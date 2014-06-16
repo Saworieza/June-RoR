@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://coderwall.com/p/bsfitw -->
+<html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/50775e2d30a1d50002000221.js"></script><script type="text/javascript" async="" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/mixpanel-2.2.min.js"></script><script async="" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/p.js"></script><script type="text/javascript" async="" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/ga.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"8e944bd22a","applicationID":"3742871","transactionName":"IQtXRkUMVA9QRktCRg0QUEJETEsLWkM=","queueTime":81,"applicationTime":358,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgQEVVdaGwAHUFNaAAA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+<link href="https://d3levm2kxut31z.cloudfront.net/assets/favicon-25872357e26fa7dcbd14232798c9c1aa.png" rel="shortcut icon" type="image/x-icon">
+<link href="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/application-3b41ead4e719911f53960f50bd548852.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-797907-8']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+    <!-- start Petametrics -->
+    <script type="text/javascript">(function(w,d,s,p,v,e,r) {
+      w['$petametrics_var']=v;w[v]=w[v]||function(){
+        (w[v].q=w[v].q||[]).push(arguments)};
+        w[v].l=1*new Date();e=d.createElement(s),r=d.getElementsByTagName(s)[0];
+        e.async=1;e.src=p;
+        r.parentNode.insertBefore(e,r)})
+        (window,document,'script','//cdn.petametrics.com/p.js','$p');
+
+      $p("init", "cd8014kif8htt6tt");
+      $p("send", "pageview");
+    </script>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function (e, b) {
+        if (!b.__SV) {
+            var a, f, i, g;
+            window.mixpanel = b;
+            a = e.createElement("script");
+            a.type = "text/javascript";
+            a.async = !0;
+            a.src = ("https:" === e.location.protocol ? "https:" : "http:") + '//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';
+            f = e.getElementsByTagName("script")[0];
+            f.parentNode.insertBefore(a, f);
+            b._i = [];
+            b.init = function (a, e, d) {
+                function f(b, h) {
+                    var a = h.split(".");
+                    2 == a.length && (b = b[a[0]], h = a[1]);
+                    b[h] = function () {
+                        b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
+                    }
+                }
+
+                var c = b;
+                "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
+                c.people = c.people || [];
+                c.toString = function (b) {
+                    var a = "mixpanel";
+                    "mixpanel" !== d && (a += "." + d);
+                    b || (a += " (stub)");
+                    return a
+                };
+                c.people.toString = function () {
+                    return c.toString(1) + ".people (stub)"
+                };
+                i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment".split(" ");
+                for (g = 0; g < i.length; g++)f(c, i[g]);
+                b._i.push([a, e, d])
+            };
+            b.__SV = 1.2
+        }
+    })(document, window.mixpanel || []);
+    mixpanel.init("3698c19fe4d7e94568a3b7de32667644", {
+        'track_pageview': true,
+        'debug': true,
+        'verbose': true
+    });
+    </script><!-- end Mixpanel -->
+
+
+<title>Sergio Tapia Gutierrez : Ruby on Rails 4 - Authentication with Facebook and OmniAuth.</title>
+<link href="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth..html" rel="canonical">
+<meta content="A protip by sergiotapia about rails-4, ruby-on-rails, authentication, omniauth, facebook, and rails." name="description" property="og:description">
+<meta content="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/27269/Photo_on_2012-07-30_at_18.13.jpg" property="og:image">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+<meta content="summary" name="twitter:card">
+<meta content="@coderwall" name="twitter:site">
+<meta content="Ruby on Rails 4 - Authentication with Facebook and OmniAuth." name="twitter:title">
+<meta content="https://coderwall.com/p/bsfitw" name="twitter:url">
+<meta content="A protip by sergiotapia about rails-4, ruby-on-rails, authentication, omniauth, facebook, and rails." name="twitter:description">
+<meta content="138387560" name="twitter:creator:id">
+
+<meta content="authenticity_token" name="csrf-param">
+<meta content="UWHevmPOA1jiJROhv6GY6bLa3JZC9e0D/605hP2LfxI=" name="csrf-token">
+<img src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/seg" width="1" height="1" border="0"><img src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/saved_resource" width="1" height="1" border="0"></head>
+<body class="protip-single">
+<header id="masthead">
+<div class="inside-masthead cf">
+<div class="mobile-panel cf">
+<a class="logo" href="https://coderwall.com/">
+<span>coderwall</span>
+</a>
+<a class="menu-btn"></a>
+</div>
+<a class="tee-ribbon track" data-action="clicked tee" href="https://coderwall.com/team/new-relic"></a>
+<nav id="nav">
+<ul>
+<li><a href="https://coderwall.com/">Discover</a></li>
+<li><a href="https://coderwall.com/teams">Teams</a></li>
+<li><a href="https://coderwall.com/jobs">Jobs</a></li>
+<li><a href="https://coderwall.com/signin">Sign In</a></li>
+<li><a href="https://coderwall.com/signin">Sign Up</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="mobile-top">
+<a class="new-logo" href="https://coderwall.com/"></a>
+<a class="mobile-nav-btn" id="x-mobile-toggle"></a>
+<nav class="mobile-nav" id="x-mobile-menu">
+<ul>
+<li><a href="https://coderwall.com/">Discover</a></li>
+<li><a href="https://coderwall.com/teams">Teams</a></li>
+<li><a href="https://coderwall.com/jobs">Jobs</a></li>
+<li><a href="https://coderwall.com/signin">Sign In</a></li>
+<li><a href="https://coderwall.com/signin">Sign Up</a></li>
+</ul>
+</nav>
+</div>
+<canvas class="blur" src="https://d3levm2kxut31z.cloudfront.net/assets/locations/nowhere-b8ad6d0fabad26da3927df689df9d92e.jpg" width="500" height="375"></canvas>
+<div id="x-active-preview-pane">
+<div class="side-conversion-alert hide" style="display: block; opacity: 0;">
+<p>Where developers come to connect, share, build and be inspired.</p>
+<a class="convert-signup track" data-action="view homepage" data-from="convert button on protip" href="https://coderwall.com/">Join Coderwall</a>
+</div>
+<div class="inside cf x-protip-pane">
+<!-- /.blur-screen -->
+<div class="cf fullpage protip-single tip-container x-protip-content" id="x-protip">
+<aside class="tip-sidebar">
+<div class="user-box">
+<a class="avatar" data-action="view user profile" data-from="protip author avatar on top" data-properties="{&quot;mode&quot;:&quot;fullpage&quot;}" href="https://coderwall.com/sergiotapia">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</a>
+<ul class="user-team">
+<li class="user">
+by
+<a class="track" data-action="view user profile" data-from="protip author name on top" data-properties="{&quot;mode&quot;:&quot;fullpage&quot;}" href="https://coderwall.com/sergiotapia">
+Sergio Tapia Gutierrez
+</a>
+</li>
+</ul>
+<p class="bio">
+Latinamerican C# MVC3 / Rails developer. 5 years in the industry and still amazed by exciting new possibilities each year brings to the dev world.
+</p>
+<ul class="side-bar-list">
+<li class="username">
+<a class="name track" data-action="view user profile" data-from="protip author name(follow)" data-properties="{&quot;mode&quot;:&quot;fullpage&quot;}" href="https://coderwall.com/sergiotapia">sergiotapia</a>
+<a href="https://coderwall.com/users/sergiotapia/follow" class="follow" data-follow-type="Users" data-method="post" data-remote="true" data-value="sergiotapia" rel="nofollow"></a>
+</li>
+</ul>
+</div>
+<div class="side-btm">
+<h3>Networks</h3>
+<ul class="side-bar-list side-bar-networks">
+<li style="border-color:#236578">
+<a class="name" href="https://coderwall.com/n/ruby-on-rails">ruby on rails</a>
+<a href="https://coderwall.com/n/ruby-on-rails/leave" class="follow ruby-on-rails" data-follow-type="Networks" data-method="post" data-remote="true" data-value="ruby-on-rails" rel="nofollow"></a>
+</li>
+</ul>
+<ul class="admin-links">
+<li>
+<a href="https://coderwall.com/p/bsfitw/report_inappropriate" class=" user-flag" data-method="post" data-remote="true" rel="nofollow"></a>
+</li>
+</ul>
+<h3>Featured team</h3>
+<a href="https://coderwall.com/team/substantial" class="team-box" data-action="view team jobs" data-from="job on protip" data-properties="{&quot;author&#39;s team&quot;:false,&quot;adjective&quot;:&quot;has a great engineering team&quot;,&quot;mode&quot;:&quot;fullpage&quot;}"><div class="image-top">
+<img alt="961x477" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/961x477">
+</div>
+<div class="content">
+<div class="avatar">
+<img alt="Substantial_door" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/substantial_door.jpg">
+</div>
+<h4>Substantial</h4>
+<p>
+Calling all Inspired Developers. Substantial has a great engineering team and is hiring!
+</p>
+</div>
+</a><a class="feature-jobs track" data-action="upgrade team" data-from="protip page" href="https://coderwall.com/employers">
+feature your jobs here
+</a>
+<iframe id="petametrics-widget-825" name="petametrics-widget-825" scrolling="no" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/saved_resource.html" style="width: 244px; height: 0px; border: none; overflow: hidden;"></iframe></div>
+</aside>
+<article class="tip-panel" id="bsfitw">
+<a href="http://twitter.com/share?url=https%3A%2F%2Fcoderwall.com%2Fp%2Fbsfitw&via=coderwall&text=Ruby+on+Rails+4+-+Authentication+with+Facebook+and+OmniAuth.+%23protip&related=&count=vertical&lang=en" class="share-this-tip direction track" data-action="share protip" data-from="protip" target="new">Share this</a>
+<a href="https://coderwall.com/p/bsfitw/upvote" class="upvote track" data-action="upvote protip" data-from="protip" data-method="post" data-remote="true" rel="nofollow">128</a>
+<header class="tip-header">
+<h1 class="tip-title">
+Ruby on Rails 4 - Authentication with Facebook and OmniAuth.
+</h1>
+<p class="views">
+<span>
+22901
+</span>
+views
+</p>
+<ul class="cf" id="tags">
+<li>
+<a href="https://coderwall.com/p/t/rails-4">rails-4</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/ruby-on-rails">ruby-on-rails</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/authentication">authentication</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/omniauth">omniauth</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/facebook">facebook</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/rails">rails</a>
+</li>
+</ul>
+<!-- /.tip-body.tip-content -->
+</header>
+<div class="tip-content">
+<p>In this article I'm going to teach you how to authenticate your users easily using Facebook. This means a much easier sign up process for your users and you no longer have the responsibility of securing passwords.</p>
+
+<p>This article is written specifically for Ruby on Rails 4. Since I had to cobble together solutions from many sources hopefully this helps people get a working codebase quickly.</p>
+
+<hr>
+
+<h2>Objectives:</h2>
+
+<p>Here's a small list of the things we're going to work on. Ideally, you want to follow this progression path to get a working final result.</p>
+
+<ul>
+<li>Add Omniauth and Omniauth-Facebook gems.</li>
+<li>Create <code style="overflow-y: hidden;">User</code> model.</li>
+<li>Create Sessions controller.</li>
+<li>Create Omniauth initializer.</li>
+<li>Add client-side functionality using javascript.</li>
+<li>Showing the logged in user in the View.</li>
+</ul>
+
+<hr>
+
+<h2>Add Omniauth and Omniauth-Facebook gems.</h2>
+
+<p>Open up your Gemfile and add the following gems to it.</p>
+
+<pre><code class="matlab" style="overflow-y: hidden;">gem <span class="string">'omniauth'</span>
+gem <span class="string">'omniauth-facebook'</span>, <span class="string">'1.4.0'</span>
+</code></pre>
+
+<p>Make sure you run the <code style="overflow-y: hidden;">bundle install</code> command. This configures your Rails application to use those gems.</p>
+
+<hr>
+
+<h2>Create User model.</h2>
+
+<p>We need to generate a User model and add in some necessary fields that Omniauth uses for user authentication.</p>
+
+<p>Run the following command from terminal:</p>
+
+<pre><code class="apache" style="overflow-y: hidden;">rails g model <span class="keyword">User</span> provider uid name oauth_token oauth_expires_at:datetime
+</code></pre>
+
+<p>Create a method in the User model that interacts with Omniauth's object.</p>
+
+<pre><code class="avrasm" style="overflow-y: hidden;">class User &lt; ActiveRecord::Base
+  def self<span class="preprocessor">.from</span>_omniauth(auth)
+    where(auth<span class="preprocessor">.slice</span>(:provider, :uid))<span class="preprocessor">.first</span>_or_initialize<span class="preprocessor">.tap</span> do |user|
+      user<span class="preprocessor">.provider</span> = auth<span class="preprocessor">.provider</span>
+      user<span class="preprocessor">.uid</span> = auth<span class="preprocessor">.uid</span>
+      user<span class="preprocessor">.name</span> = auth<span class="preprocessor">.info</span><span class="preprocessor">.name</span>
+      user<span class="preprocessor">.oauth</span>_token = auth<span class="preprocessor">.credentials</span><span class="preprocessor">.token</span>
+      user<span class="preprocessor">.oauth</span>_expires_at = Time<span class="preprocessor">.at</span>(auth<span class="preprocessor">.credentials</span><span class="preprocessor">.expires</span>_at)
+      user<span class="preprocessor">.save</span>!
+    end
+  end
+end
+</code></pre>
+
+<p>Then we need to create a helper method in our <code style="overflow-y: hidden;">ApplicationController</code> to access whoever is logged in at the moment.</p>
+
+<pre><code class="ruby" style="overflow-y: hidden;"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> <span class="inheritance">&lt; <span class="parent">ActionController::Base</span></span></span>
+  <span class="identifier">protect_from_forgery</span>
+
+  <span class="identifier">private</span>
+  <span class="function"><span class="keyword">def</span> <span class="title">current_user</span></span>
+    <span class="variable">@current_user</span> ||= <span class="constant">User</span>.<span class="identifier"><span class="keymethods">find</span></span>(<span class="identifier">session</span>[<span class="symbol">:<span class="identifier">user_id</span></span>]) <span class="identifier"><span class="keyword">if</span></span> <span class="identifier">session</span>[<span class="symbol">:<span class="identifier">user_id</span></span>]
+  <span class="identifier"><span class="keyword">end</span></span>
+  <span class="identifier">helper_method</span> <span class="symbol">:<span class="identifier">current_user</span></span>
+<span class="identifier"><span class="keyword">end</span></span>
+</code></pre>
+
+<hr>
+
+<h2>Create Sessions controller</h2>
+
+<p>Next lets create a sessions controller to handle callbacks. This is where we'll actually login our users.</p>
+
+<pre><code class="ruby" style="overflow-y: hidden;"><span class="class"><span class="keyword">class</span> <span class="title">SessionsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span>
+  <span class="function"><span class="keyword">def</span> <span class="title">create</span></span>
+    <span class="identifier">user</span> = <span class="constant">User</span>.<span class="identifier">from_omniauth</span>(<span class="identifier">env</span>[<span class="string">"omniauth.auth"</span>])
+    <span class="identifier">session</span>[<span class="symbol">:<span class="identifier">user_id</span></span>] = <span class="identifier">user</span>.<span class="identifier"><span class="keymethods">id</span></span>
+    <span class="identifier">redirect_to</span> <span class="identifier">root_url</span>
+  <span class="identifier"><span class="keyword">end</span></span>
+
+  <span class="function"><span class="keyword">def</span> <span class="title">destroy</span></span>
+    <span class="identifier">session</span>[<span class="symbol">:<span class="identifier">user_id</span></span>] = <span class="identifier"><span class="keyword">nil</span></span>
+    <span class="identifier">redirect_to</span> <span class="identifier">root_url</span>
+  <span class="identifier"><span class="keyword">end</span></span>
+<span class="identifier"><span class="keyword">end</span></span>
+</code></pre>
+
+<p>Create a couple of paths in your <code style="overflow-y: hidden;">routes.rb</code> file as well. Otherwise your Rails application won't know what controller to use.</p>
+
+<pre><code class="matlab" style="overflow-y: hidden;">match <span class="string">'auth/:provider/callback'</span>, to: <span class="string">'sessions#create'</span>, via: [:get, :post]
+match <span class="string">'auth/failure'</span>, to: redirect(<span class="string">'/'</span>), via: [:get, :post]
+match <span class="string">'signout'</span>, to: <span class="string">'sessions#destroy'</span>, as: <span class="string">'signout'</span>, via: [:get, :post]
+</code></pre>
+
+<hr>
+
+<h2>Create Omniauth initializer</h2>
+
+<p>We need to create an initializer for Omniauth. Create it in <code style="overflow-y: hidden;">config/initializers/omniauth.rb</code>.</p>
+
+<pre><code class="matlab" style="overflow-y: hidden;">OmniAuth.config.logger = Rails.logger
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :facebook, <span class="string">'YOUR-APP-ID-HERE'</span>, <span class="string">'YOUR-APP-SECRET-HERE'</span>
+<span class="built_in">end</span>
+</code></pre>
+
+<hr>
+
+<h2>Add client-side functionality using Javascript</h2>
+
+<p>Create a coffescript file called <code style="overflow-y: hidden;">facebook.js.coffee</code>.</p>
+
+<pre><code class="perl">jQuery -&gt;
+  <span class="variable">$(</span><span class="string">'body'</span>).prepend(<span class="string">'&lt;div id="fb-root"&gt;&lt;/div&gt;'</span>)
+
+  <span class="variable">$.</span>ajax
+    url: <span class="string">"#{window.location.protocol}//connect.facebook.net/en_US/all.js"</span>
+    dataType: <span class="string">'script'</span>
+    cache: true
+
+
+window.fbAsyncInit = -&gt;
+  FB.init(appId: <span class="string">'YOUR-APP-ID'</span>, cookie: true)
+
+  <span class="variable">$(</span><span class="string">'#sign_in'</span>).click (e) -&gt;
+    e.preventDefault()
+    FB.login (response) -&gt;
+      window.location = <span class="string">'/auth/facebook/callback'</span> <span class="keyword">if</span> response.authResponse
+
+  <span class="variable">$(</span><span class="string">'#sign_out'</span>).click (e) -&gt;
+    FB.getLoginStatus (response) -&gt;
+      FB.logout() <span class="keyword">if</span> response.authResponse
+    true
+</code></pre>
+
+<hr>
+
+<h2>Showing the logged in user in the View.</h2>
+
+<p>In your <code style="overflow-y: hidden;">application.html.erb</code> file, we'll write in some code to display either a sign in link, or the currently logged in user's name.</p>
+
+<pre><code class="xml" style="overflow-y: hidden;"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"user-widget"</span>&gt;</span>
+  <span class="vbscript">&lt;% <span class="keyword">if</span> current_user %&gt;</span>
+    Welcome <span class="tag">&lt;<span class="title">strong</span>&gt;</span><span class="vbscript">&lt;%= current_user.name %&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>!
+    <span class="vbscript">&lt;%= link_to <span class="string">"Sign out"</span>, signout_path, id: <span class="string">"sign_out"</span> %&gt;</span>
+  <span class="vbscript">&lt;% <span class="keyword">else</span> %&gt;</span>
+    <span class="vbscript">&lt;%= link_to <span class="string">"Sign in with Facebook"</span>, <span class="string">"/auth/facebook"</span>, id: <span class="string">"sign_in"</span> %&gt;</span>
+  <span class="vbscript">&lt;% <span class="keyword">end</span> %&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre>
+
+<hr>
+
+<p>And there you have it. </p>
+
+<p>Quick and painless Facebook authentication in a Ruby on Rails 4 application. Make sure you read Facebook's official documentation on how to request more permissions from users if you need more personal information such as emails and sex.</p>
+
+</div>
+</article>
+<section class="comments">
+<h2 class="comments-header">Comments</h2>
+<ul class="comment-list">
+<li class="cf top-comment" id="comment_8751">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/5a8295de13dda6cc07ec65863be4cea8">
+</div>
+<a class="comment-user" data-reply-to="rachid" href="https://coderwall.com/rachid">
+rachid
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8751/like" rel="nofollow">
+7
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Don't forget to pass some credits to our friend ryan bates. <a href="http://railscasts.com/episodes/360-facebook-authentication">http://railscasts.com/episodes/360-facebook-authentication</a></p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_8051">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/110e5b52f6c5d95b64653434cef61dae">
+</div>
+<a class="comment-user" data-reply-to="transforme" href="https://coderwall.com/transforme">
+transforme
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8051/like" rel="nofollow">
+2
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>thanks for sharing this.  looking forward to implementing it.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_8433">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/2d62e386c079f824fe7f0c8e8e83128b">
+</div>
+<a class="comment-user" data-reply-to="maxcnunes" href="https://coderwall.com/maxcnunes">
+maxcnunes
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8433/like" rel="nofollow">
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Thanks, really helpful.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_9153">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/188538f55df8f151232958bee8610ddf">
+</div>
+<a class="comment-user" data-reply-to="txant" href="https://coderwall.com/txant">
+txant
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/9153/like" rel="nofollow">
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p><a href="https://coderwall.com/sergiotapia">@sergiotapia</a>: Thanks for your tutorial and reply message. My error is solved. Because of my careless, I just copied and pasted the facebook.js.coffee and I didn't check the codes which along inside. The AppID need to add at the one of the lines of codes of that file. Now, my rails app works correctly.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11493">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11493/like" rel="nofollow">
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Hi <a href="https://coderwall.com/semvc">@semvc</a>, you need to create that file manually using your editor of choice. :)</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11498">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/e299a2906c329f741a4d8784e956285e">
+</div>
+<a class="comment-user" data-reply-to="semvc" href="https://coderwall.com/semvc">
+semvc
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11498/like" rel="nofollow">
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Hi, solved my previous problem... I'm able to log in with facebook, but when click i get the following error --&gt; </p>
+
+<p>OmniAuth::Strategies::Facebook::NoAuthorizationCodeError</p>
+
+<p>must pass either a <code style="overflow-y: hidden;">code</code> parameter or a signed request (via <code style="overflow-y: hidden;">signed_request</code> parameter or a <code style="overflow-y: hidden;">fbsr_XXX</code> cookie)</p>
+
+<p>Did someone also have this problem? I've searched the internet for some hours but couldn't find any solution... :'(</p>
+
+<p>Hope someone can help me...Thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_8361">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8361/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Glad you like it!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_8394">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/74baee3715517a223ceeb492e85800a4">
+</div>
+<a class="comment-user" data-reply-to="manuel-cepeda" href="https://coderwall.com/manuel-cepeda">
+manuel-cepeda
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8394/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>i get this error</p>
+
+<p>undefined local variable or method `current_user' for #&lt;#<a>Class:0x007f5b1c4d0ac0</a>:0x00000003a2be00&gt;</p>
+
+<p></p><div>
+<div>
+&lt;% if current<em>user %&gt;
+Welcome <strong>&lt;%= current</strong></em><strong>user.name %&gt;</strong>!
+&lt;%= link<em>to "Sign out", signout</em>path, id: "sign_out" %&gt;
+&lt;% else %&gt;<p></p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</div></div></li>
+<li class="cf" id="comment_8395">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8395/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>@manuel-cepada:</p>
+
+<p>Sorry about that! I forgot to mention that you need to create a helper method called <code style="overflow-y: hidden;">current_user</code>. </p>
+
+<pre><code class="ruby" style="overflow-y: hidden;"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> <span class="inheritance">&lt; <span class="parent">ActionController::Base</span></span></span>
+  <span class="identifier">protect_from_forgery</span>
+
+  <span class="identifier">private</span>
+  <span class="function"><span class="keyword">def</span> <span class="title">current_user</span></span>
+    <span class="variable">@current_user</span> ||= <span class="constant">User</span>.<span class="identifier"><span class="keymethods">find</span></span>(<span class="identifier">session</span>[<span class="symbol">:<span class="identifier">user_id</span></span>]) <span class="identifier"><span class="keyword">if</span></span> <span class="identifier">session</span>[<span class="symbol">:<span class="identifier">user_id</span></span>]
+  <span class="identifier"><span class="keyword">end</span></span>
+  <span class="identifier">helper_method</span> <span class="symbol">:<span class="identifier">current_user</span></span>
+<span class="identifier"><span class="keyword">end</span></span>
+</code></pre>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_8750">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Logo-4" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/logo-4.png">
+</div>
+<a class="comment-user" data-reply-to="erikwco" href="https://coderwall.com/erikwco">
+erikwco
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8750/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Definitely i will try it!! thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_8759">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/6d89be962aea6ca120236b264edcf2ca">
+</div>
+<a class="comment-user" data-reply-to="tvdeyen" href="https://coderwall.com/tvdeyen">
+tvdeyen
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/8759/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Give Ryan some &lt;3</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_9128">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/188538f55df8f151232958bee8610ddf">
+</div>
+<a class="comment-user" data-reply-to="txant" href="https://coderwall.com/txant">
+txant
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/9128/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>I created the app to get the App ID and App Secret code at the facebook developer sections. But after finished all steps as u shown, I got below error. What can it be?</p>
+
+<p>Error Accessing App
+We're sorry, but the application you're trying to use doesn't exist or has been disabled.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_9139">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/9139/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p><a href="https://coderwall.com/txant">@txant</a>: That's probably something wrong on Facebook's end. I've never seen that message but it's pretty straight forward. Your app has been disabled or doesn't exist. Make sure you're using the correct AppID and that your app on developers.facebook.com isn't disabled.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_9790">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="874080c31464725cc629df38ea44bc46_normal" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/874080c31464725cc629df38ea44bc46_normal.jpeg">
+</div>
+<a class="comment-user" data-reply-to="farantesrod" href="https://coderwall.com/farantesrod">
+farantesrod
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/9790/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>thanks for the tutorial.</p>
+
+<p>I ran into trouble deploying in Heroku because it's required to add in the omniauth.rb initializer :</p>
+
+<p>{:client<em>options =&gt; {:ssl =&gt; {:ca</em>path =&gt; "/etc/ssl/certs"}}}  # Modify this with your SSL certificates path</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_10068">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="L_normal" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/l_normal.jpg">
+</div>
+<a class="comment-user" data-reply-to="atdeniel" href="https://coderwall.com/atdeniel">
+atdeniel
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/10068/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>It works! Thanks! How about with Google+? :P?comment=WORKS! THANKS! :P How about google+?</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_10074">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/188538f55df8f151232958bee8610ddf">
+</div>
+<a class="comment-user" data-reply-to="txant" href="https://coderwall.com/txant">
+txant
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/10074/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>I have the error of Invalid redirect_uri on calling with ip address from others devices which located in same local network. Its okay at localhost but also have error at 127.0.0.1. Please show me the way to solve. Thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_10469">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/a67bdb2d3a365da1bc43f82b85aa2fb1">
+</div>
+<a class="comment-user" data-reply-to="thiyagarajan" href="https://coderwall.com/thiyagarajan">
+thiyagarajan
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/10469/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Thanks a lot!, its working well  in rails 4.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_10717">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="1ff1d726ce50602dce008417145df263_normal" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/1ff1d726ce50602dce008417145df263_normal.jpeg">
+</div>
+<a class="comment-user" data-reply-to="cleechtech" href="https://coderwall.com/cleechtech">
+cleechtech
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/10717/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>remember to migrate the database! heroku rake db:migrate</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11491">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/e299a2906c329f741a4d8784e956285e">
+</div>
+<a class="comment-user" data-reply-to="semvc" href="https://coderwall.com/semvc">
+semvc
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11491/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Hi there, </p>
+
+<p>having a problem with  creating an initializer for Omniauth. Should you make the file omniauth.rb by yourself or should you generate it by typing in a code in your command prompt with ruby on rails...</p>
+
+<p>Thanks in advance!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11496">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/e299a2906c329f741a4d8784e956285e">
+</div>
+<a class="comment-user" data-reply-to="semvc" href="https://coderwall.com/semvc">
+semvc
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11496/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Thanks sergiotapia for your fast respond, but i have a next question...</p>
+
+<p>I've manually made the omniauth.rb file and placed the correct code into it but when trying to migrate the database --&gt; rake db:migrate, i get the following error: </p>
+
+<p>rake aborted! uninitialized constant OmniAuth::OmniAuth...</p>
+
+<p>Maybe you know the answer?</p>
+
+<p>Thanks in advance!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11497">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/4cec42136c3cf713d89cf2a7fbae53c1">
+</div>
+<a class="comment-user" data-reply-to="leovmcosta" href="https://coderwall.com/leovmcosta">
+leovmcosta
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11497/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Hi,</p>
+
+<p>I'm trying to implement this tutorial along the app I created following The Rails Tutorial by Michael Hartl however I'm getting an error when I try to join both codes in my create action. This is the part of my session controller which is currently giving a error:</p>
+
+<p>def create
+user = User.find<em>by(email: params[:session][:email].downcase) || User.from</em>omniauth(env["omniauth.auth"])</p>
+
+<p>Any suggestions on how can I manage to solve this problem?
+Thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11723">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/blank-mugshot-e529b9f01583333a5cd98af1e81e80bf.png">
+</div>
+<a class="comment-user" data-reply-to="madhu sudhan" href="https://coderwall.com/madhu%20sudhan">
+madhu sudhan
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11723/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Thanks its helped me , And please make facebook.js.coffee file name  to facebook.js.coffee.erb</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_11980">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/8555eec52f2da852df6cbfd2db71f306">
+</div>
+<a class="comment-user" data-reply-to="vickoman86" href="https://coderwall.com/vickoman86">
+vickoman86
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/11980/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>undefined method `slice' for nil:NilClass</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_12065">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/b21a1e60af5fa538879df25b9118ff94">
+</div>
+<a class="comment-user" data-reply-to="nunziofiore" href="https://coderwall.com/nunziofiore">
+nunziofiore
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/12065/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>to fix error reported by <a href="https://coderwall.com/semvc">@semvc</a> you need to set </p>
+
+<pre><code class="matlab" style="overflow-y: hidden;">  window.location = <span class="string">'/auth/facebook'</span> <span class="keyword">if</span> response.authResponse
+</code></pre>
+
+<p>in facebook.js.coffescript</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_12486">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Goofy_normal" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/goofy_normal.jpeg">
+</div>
+<a class="comment-user" data-reply-to="sameera207" href="https://coderwall.com/sameera207">
+sameera207
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/12486/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Thanks for the great post, got it working, however I had to remove 'e.preventDefault()' part in 'facebook.js.coffee' for it to work :)</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_12758">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/73f4e50f4f3af191ecaee33b27ec69fa">
+</div>
+<a class="comment-user" data-reply-to="jojas" href="https://coderwall.com/jojas">
+jojas
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/12758/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Practical tutorial! Thanks :)</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_12958">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/ebfbfe34569dfcde2da2e93fd26b4d35">
+</div>
+<a class="comment-user" data-reply-to="folivi" href="https://coderwall.com/folivi">
+folivi
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/12958/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Koala is also a great gem for fb. Haven't tried it yet on Rails4 apps but it''s worth ckecking out</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13060">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/blank-mugshot-e529b9f01583333a5cd98af1e81e80bf.png">
+</div>
+<a class="comment-user" data-reply-to="christophe1" href="https://coderwall.com/christophe1">
+christophe1
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13060/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Just reading through it now and typing in your code, not tested yet...looks good but could be clearer for the novice user like:</p>
+
+<p>'Create a coffescript file called facebook.js.coffee'</p>
+
+<p>Where? I take it in the App/assets/javascripts folder?</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13384">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/9b0f7bbf22d65fa2bd23496973c0ba80">
+</div>
+<a class="comment-user" data-reply-to="sebastialonso" href="https://coderwall.com/sebastialonso">
+sebastialonso
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13384/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Succinct, very quick to implement, and most importantly, NO DEVISE!</p>
+
+<p>Will recommend! Thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13564">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="934851994d52ee9f4d7dab8a5c7420c9_normal" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/934851994d52ee9f4d7dab8a5c7420c9_normal.png">
+</div>
+<a class="comment-user" data-reply-to="martinvanaken" href="https://coderwall.com/martinvanaken">
+martinvanaken
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13564/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Work as advised. Impressive as this can quickly become complicated stuff. Much appreciated.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13878">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/b41b0177b5daeb6c0529c7487dedc2b7">
+</div>
+<a class="comment-user" data-reply-to="lovettlovett" href="https://coderwall.com/lovettlovett">
+lovettlovett
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13878/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Thanks for the great tutorial! I followed your process to a "T", but I'm getting a similar error as <a href="https://coderwall.com/leovmcosta">@leovmcosta</a>. I'm getting this error in my SessionsController create function, "syntax error, unexpected end-of-input, expecting keyword_end" (<a href="http://cl.ly/image/3a0q3k0R3N1k">http://cl.ly/image/3a0q3k0R3N1k</a>).</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13953">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13953/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p><a href="https://coderwall.com/mcmaur">@mcmaur</a>: That means that you didn't create the SessionsController. Check above to see what it needs to have.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13955">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13955/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Notice "Session" vs. "Sessions" - they're not the same. :) Check your routes.rb file.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13958">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13958/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Keep it this way:</p>
+
+<pre><code class="objectivec" style="overflow-y: hidden;"><span class="class"><span class="keyword">class</span> <span class="id">SessionsController</span> &lt; <span class="id">ApplicationController</span></span>
+<span class="keyword">end</span>
+</code></pre>
+
+<p>Create a couple of paths in your routes.rb file as well. Otherwise your Rails application won't know what controller to use.</p>
+
+<pre><code class="matlab" style="overflow-y: hidden;">match <span class="string">'auth/:provider/callback'</span>, to: <span class="string">'sessions#create'</span>, via: [:get, :post]
+match <span class="string">'auth/failure'</span>, to: redirect(<span class="string">'/'</span>), via: [:get, :post]
+match <span class="string">'signout'</span>, to: <span class="string">'sessions#destroy'</span>, as: <span class="string">'signout'</span>, via: [:get, :post]
+</code></pre>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13962">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Photo_on_2012-07-30_at_18.13" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Photo_on_2012-07-30_at_18.13.jpg">
+</div>
+<a class="comment-user" data-reply-to="sergiotapia" href="https://coderwall.com/sergiotapia">
+sergiotapia
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13962/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Stop and restart your app?</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_13963">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Gkp3yhuq_normal" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/Gkp3yHuQ_normal.jpeg">
+</div>
+<a class="comment-user" data-reply-to="mcmaur" href="https://coderwall.com/mcmaur">
+mcmaur
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/13963/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>still error : <a href="https://dl.dropboxusercontent.com/u/9616624/railError.jpg">https://dl.dropboxusercontent.com/u/9616624/railError.jpg</a></p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_14382">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/8a388627a6519b743966d82e890b0727">
+</div>
+<a class="comment-user" data-reply-to="light24bulbs" href="https://coderwall.com/light24bulbs">
+light24bulbs
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/14382/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>When the ajax call tries to load the facebook script, I get this error: Given URL is not permitted by the application configuration.: One or more of the given URLs is not allowed by the App's settings.  It must match the Website URL or Canvas URL, or the domain must be a subdomain of one of the App's domains. </p>
+
+<p>I wonder why that didn't happen to anyone else.  I must have missed something.  Configuring the app to allow cross site ajax requests doesnt seem to help</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_14383">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/8a388627a6519b743966d82e890b0727">
+</div>
+<a class="comment-user" data-reply-to="light24bulbs" href="https://coderwall.com/light24bulbs">
+light24bulbs
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/14383/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>can be solved by this: <a href="http://stackoverflow.com/questions/14474122/given-url-is-not-permitted-by-the-application-configuration">http://stackoverflow.com/questions/14474122/given-url-is-not-permitted-by-the-application-configuration</a></p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_14740">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/98be2f5c2ffc61dcc45b6b16745e599d">
+</div>
+<a class="comment-user" data-reply-to="longdh57" href="https://coderwall.com/longdh57">
+longdh57
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/bsfitw/comments/14740/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>thanks sergiotapia but when I got to the end of step finish to test the application at localhost:3000/auth/facebook, I got this error:</p>
+
+<p>{
+   "error": {
+      "message": "Invalid redirect_uri: URL \u0111\u00e3 cho kh\u00f4ng \u0111\u01b0\u1ee3c c\u1ea5u h\u00ecnh \u1ee8ng d\u1ee5ng cho ph\u00e9p.",
+      "type": "OAuthException",
+      "code": 191
+   }
+}</p>
+
+<p>the problem is the URL in the Facebook developer center, but none of the solutions I read works for me</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+
+</ul>
+<div class="add-comment cf" id="add-comment">
+<h2>Add a comment</h2>
+<form accept-charset="UTF-8" action="https://coderwall.com/p/bsfitw/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="UWHevmPOA1jiJROhv6GY6bLa3JZC9e0D/605hP2LfxI="></div><textarea cols="40" id="comment_comment" label="false" name="comment[comment]" rows="5"></textarea>
+<input class="button" type="submit" value="Submit comment">
+</form>
+
+</div>
+
+</section>
+<div class="mobile-job">
+<a href="https://coderwall.com/team/substantial" class="team-box" data-action="view team jobs" data-from="job on protip" data-properties="{&quot;author&#39;s team&quot;:false,&quot;adjective&quot;:&quot;is awesome&quot;,&quot;mode&quot;:&quot;fullpage&quot;}"><div class="image-top">
+<img alt="961x477" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/961x477">
+</div>
+<div class="content">
+<div class="avatar">
+<img alt="Substantial_door" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/substantial_door.jpg">
+</div>
+<h4>Substantial</h4>
+<p>
+Calling all Inspired Developers. Substantial is awesome and is hiring!
+</p>
+</div>
+</a></div>
+</div>
+</div>
+
+
+</div>
+
+<script>
+  //<![CDATA[
+    window.console.log = function(){}
+  //]]>
+</script>
+<script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/jquery-b8a47eea9addee34347006818280f5a6.js" type="text/javascript"></script>
+<script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/jquery_ujs-ddc6428895649bdafdada9ce36c2b2d3.js" type="text/javascript"></script>
+    <script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/tracking-2505bf36b8a2b1da336f410db1152e2c.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+
+        mixpanel.identify('14647e47a0d55-0884e409e-34253344-13c680-14647e47a0e10a');
+
+        mixpanel.register({'signed in': false,
+            'member': false,
+            'first visit': true
+        }, 'all', 31);
+
+        logUsage('viewed protip', null, {"featured":true,"distinction":"views"});
+
+
+        (function () {
+            window._pa = window._pa || {};
+            var pa = document.createElement('script');
+            pa.type = 'text/javascript';
+            pa.async = true;
+            pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/50775e2d30a1d50002000221.js";
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(pa, s);
+        })();
+        window.onerror = function (message, file, line) {
+            var prop = {}
+            prop.message = message;
+            prop.file = file;
+            prop.line = line;
+            mixpanel.track('error', prop);
+        }
+    </script>
+
+<script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/highlight-7df14c8e10d86811327a0ad02112f3dd.js" type="text/javascript"></script>
+<script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/language-53c559096b36c91b41bcb2e2aadec549.js" type="text/javascript"></script>
+<script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/protips-b57a1b8e408aa013e2760d6e9f3ef007.js" type="text/javascript"></script>
+
+
+
+<script src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/nr-411.min.js"></script><script type="text/javascript" src="./Sergio Tapia Gutierrez   Ruby on Rails 4 - Authentication with Facebook and OmniAuth._files/8e944bd22a"></script></body></html>

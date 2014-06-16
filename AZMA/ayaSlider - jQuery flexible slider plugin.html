@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://dl.dropboxusercontent.com/u/3241507/ayaslider/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>ayaSlider - jQuery flexible slider plugin</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/3241507/ayaslider/css/grid.css">
+	<link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/3241507/ayaslider/css/sweefty-skin.css">
+	<link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/3241507/ayaslider/css/app.css">
+	
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/jquery.min.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/Sweefty.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/modal.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/scrollTo.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/tooltip.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/touch.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/tables.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/app.js" type="text/javascript"></script>
+	<script src="./ayaSlider - jQuery flexible slider plugin_files/ayaSlider.js" type="text/javascript"></script>
+	
+	<link href="./ayaSlider - jQuery flexible slider plugin_files/css" rel="stylesheet" type="text/css">
+	<link href="./ayaSlider - jQuery flexible slider plugin_files/css(1)" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+	<div class="modal" id="modal">Hi there<a href="https://dl.dropboxusercontent.com/u/3241507/ayaslider/index.html#" class="closeModal">close</a></div>
+	
+	<div id="header">
+		<div id="mobileMenu"></div>
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div id="logo" class="grid_2 column"></div>
+					<div class="grid_10 column">
+						<div id="navWrapper" class="hide-phones">
+						<ul data-trigger="menu:pretty" class="nav right hide-phone">
+							<li class=""><a href="https://github.com/mamod/ayaSlider">Fork on Github</a></li>
+							<li class=""><a href="https://github.com/mamod/ayaSlider/archive/master.zip">Download</a>
+							</li>
+						</ul><div class="selectContainer show-phone prettySelect"><select class="selectMenu" style="z-index: 10; opacity: 0;"><option style="" value="https://github.com/mamod/ayaSlider">Fork on Github</option><option style="" value="https://github.com/mamod/ayaSlider/archive/master.zip">Download</option></select><div class="prettyMenu"><span class="prettyTitle">Fork on Github</span><span class="pointer"></span></div></div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="clear"></div>-->
+			</div>
+		</div>
+		
+		
+		<div class="container">
+			<div class="row">
+				<div class="grid_12 column center">
+					<div class="intro">
+						<!--<h1 class="fittext" data-font=";34">ayaSlider jQuery Plugin</h1>-->
+						
+					</div>
+				</div>
+			</div>
+				
+			<div class="row">
+				
+				<div class="grid_12" style="background:#fff;">
+					
+					
+					<div id="slideShow" style="position: relative; overflow: hidden;">
+						
+						<!--FIRST SLIDE-->
+						<div data-out="top:1000;opacity:0;" data-in="left:-100;opacity:.2;duration:500" class="slide s1 _ayaSlider_slide _ayaSlider_move" style="position: absolute; overflow: hidden; display: none; width: 100%; height: 350px; opacity: 0; top: 1000px; left: 0px; z-index: 2;">
+							<img style="position: absolute; opacity: 1; left: 0px; top: 0px;" src="./ayaSlider - jQuery flexible slider plugin_files/leaf.png" class="_ayaSlider_move">
+							
+							<div class="grid_5 _ayaSlider_move" style="margin-top: 15px; position: relative; opacity: 1; left: 0px; top: 0px;">
+								<div data-in="top:-100;delay:1550;duration:550" class="title _ayaSlider_move" style="top: -100px; left: 0px; position: relative; opacity: 1;"><h2 class="_ayaSlider_move" style="position: relative; opacity: 1; left: 0px; top: 0px;">Easy to Setup</h2></div>
+								<div data-in="left:-1000;delay:700;duration:1550" class="content _ayaSlider_move" style="top: 0px; left: -1000px; position: relative; opacity: 1;">Mutiple Slides</div>
+								<div data-in="left:-1000;delay:800;duration:1550" class="content _ayaSlider_move" style="top: 0px; left: -1000px; position: relative; opacity: 1;">Multiple Animations</div>
+								<div data-in="left:-1000;delay:900;duration:1550" class="content _ayaSlider_move" style="top: 0px; left: -1000px; position: relative; opacity: 1;">Easing Included</div>
+								<div data-in="left:-1000;delay:1000;duration:1550" class="content _ayaSlider_move" style="top: 0px; left: -1000px; position: relative; opacity: 1;">Easing Included</div>
+							</div>
+						</div>
+						
+						
+						<!--SECOND SLIDE-->
+						<div data-out="left:-1000;opacity:0;delay:9000" data-in="top:-500;duration:1200;ease:easeOutBounce;" class="slide s2 _ayaSlider_slide _ayaSlider_move" style="position: absolute; overflow: hidden; display: block; width: 100%; height: 350px; z-index: 3; opacity: 1; top: 0px; left: 0px;">
+							<img style="position: absolute; top: 0px; left: 0px; opacity: 1;" src="./ayaSlider - jQuery flexible slider plugin_files/grass.png" class="_ayaSlider_move">
+							
+							<div class="grid_4 _ayaSlider_move" style="position: relative; opacity: 1; left: 0px; top: 0px;">
+								
+								<div style="top: 0px; left: 0px; opacity: 1; position: relative;" data-in="opacity:0;left:100;delay:2050;duration:1050;ease:linear" data-out="left:-100;opacity:0;delay:4000;" class="content _ayaSlider_move">Unlimited</div>
+								<div style="top: 0px; left: 0px; opacity: 1; position: relative;" data-in="opacity:0;left:150;delay:2550;duration:1050;ease:linear" data-out="left:-100;opacity:0;delay:4300;" class="content _ayaSlider_move">Animations</div>
+								
+							</div>
+							
+							<div class="grid_4 _ayaSlider_move" style="position: relative; opacity: 1; left: 0px; top: 0px;">
+								<div style="top: 0px; left: 0px; opacity: 1; position: relative;" data-in="opacity:0;left:100;delay:3050;duration:1050;ease:linear" data-out="left:-100;opacity:0;delay:4000;" class="content _ayaSlider_move">Embed</div>
+								<div style="top: 0px; left: 0px; opacity: 1; position: relative;" data-in="opacity:0;left:150;delay:3550;duration:800;ease:linear" data-out="left:-100;opacity:0;delay:4300;" class="content _ayaSlider_move">Any HTML</div>
+								
+							</div>
+							
+							<div class="grid_4 _ayaSlider_move" style="position: relative; opacity: 1; left: 0px; top: 0px;">
+								<div style="top: 0px; left: 0px; opacity: 1; position: relative;" data-in="opacity:0;left:100;delay:4050;duration:1050;ease:linear" data-out="left:-100;opacity:0;delay:4000;" class="content _ayaSlider_move">Use</div>
+								<div style="top: 0px; left: 0px; opacity: 1; position: relative;" data-in="opacity:0;left:150;delay:4550;duration:800;ease:linear" data-out="left:-100;opacity:0;delay:4300;" class="content _ayaSlider_move">Your Imagination</div>
+							</div>
+							
+							
+							<!--<div class="grid_12">-->
+								<!--<div style="margin-top:-100px;background:#000;" data-in="opacity:0;left:1000;delay:10050;duration:1050;ease:linear" data-out="left:-100;opacity:0;delay:4000;" class="content">Easing Included</div>-->
+								<img data-in="opacity:0;delay:9050;duration:1050;ease:linear" style="position: absolute; top: 0px; left: 0px; opacity: 0;" src="./ayaSlider - jQuery flexible slider plugin_files/night.png" class="_ayaSlider_move">
+							<!--</div>-->
+							
+						</div>
+						
+						<!--THIRD SLIDE-->
+						<div data-out="top:-1000;opacity:0;delay:7000" data-in="left:1000;ease:linear;duration:400;delay:50" class="slide s3 _ayaSlider_slide _ayaSlider_move" style="position: absolute; overflow: hidden; display: none; width: 100%; height: 350px; z-index: 2; opacity: 0; top: -1000px; left: 0px;">
+							<img style="position: absolute; top: 0px; left: 0px; opacity: 1;" src="./ayaSlider - jQuery flexible slider plugin_files/3.png" class="_ayaSlider_move">
+							
+							<div class="push_7 grid_5 _ayaSlider_move" style="margin-top: 15px; position: relative; opacity: 1; left: 0px; top: 0px;">
+								<div data-in="top:-1000;delay:1850;duration:550" class="title _ayaSlider_move" style="top: -43.63636363636358px; left: 0px; position: relative; opacity: 1;"><h2 class="_ayaSlider_move" style="position: relative; opacity: 1; left: 0px; top: 0px;">Really Flexible</h2></div>
+								<div data-in="top:-1000;delay:1650;duration:550" class="content _ayaSlider_move" style="top: -438.18181818181824px; left: 0px; position: relative; opacity: 1;">Design Your Layout</div>
+								<div data-in="top:-1000;delay:1450;duration:550" class="content _ayaSlider_move" style="top: -807.2727272727273px; left: 0px; position: relative; opacity: 1;">Animate Every Element</div>
+								<div data-in="top:-1000;delay:1250;duration:550" class="content _ayaSlider_move" style="top: -1000px; left: 0px; position: relative; opacity: 1;">Embed Any HTML</div>
+								<div data-in="top:-1000;delay:1050;duration:550" class="content _ayaSlider_move" style="top: -1000px; left: 0px; position: relative; opacity: 1;">ayaSlider Does't Force Styles</div>
+							</div>
+						</div>
+						
+						
+						<!--SECOND FOUR-->
+						<div data-out="left:-1000;opacity:0;delay:3000" class="slide s2 _ayaSlider_slide _ayaSlider_move" style="position: absolute; overflow: hidden; display: none; width: 100%; height: 350px; z-index: 2; opacity: 0; left: -1000px; top: 0px;">
+							
+							
+							<img data-in="opacity:0;left:-100;duration:1000;ease:linear;" style="position: absolute; top: 0px; left: -100px; opacity: 0;" src="./ayaSlider - jQuery flexible slider plugin_files/1.jpg" class="_ayaSlider_move">
+							
+						</div>
+						
+						
+					</div>
+					
+					
+					
+				</div>
+				
+			</div>
+		</div>
+		
+	</div>
+	<div id="timer" style="width:100%;height:10px;background:#ccc;"><div class="_ayaSlider_timer" style="z-index: 9999; width: 88.85182098765432%; left: 0px; top: 0px; margin: 0px; padding: 0px; opacity: 0.5; height: 100%; position: relative; overflow: hidden; background-color: rgb(0, 0, 0);"></div></div>
+	
+	
+	<div id="body">
+		<div class="container">
+			
+			<div class="row">
+				<div class="column center grid_3" style="">
+					<ul class="slideControl">
+						<li class=""></li>
+						<li class="current"></li>
+						<li class=""></li>
+						<li class=""></li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				<div class="grid_6 column center align_center">
+					<h1 class="bigTitle fittext" data-font="1" style="font-size: 52px;">Plugin Usage</h1>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="row grid_system">
+				
+				<div class="grid_12 column">
+					<div class="row">
+						<div class="grid_12 column">
+							<div class="title">
+								<h2>1- HEADER</h2>
+							</div>
+						</div>
+						<div class="grid_12 column">
+							<div class="block">
+								<script src="./ayaSlider - jQuery flexible slider plugin_files/4020403.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="grid_6 column">
+					<div class="row">
+						<div class="grid_12 column">
+							<div class="title">
+								<h2>2- HTML</h2>
+							</div>
+						</div>
+						<div class="grid_12 column">
+							<div class="block">
+								<script src="./ayaSlider - jQuery flexible slider plugin_files/4020383.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-d1006a2c03378524a2bad8f05b286964.css"><div id="gist4020442" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-ayaslider-javascript-L1" rel="file-ayaslider-javascript-L1">1</span>
+            <span class="line-number" id="file-ayaslider-javascript-L2" rel="file-ayaslider-javascript-L2">2</span>
+            <span class="line-number" id="file-ayaslider-javascript-L3" rel="file-ayaslider-javascript-L3">3</span>
+            <span class="line-number" id="file-ayaslider-javascript-L4" rel="file-ayaslider-javascript-L4">4</span>
+            <span class="line-number" id="file-ayaslider-javascript-L5" rel="file-ayaslider-javascript-L5">5</span>
+            <span class="line-number" id="file-ayaslider-javascript-L6" rel="file-ayaslider-javascript-L6">6</span>
+            <span class="line-number" id="file-ayaslider-javascript-L7" rel="file-ayaslider-javascript-L7">7</span>
+            <span class="line-number" id="file-ayaslider-javascript-L8" rel="file-ayaslider-javascript-L8">8</span>
+            <span class="line-number" id="file-ayaslider-javascript-L9" rel="file-ayaslider-javascript-L9">9</span>
+            <span class="line-number" id="file-ayaslider-javascript-L10" rel="file-ayaslider-javascript-L10">10</span>
+            <span class="line-number" id="file-ayaslider-javascript-L11" rel="file-ayaslider-javascript-L11">11</span>
+            <span class="line-number" id="file-ayaslider-javascript-L12" rel="file-ayaslider-javascript-L12">12</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-ayaslider-javascript-LC1">&lt;script&gt;</div><div class="line" id="file-ayaslider-javascript-LC2">//set default options and initiate ayaSlider</div><div class="line" id="file-ayaslider-javascript-LC3">$(document).ready(function(){</div><div class="line" id="file-ayaslider-javascript-LC4">    $('#slideShow').ayaSlider({</div><div class="line" id="file-ayaslider-javascript-LC5">       easeIn : 'easeOutBack',</div><div class="line" id="file-ayaslider-javascript-LC6">       easeOut : 'linear',</div><div class="line" id="file-ayaslider-javascript-LC7">       delay : 4000,</div><div class="line" id="file-ayaslider-javascript-LC8">       ....,</div><div class="line" id="file-ayaslider-javascript-LC9">       ....</div><div class="line" id="file-ayaslider-javascript-LC10">    });</div><div class="line" id="file-ayaslider-javascript-LC11">});	</div><div class="line" id="file-ayaslider-javascript-LC12">&lt;/script&gt;</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/mamod/4020442/raw/ayaSlider%20javascript" style="float:right">view raw</a>
+            <a href="https://gist.github.com/mamod/4020442#file-ayaslider-javascript">ayaSlider javascript</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid_6 column">
+					<div class="row">
+						<div class="grid_12 column">
+							<div class="title">
+								<h2>3- Javascript</h2>
+							</div>
+						</div>
+						<div class="grid_12 column">
+							<div class="block">
+								<script src="./ayaSlider - jQuery flexible slider plugin_files/4020442.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="row">
+				<div class="grid_6 column center align_center">
+					<h1 class="bigTitle fittext" data-font=".98" style="font-size: 44px;">Plugin Options</h1>
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				
+				<section class="grid_12 column">
+					
+					
+					<div class="row">
+						<div class="grid_12 column">
+							<div class="title">
+								<h2>Custom Global Options</h2>
+							</div>
+						</div>
+						<div class="grid_12 column">
+							<div class="block">
+								<div class="tabs" data-trigger="tab">
+									
+									<ul>
+										<li class="active">Description</li>
+										<li>Example</li>
+										
+									</ul>
+									
+									<!-- FIRST TAB -->
+									<div style="display: block;">
+										
+										<div class="opt">
+											<span class="option">easeIn : </span>
+											<span class="description">custom easing for animating IN sliders <i>(default: linear)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">easeOut : </span>
+											<span class="description">custom easing for animating OUT sliders <i>(default: linear)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">delay : </span>
+											<span class="description">delay timing of how long the slide should stay in milliseconds <i>(default: 5000)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">next : </span>
+											<span class="description">selector/jQuery object of element to be set as "NEXT" controller <i>(When clicked next slide appear)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">previous : </span>
+											<span class="description">selector/jQuery object of element to be set as "PREVIOUS" controller <i>(When clicked previous slide appear)</i></span>
+										</div>
+										
+										
+										<div class="opt">
+											<span class="option">list : </span>
+											<span class="description">selector/jQuery object of UL element to be set as a controller of the slides flow <i>(Must has the same number of &lt;li&gt; as slides)</i></span>
+										</div>
+										
+									</div>
+									
+									<!-- second tab -->
+									<div style="display: none;">
+										<script src="./ayaSlider - jQuery flexible slider plugin_files/4022947.js"></script>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="row">
+						<div class="grid_12 column">
+							<div class="title">
+								<h2>Per slide options</h2>
+							</div>
+						</div>
+						<div class="grid_12 column">
+							<div class="block">
+								<div class="tabs" data-trigger="tab">
+									
+									<ul>
+										<li class="active">Description</li>
+										<li>Example</li>
+										
+									</ul>
+									
+									<!-- FIRST TAB -->
+									<div style="display: block;">
+										
+										<p>You can add custom animation for any element inside your slides. For sliding in you need to add these options to the data attribute <b>data-in</b> and for sliding out add these options to the data attribute <b>data-out</b>, both attributes can have same options.</p>
+										
+										<div class="opt">
+											<span class="option">top : </span>
+											<span class="description">start animaton at this top point <i>(from up to down animation this value must be negative)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">left : </span>
+											<span class="description">start animation at this left point <i>(from left to right this value must be negative)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">opacity : </span>
+											<span class="description">start animation at this opacity point <i>(0 - .9)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">duration : </span>
+											<span class="description">how long animation should last <i>(in milliseconds)</i></span>
+										</div>
+										
+										<div class="opt">
+											<span class="option">delay : </span>
+											<span class="description">time should pass before animation starts <i>(in milliseconds)</i></span>
+										</div>
+										
+										
+										<div class="opt">
+											<span class="option">ease : </span>
+											<span class="description">default easing for this element</span>
+										</div>
+										
+									</div>
+									
+									<!-- second tab -->
+									<div style="display: none;">
+										<script src="./ayaSlider - jQuery flexible slider plugin_files/4022996.js"></script>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+				</section>
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="footer">
+		<div class="container">
+		<div class="row">
+			<div class="column grid_10">
+				<p>From the desk of <a href="http://mamod.me/" target="_blank">@mamod</a> with LOVE</p>
+				<p>Powered by <a href="http://sweefty.com/">Sweefty</a> Framework</p>
+			</div>
+			
+			
+			
+			<div class="column grid_2">
+				<p>Back to <a href="https://dl.dropboxusercontent.com/u/3241507/ayaslider/index.html#" data-trigger="scrollTo:body">Top</a></p>
+			</div>
+			
+		</div>
+		</div>
+	</div>
+	
+	<script>
+	$(document).ready(function(){
+	    $('#slideShow').ayaSlider({
+	       easeIn : 'easeOutBack',
+	       easeOut : 'linear',
+	       delay : 5000,
+	       timer : $('#timer'),
+	       previous : $('.prev'),
+	       next : $('.next'),
+	       list : $('.slideControl')
+	    });
+	});	
+	</script>
+	
+
+<div id="SW_hidden_element" style="margin-left: 50.6%; display: none;"></div><div style="width: 100%; height: 3130px; position: fixed; overflow: hidden; opacity: 0.5; top: 0px; left: 0px; display: none; z-index: 999996; background-color: rgb(0, 0, 0);"></div><div style="width: 100%; height: 3130px; position: absolute; display: none; overflow: hidden; top: 0px; left: 0px; z-index: 999998;"><div style="position: relative; width: 100%; z-index: 999997; top: 0px; left: 0px; visibility: hidden;"></div></div><div class="tooltip" style="width: auto; max-width: 90%; position: absolute; display: none; top: 0px; left: 0px; margin: 0px; z-index: 9999;"></div></body></html>

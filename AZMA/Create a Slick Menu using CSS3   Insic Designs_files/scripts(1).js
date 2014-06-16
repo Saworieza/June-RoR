@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){jQuery('div.postwrap').hover(function(){jQuery(this).addClass('postactive');jQuery(this).find('.topmeta').stop(true,true).fadeIn();jQuery(this).find('.readmorewrap').stop(true,true).fadeIn();},function(){jQuery(this).removeClass('postactive');jQuery(this).find('.topmeta').hide();jQuery(this).find('.readmorewrap').hide();});});

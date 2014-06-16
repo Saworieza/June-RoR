@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://24ways.org/2011/css3-patterns-explained/ -->
+<html lang="en-gb" class=" js-enhanced svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="http://themes.googleusercontent.com/">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com/">
+    <link rel="dns-prefetch" href="http://cloud.24ways.org/">
+    <link rel="dns-prefetch" href="http://media.24ways.org/">
+    <link rel="dns-prefetch" href="http://static.24ways.org/">
+    <script type="text/javascript" async="" id="gauges-tracker" data-site-id="5299b018f5a1f50cc600011d" src="./CSS3 Patterns, Explained ◆ 24 ways_files/track.js"></script><script async="" src="./CSS3 Patterns, Explained ◆ 24 ways_files/analytics.js"></script><script>
+        // Cut the mustard
+        var enhanced=false, ddecn='';
+        if (document.querySelector && window.addEventListener){ddecn+=' js-enhanced'; enhanced=true;}
+        // Detect support for SVG
+        if(document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1")){ddecn+=' svg';}
+        document.documentElement.className += ddecn;
+    </script>
+<!--[if lt IE 9]>
+    <script src="/_assets/js/html5shiv.min.js"></script>
+<![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="./CSS3 Patterns, Explained ◆ 24 ways_files/styles_v25.css">
+    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/24ways">
+    <link rel="icon" href="http://static.24ways.org/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="http://static.24ways.org/icons/apple-touch-icon.png">
+    <link rel="author" href="http://24ways.org/humans.txt">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="24 ways">
+    <meta name="apple-mobile-web-app-title" content="24 ways">
+    <meta name="twitter:site" content="@24ways">
+    <meta name="twitter:title" content="CSS3 Patterns, Explained">
+    <meta name="twitter:description" content="Lea Verou unlocks the mysteries of CSS background gradients and investigates how they can be used more creatively to replace images. You&amp;#8217;ll soon rather be throwing shapes at work than the Christmas party dance floor.">
+    <meta name="twitter:creator" content="@LeaVerou">
+    <meta name="twitter:image" content="http://cloud.24ways.org/authors/leaverou160.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <title>CSS3 Patterns, Explained ◆ 24 ways</title>
+</head>
+
+<body class="year-2011">
+    <header class="banner" role="banner" id="top">
+        <h1 class="banner_logo"><a href="http://24ways.org/" rel="home">24 ways <span>to impress your friends</span></a></h1>
+    </header><!--/@banner-->
+    <a class="menu" href="http://24ways.org/2011/css3-patterns-explained/#menu" data-icon="☰">Jump to menu</a>
+
+
+
+
+
+
+
+    <main class="main" role="main">
+        <article class="article h-entry day-16">
+            <header class="article_header">
+                <h1 class="article_title p-name">CSS3 Patterns, Explained</h1>
+                <p class="article_byline p-author h-card">
+                    <a class="u-url" href="http://24ways.org/2011/css3-patterns-explained/#author">
+                        <span class="avatar"><img class="article_image u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/leaverou280.jpg" width="160" height="160" alt="Lea Verou"></span>
+                        <span class="p-name">Lea Verou</span>
+                    </a>
+                </p><p>
+            </p></header>
+
+            <footer class="article_footer">
+                <ul class="list">
+                    <li class="list_item"><time class="dt-published" datetime="2011-12-16T00:00:00+00:00">16 Dec<span>ember</span> 2011</time></li>
+                    <li class="list_item">Published in <a href="http://24ways.org/topics/code/">Code</a></li>
+                    <li class="list_item"><a href="http://24ways.org/2011/css3-patterns-explained/#comments">14 comments</a></li>
+                </ul>
+            </footer>
+
+            <div class="article_main e-content">
+                              
+                <p class="lede">Many of you have probably seen my <a href="http://lea.verou.me/css3patterns">CSS3 patterns gallery</a>. It became very popular throughout the year and it showed many web developers how powerful CSS3 gradients really are. But how many really understand how these patterns are created? The biggest benefit of <span class="caps">CSS</span>-generated backgrounds is that they can be modified directly within the style sheet. This benefit is void if we are just copying and pasting <span class="caps">CSS</span> code we don’t understand. We may as well use a data <span class="caps">URI</span> instead.</p>
+
+<h2>Important note</h2>
+
+<p>In all the examples that follow, I’ll be using gradients without a vendor prefix, for readability and brevity. However, you should keep in mind that in reality you need to use all the vendor prefixes (<code>-moz-</code>, <code>-ms-</code>, <code>-o-</code>, <code>-webkit-</code>) as no browser currently implements them without a prefix. Alternatively, you could use <a href="https://github.com/LeaVerou/prefixfree">-prefix-free</a> and have the current vendor prefix prepended at runtime, only when needed.</p>
+
+<p>The syntax described here is the one that browsers currently implement. The specification has since changed, but no browser implements the changes yet. If you are interested in what is coming, I suggest you take a look at <a href="http://dev.w3.org/csswg/css3-images/#linear-gradients">the dev version of the spec</a>.</p>
+
+<p>If you are not yet familiar with <span class="caps">CSS</span> gradients, you can read these excellent tutorials by <a href="http://twitter.com/#!/johnallsopp">John Allsopp</a> and return here later, as in the rest of the article I assume you already know the <span class="caps">CSS</span> gradient basics:</p>
+
+	<ul>
+		<li><a href="http://www.webdirections.org/blog/css3-linear-gradients/">CSS3 Linear Gradients</a></li>
+		<li><a href="http://www.webdirections.org/blog/css3-radial-gradients/">CSS3 Radial Gradients</a></li>
+	</ul>
+
+<h2>The main idea</h2>
+
+<p>I’m sure most of you can imagine the background this code generates:</p>
+
+<pre><code>background: linear-gradient(left, white 20%, #8b0 80%);
+</code></pre>
+
+<p>It’s a simple gradient from one color to another that looks like this:</p>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/1.png" alt="White to green horizontal gradient, with a large gradient."> <span class="caption"><a href="http://dabblet.com/gist/1457548">See this example live</a></span></p>
+
+<p>As you probably know, in this case the first 20% of the container’s width is solid white and the last 20% is solid green. The other 60% is a smooth gradient between these colors. Let’s try moving these color stops closer to each other:</p>
+
+<pre><code>background: linear-gradient(left, white 30%, #8b0 70%);
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/2.png" alt="White to green horizontal gradient."> <span class="caption"><a href="http://dabblet.com/gist/1457620">See this example live</a></span></p>
+
+<pre><code>background: linear-gradient(left, white 40%, #8b0 60%);
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/3.png" alt="White to green horizontal gradient, with a smaller gradient."> <span class="caption"><a href="http://dabblet.com/gist/1457624">See this example live</a></span></p>
+
+<pre><code>background: linear-gradient(left, white 50%, #8b0 50%);
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/4.png" alt="White and green blocks of equal width."> <span class="caption"><a href="http://dabblet.com/gist/1457626">See this example live</a></span></p>
+
+<p>Notice how the gradient keeps shrinking and the solid color areas expanding, until there is no gradient any more in the last example. We can even adjust the position of these two color stops to control where each color abruptly changes into another:</p>
+
+<pre><code>background: linear-gradient(left, white 30%, #8b0 30%);
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/5.png" alt="A narrow white block on the left, and a wide green block on the right."> <span class="caption"><a href="http://dabblet.com/gist/1457635">See this example live</a></span></p>
+
+<pre><code>background: linear-gradient(left, white 90%, #8b0 90%);
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/6.png" alt="A wide white block on the left, and a narrow green block on the right."> <span class="caption"><a href="http://dabblet.com/gist/1457638">See this example live</a></span></p>
+
+<p>What you need to take away from these examples is that when two color stops are at the same position, there is no gradient, only solid colors. Even without going any further, this trick is useful for a number of different use cases like faux columns or the effect I wanted to achieve in my homepage or the <a href="http://leaverou.github.com/prefixfree">-prefix-free</a> page where the background is only shown on one side and hidden on the other:</p>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/7.png" alt="A screenshot of a website with a repeating tiled background image or horizontal stripes."></p>
+
+<h2>Combining with background-size</h2>
+
+<p>We can do wonders, however, if we combine this with the CSS3 <code>background-size</code> property:</p>
+
+<pre><code>background: linear-gradient(left, white 50%, #8b0 50%);
+background-size: 100px 100px;
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/8.png" alt="White and green repeating stripes."> <span class="caption"><a href="http://dabblet.com/gist/1457651">See this example live</a></span></p>
+
+<p>And there it is. We just created the simplest of patterns: (vertical) stripes. We can remove the first parameter (<code>left</code>) or replace it with <code>top</code> and we’ll get horizontal stripes. However, let’s face it: Horizontal and vertical stripes are kinda boring. Most stripey backgrounds we see on the web are diagonal. So, let’s try doing that.</p>
+
+<p>Our first attempt would be to change the angle of the gradient to something like <code>45deg</code>. However, this results in an ugly pattern like this: </p>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/9.png" alt="White and green repeating triangles"> <span class="caption"><a href="http://dabblet.com/gist/1457652">See this example live</a></span></p>
+
+<p>Before reading on, think for a second: why didn’t this produce the desired result? Can you figure it out?</p>
+
+<p>The reason is that the gradient angle rotates the gradient <strong>inside each tile</strong>, not the tiled background as a whole. However, didn’t we have the same problem the first time we tried to create diagonal stripes with an image? And then we learned that every stripe has to be included twice, like so:</p>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/10.png" alt="A background image tile that could be repeated to form a diagonal stripes pattern."></p>
+
+<p>So, let’s try to create that effect with <span class="caps">CSS</span> gradients. It’s essentially what we tried before, but with more color stops:</p>
+
+<pre><code>background: linear-gradient(45deg, white 25%,
+    #8b0 25%, #8b0 50%, 
+    white 50%, white 75%, 
+    #8b0 75%);
+background-size:100px 100px;
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/11.png" alt="White and green diagonal stripes, tilted at 45 degrees"> <span class="caption"><a href="http://dabblet.com/gist/1457658">See this example live</a></span></p>
+
+<p>And there we have our stripes! An easy way to remember the order of the percentages and colors it is that you always have two of the same in succession, except the first and last color.</p>
+
+<p><strong>Note:</strong> Firefox for Mac also needs an additional 100% color stop at the end of any pattern with more than two stops, like so: <code>..., white 75%, #8b0 75%, #8b0)</code>. The bug was reported in February 2011 and you can <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=634982">vote for it and track its progress at Bugzilla</a>.</p>
+
+<p>Unfortunately, this is essentially a hack and we will realize that if we try to change the gradient angle to <code>60deg</code>:</p>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/12.png" alt="White and green diagonal stripes, but a broken pattern."> <span class="caption"><a href="http://dabblet.com/gist/1481153">See this example live</a></span></p>
+
+<p>Not that maintainable after all, eh? Luckily, CSS3 offers us another way of declaring such backgrounds, which not only helps this case but also results in much more concise code:</p>
+
+<pre><code>background: repeating-linear-gradient(60deg, white, white 35px, #8b0 35px, #8b0 70px);
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/13.png" alt="White and green diagonal stripes tilted at 60 degrees."> <span class="caption"><a href="http://dabblet.com/gist/1481808">See this example live</a></span></p>
+
+<p>In this case, however, the size has to be declared in the color stop positions and not through <code>background-size</code>, since the gradient is supposed to cover the entire container. You might notice that the declared size is different from the one specified the previous way. This is because the size of the stripes is measured differently: in the first example we specify the dimensions of the tile itself; in the second, the width of the stripes (35px), which is measured diagonally.</p>
+
+<h2>Multiple backgrounds</h2>
+
+<p>Using only one gradient you can create stripes and that’s about it. There are a few more patterns you can create with just one gradient (linear or radial) but they are more or less boring and ugly. Almost every pattern in my gallery contains a number of different backgrounds. For example, let’s create a polka dot pattern:</p>
+
+<pre><code>background: radial-gradient(circle, white 10%, transparent 10%),
+radial-gradient(circle, white 10%, black 10%) 50px 50px;
+background-size:100px 100px;
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/14.png" alt="Black and white polka dots."> <span class="caption"><a href="http://dabblet.com/gist/1457668">See this example live</a></span></p>
+
+<p>Notice that the two gradients are almost the same image, but positioned differently to create the polka dot effect. The only difference between them is that the first (topmost) gradient has <code>transparent</code> instead of <code>black</code>. If it didn’t have transparent regions, it would effectively be the same as having a single gradient, as the topmost gradient would obscure everything beneath it.</p>
+
+<p>There is an issue with this background. Can you spot it?</p>
+
+<p>This background will be fine for browsers that support <span class="caps">CSS</span> gradients but, for browsers that don’t, it will be transparent as the whole declaration is ignored. We have two ways to provide a fallback, each for different use cases. We have to either declare another background before the gradient, like so:</p>
+
+<pre><code>background: black;
+background: radial-gradient(circle, white 10%, transparent 10%),
+radial-gradient(circle, white 10%, black 10%) 50px 50px;
+background-size:100px 100px;
+</code></pre>
+
+<p>or declare each background property separately:</p>
+
+<pre><code>background-color: black;
+background-image: radial-gradient(circle, white 10%, transparent 10%),
+radial-gradient(circle, white 10%, transparent 10%);
+background-size:100px 100px;
+background-position: 0 0, 50px 50px;
+</code></pre>
+
+<p>The vigilant among you will have noticed another change we made to our code in the last example: we altered the second gradient to have transparent regions as well. This way <code>background-color</code> serves a dual purpose: it sets both the fallback color and the background color of the polka dot pattern, so that we can change it with just one edit. Always strive to make code that can be modified with the least number of edits. You might think that it will never be changed in that way but, almost always, given enough time, you’ll be proved wrong.</p>
+
+<p>We can apply the exact same technique with linear gradients, in order to create checkerboard patterns out of right triangles:</p>
+
+<pre><code>background-color: white;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%), 
+linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%);
+background-size:100px 100px;
+background-position: 0 0, 50px 50px;
+</code></pre>
+
+<p class="image"><img src="./CSS3 Patterns, Explained ◆ 24 ways_files/15.png" alt="Black and white checkerboard pattern."> <span class="caption"><a href="http://dabblet.com/gist/1457677">See this example live</a></span></p>
+
+<h2>Using the right units</h2>
+
+<p>Don’t use pixels for the sizes without any thought. In some cases, ems make much more sense. For example, when you want to make a lined paper background, you want the lines to actually follow the text. If you use pixels, you have to change the size every time you change <code>font-size</code>. If you set the <code>background-size</code> in ems, it will naturally follow the text and you will only have to update it if you change <code>line-height</code>.</p>
+
+<h2>Is it possible?</h2>
+
+<p>The shapes that can be achieved with only one gradient are:</p>
+
+	<ul>
+		<li>stripes</li>
+		<li>right triangles</li>
+		<li>circles and ellipses</li>
+		<li>semicircles and other shapes formed from slicing ellipses horizontally or vertically</li>
+	</ul>
+
+<p>You can combine several of them to create squares and rectangles (two right triangles put together), rhombi and other parallelograms (four right triangles), curves formed from parts of ellipses, and other shapes.</p>
+
+<h2>Just because you can doesn’t mean you should</h2>
+
+<p>Technically, anything can be crafted with these techniques. However, not every pattern is suitable for it. The main advantages of this technique are:</p>
+
+	<ul>
+		<li>no extra <span class="caps">HTTP</span> requests</li>
+		<li>short code</li>
+		<li>human-readable code (unlike data <span class="caps">URI</span>s) that can be changed without even leaving the <span class="caps">CSS</span> file.</li>
+	</ul>
+
+<p>Complex patterns that require a large number of gradients are probably better left to <span class="caps">SVG</span> or bitmap images, since they negate almost every advantage of this technique:</p>
+
+	<ul>
+		<li>they are not shorter</li>
+		<li>they are not really comprehensible – changing them requires much more effort than using an image editor</li>
+	</ul>
+
+<p>They still save an <span class="caps">HTTP</span> request, but so does a data <span class="caps">URI</span>.</p>
+
+<p>I <a href="http://lea.verou.me/css3patterns/#tartan">have</a> <a href="http://lea.verou.me/css3patterns/#madras">included</a> <a href="http://lea.verou.me/css3patterns/#hearts">some</a> <a href="http://lea.verou.me/css3patterns/#yin-yang">very</a> <a href="http://lea.verou.me/css3patterns/#stars">complex</a> <a href="http://lea.verou.me/css3patterns/#seigaiha">patterns</a> in my gallery, because even though I think they shouldn’t be used in production (except under very exceptional conditions), understanding how they work and coding them helps somebody understand the technology in much more depth.</p>
+
+<p>Another rule of thumb is that if your pattern needs shapes to obscure parts of other shapes, like in the <a href="http://lea.verou.me/css3patterns/#stars">star pattern</a> or the <a href="http://lea.verou.me/css3patterns/#yin-yang">yin yang pattern</a>, then you probably shouldn’t use it. In these patterns, changing the background color requires you to also change the color of these shapes, making edits very tedious.</p>
+
+<p>If a certain pattern is not practicable with a reasonable amount of <span class="caps">CSS</span>, that doesn’t mean you should resort to bitmap images. <span class="caps">SVG</span> is a very good alternative and is supported by all modern browsers.</p>
+
+<h2>Browser support</h2>
+
+<p><span class="caps">CSS</span> gradients are supported by Firefox 3.6+, Chrome 10+, Safari 5.1+ and Opera 11.60+ (linear gradients since Opera 11.10). Support is also coming in Internet Explorer when IE10 is released. You can get gradients in older WebKit versions (including most mobile browsers) by using the proprietary <code>-webkit-gradient()</code>, if you really need them.</p>
+
+<h2>Epilogue</h2>
+
+<p>I hope you find these techniques useful for your own designs. If you come up with a pattern that’s very different from the ones already included, especially if it demonstrates a cool new technique, feel free to send a pull request to the <a href="https://github.com/LeaVerou/CSS3-Patterns-Gallery">github repo of the patterns gallery</a>. Also, I’m always fascinated to see my techniques put in practice, so if you made something cool and used <span class="caps">CSS</span> patterns, I’d love to know about it!</p>
+
+<p>Happy holidays!</p>
+            </div>
+
+            <section class="section" id="author">
+                <header class="section_header">
+                    <h1 class="section_title">About the author</h1>
+                </header>
+                <div class="section_main">
+                    <p><strong class="fn n">Lea Verou</strong> is the lead web developer and designer of <a href="http://fresset.gr/" class="org">Fresset Ltd</a>, which she co-founded in 2008. Fresset owns and manages some of the largest Greek community websites. Lea has a long-standing passion for open web standards, especially <span class="caps">CSS</span> and JavaScript. She loves researching new ways to use them and shares her findings through her blog, <a href="http://lea.verou.me/" class="url" rel="me">lea.verou.me</a>. She <a href="http://lea.verou.me/speaking">speaks</a> at a number of the largest web development conferences and writes for leading industry publications. Lea also co-organized and occasionally lectures the web development course at the Athens University of Economics and Business.</p>
+                    <p><a class="continue" href="http://24ways.org/authors/leaverou/" title="More information about Lea Verou">More articles by Lea</a></p>
+                </div>
+            </section><!--/.section-->
+
+
+
+            
+
+                      
+            <section class="section section-sponsor" id="sponsor">
+                <header class="section_header">
+                    <h1 class="section_title">Brought to you by</h1>
+                </header>
+                <div class="section_main">
+                    
+                        <a class="promo" href="http://grabaperch.com/?ref=24w01">
+    <img class="promo_image" src="./CSS3 Patterns, Explained ◆ 24 ways_files/logo-perch.png" alt="Perch - A really little CMS" width="152" height="64">
+    <p class="promo_message">The easiest way to publish <strong>fast, flexible HTML5 websites</strong> your clients will love.</p>
+    <p class="promo_url">grabaperch.com</p>
+</a><!--/.promo-->
+
+                    
+                    
+                    
+                </div>
+            </section><!--/.section-->
+            
+
+            <section class="section" id="comments">
+                <header class="section_header">
+                    <h1 class="section_title">Comments</h1>
+                </header>
+                <div class="section_main">
+                    <p><a class="continue continue-ajax" href="http://24ways.org/2011/css3-patterns-explained/comments/" data-replace="" data-interaction="" data-target="#comments">View 14 reader comments</a></p>
+                </div>
+            </section><!--/.section-->
+
+            		
+		<section class="section" id="related">
+		    <header class="section_header">
+		        <h1 class="section_title">Related articles</h1>
+		    </header>
+		    <div class="section_main">
+		        <ul class="list list-articles">
+		
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-22" style="height: 303px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2005/debugging-css-with-the-dom-inspector/">Debugging CSS with the DOM Inspector</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2005-12-22T00:00:00+00:00">22 Dec 2005</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2005/debugging-css-with-the-dom-inspector/#comments">25 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://www.hicksdesign.co.uk/">Jon Hicks</a> demonstrates how to use the Firefox <span class="caps">DOM</span> Inspector to debug problems in your <span class="caps">CSS</span>. It may not be the ideal time of year for <em>seek and destroy</em> missions, but I’d be prepared to overlook that. It’s the season of goodwill, after all.</p>
+					<a class="summary_link" href="http://24ways.org/2005/debugging-css-with-the-dom-inspector/">
+						Impress your friends with ‘Debugging CSS with the DOM Inspector’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/jonhicks/"><img class="u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/jonhicks160.jpg" alt=""><span class="p-name">Jon Hicks</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-22" style="height: 303px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2008/absolute-columns/">Absolute Columns</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2008-12-22T00:00:00+00:00">22 Dec 2008</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2008/absolute-columns/#comments">42 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://superfluousbanter.org/">Dan Rubin</a> pops down the chimney to deliver a neat little <span class="caps">CSS</span> gift that, in certain circumstances, could be just the trick needed to obtain those matched height columns so often desired. Whilst no technique is perfect for every situation, the more sharp tools we have in our <span class="caps">CSS</span> toolbox the better.</p>
+					<a class="summary_link" href="http://24ways.org/2008/absolute-columns/">
+						Impress your friends with ‘Absolute Columns’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/danrubin/"><img class="u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/danrubin160.jpg" alt=""><span class="p-name">Dan Rubin</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-22" style="height: 303px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2010/everything-you-wanted-to-know-about-gradients/">Everything You Wanted To Know About Gradients (And a Few Things You Didn’t)</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2010-12-22T00:00:00+00:00">22 Dec 2010</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2010/everything-you-wanted-to-know-about-gradients/#comments">17 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://ethanmarcotte.com/">Ethan Marcotte</a> explains the theory and practice of <span class="caps">CSS</span> gradients, separates the duelling syntaxes and wields a mean color-stop. No longer will gradients confound, baffle or frustrate. Just leave the rainbows to the unicorns.</p>
+					<a class="summary_link" href="http://24ways.org/2010/everything-you-wanted-to-know-about-gradients/">
+						Impress your friends with ‘Everything You Wanted To Know About Gradients (And a Few Things You Didn’t)’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/ethanmarcotte/"><img class="u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/ethanmarcotte160.jpg" alt=""><span class="p-name">Ethan Marcotte</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-21" style="height: 279px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2012/infinite-canvas-moving-beyond-the-page/">Infinite Canvas: Moving Beyond the Page</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2012-12-21T00:00:00+00:00">21 Dec 2012</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2012/infinite-canvas-moving-beyond-the-page/#comments">2 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://nathanperetic.com/">Nathan Peretic</a> weighs the page refresh in the balance and finds it wanting – wanting to be brought up to date, that is, with some future <span class="caps">CSS</span> sparkle.</p>
+					<a class="summary_link" href="http://24ways.org/2012/infinite-canvas-moving-beyond-the-page/">
+						Impress your friends with ‘Infinite Canvas: Moving Beyond the Page’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/nathanperetic/"><img class="u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/nathanperetic160.jpg" alt=""><span class="p-name">Nathan Peretic</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-21" style="height: 279px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2005/swooshy-curly-quotes-without-images/">Swooshy Curly Quotes Without Images</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2005-12-21T00:00:00+00:00">21 Dec 2005</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2005/swooshy-curly-quotes-without-images/#comments">44 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+						<p><a href="http://www.colly.com/">Simon Collison</a> questions the use of quote-mark images for the aesthetic styling of blockquotes. In doing so, he demonstrates a method of achieving the same purely with <span class="caps">CSS</span>. A worthy thing in my estimation.</p>
+					<a class="summary_link" href="http://24ways.org/2005/swooshy-curly-quotes-without-images/">
+						Impress your friends with ‘Swooshy Curly Quotes Without Images’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/simoncollison/"><img class="u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/simoncollison160.jpg" alt=""><span class="p-name">Simon Collison</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-20" style="height: 279px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2006/intricate-fluid-layouts/">Intricate Fluid Layouts in Three Easy Steps</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2006-12-20T00:00:00+00:00">20 Dec 2006</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2006/intricate-fluid-layouts/#comments">20 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://nate.koechley.com/blog/">Nate Koechley</a> demonstrates how the compact and powerful <span class="caps">YUI</span> Grids stylesheet can be used to conjure up all manner of layouts from the simple to the complex. Take it easy over the festive period, and let the <span class="caps">YUI</span> Grids do all the hard work for you.</p>
+					<a class="summary_link" href="http://24ways.org/2006/intricate-fluid-layouts/">
+						Impress your friends with ‘Intricate Fluid Layouts in Three Easy Steps’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/natekoechley/"><img class="u-photo" src="./CSS3 Patterns, Explained ◆ 24 ways_files/natekoechley160.jpg" alt=""><span class="p-name">Nate Koechley</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+		
+		        </ul><!--/.list-articles-->
+		    </div>
+		</section><!--/.section-->
+		
+
+            
+        </article><!--/.article-->
+    </main><!--/@main-->    <nav class="navigation" role="navigation" id="menu">
+        <h1 class="hidden">Browse 24 ways</h1>
+<div class="nav nav-traverse"><a class="nav_item nav_prev" rel="prev" href="http://24ways.org/2011/extracting-the-content/" data-sequence-title="Extracting the Content" data-icon="←">Previous article</a><a class="nav_item nav_next" rel="next" href="http://24ways.org/2011/designing-for-perfection/" data-sequence-title="Designing for Perfection" data-icon="→">Next article</a></div><!--/.nav-traverse-->        
+<ul class="nav nav-topics">
+
+    <li class="nav_item"><a href="http://24ways.org/topics/business/" data-icon="♕">Business</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/code/" data-icon="♖">Code</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/content/" data-icon="♔">Content</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/design/" data-icon="♗">Design</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/process/" data-icon="♙">Process</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/ux/" data-icon="♘">UX</a></li>
+
+</ul><!--/.nav-topics-->
+
+        <form class="search" role="search" id="search" action="http://24ways.org/search/">
+            <fieldset class="field-search">
+                <legend class="hidden">Search 24 ways</legend>
+                <label class="field_label label" for="q">Keywords</label>
+                <input class="field_input input" type="search" id="q" name="q" placeholder="e.g. CSS, Design, Research…">
+                <input class="field_button button" type="submit" value="Search">
+
+            </fieldset>
+        </form><!--/.search-->
+
+        <ul class="nav nav-site">
+            <li class="nav_item"><a href="http://24ways.org/archives/">Archives</a></li>
+            <li class="nav_item"><a href="http://24ways.org/topics/">Topics</a></li>
+            <li class="nav_item"><a href="http://24ways.org/authors/">Authors</a></li>
+            <li class="nav_item"><a href="http://24ways.org/about/">About</a></li>
+        </ul><!--/.nav-site-->
+
+    <a class="nav nav-top" href="http://24ways.org/2011/css3-patterns-explained/#top" data-icon="⌃" style="opacity: 1; -webkit-transition: opacity 0.5s ease-in; transition: opacity 0.5s ease-in;">Return to the top of this page</a></nav><!--/@navigation-->
+    <footer class="contentinfo" role="contentinfo">
+        <p class="contentinfo_copyright">
+            <small>© 2005-2014 24 ways and our authors. <a href="http://24ways.org/about/#colophon">Colophon</a></small>
+        </p>
+        <p class="contentinfo_social">
+            <a href="http://feeds.feedburner.com/24ways" rel="alternate">Grab our RSS feed</a>
+            <a href="https://twitter.com/24ways" rel="me">Follow us on Twitter</a>
+        </p>
+    </footer><!--/@contentinfo-->
+    <script src="./CSS3 Patterns, Explained ◆ 24 ways_files/scripts_v25.js"></script>
+
+</body></html>

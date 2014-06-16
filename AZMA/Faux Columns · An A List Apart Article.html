@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://alistapart.com/article/fauxcolumns -->
+<html class="js no-touch svg" lang="en" data-useragent="Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36" data-platform="Linux i686"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta charset="utf-8">
+	
+	<link rel="dns-prefetch" href="http://d.alistapart.com/">
+	
+	<link rel="alternate" type="application/rss+xml" title="A List Apart: The Full Feed" href="http://alistapart.com/site/rss">
+	<link rel="alternate" type="application/rss+xml" title="A List Apart: The Abridged Feed (just articles and columns)" href="http://alistapart.com/site/abridged-rss">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="http://alistapart.com/d/_repo/site_assets/img/favicons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-152x152.png">
+	
+	<meta name="application-name" content="A List Apart"> 
+	<meta name="msapplication-TileColor" content="#222222"> 
+	<meta name="msapplication-TileImage" content="/d/_repo/site_assets/img/favicons/windows-8-tile.png">
+	
+	<link href="https://plus.google.com/+alistapart/" rel="publisher">
+	
+	<meta http-equiv="imagetoolbar" content="false">
+
+	<link rel="stylesheet" href="http://d.alistapart.com/_cache/56692f5fbd66eae3cc106629481bd3338e0b5fdf.1399662546.css">
+	
+	<link rel="stylesheet" href="http://cloud.webtype.com/css/0f692040-baf5-44df-a4f8-c4666e3f1c6f.css">
+	
+	<script type="text/javascript" async="" src="./Faux Columns · An A List Apart Article_files/mixpanel-2.2.min.js"></script><script src="./Faux Columns · An A List Apart Article_files/ga.js"></script><script src="./Faux Columns · An A List Apart Article_files/quant.js" async="" type="text/javascript"></script><script src="./Faux Columns · An A List Apart Article_files/modernizr-custom.js"></script>
+	
+	
+
+	<title>Faux Columns · An A List Apart Article</title>
+	
+	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="http://alistapart.com/comments/feed/fauxcolumns">
+	
+	
+	
+		
+	
+	<style>
+	
+	.member_115913 {
+		border: 1px solid rgba(0,0,0,.4) !important;
+	}
+	
+	
+	.member_115913::before {
+		/*box-shadow: inset 0 0 18px -8px rgba(255,161,161,.9);*/
+		content: url(//d.alistapart.com/_repo/site_assets/img/laurel-white-2.svg) !important;
+		padding-top: 3px !important;
+		height: 23px !important;
+	}
+	</style>
+	
+	
+	
+	<style>
+		</style>
+	
+	<meta name="description" content="It’s a beginning CSS designer’s nightmare and a frequently asked question at ALA: Multi-column CSS layouts can run into trouble when one of the columns stops short of its intended length. Here’s a simple solution.">
+	<meta name="author" content=" Dan Cederholm">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="Faux Columns">
+	<meta name="twitter:description" content="It’s a beginning CSS designer’s nightmare and a frequently asked question at ALA: Multi-column CSS layouts can run into trouble when one of the columns stops short of its intended length. Here’s a simple solution.">
+	<meta name="twitter:url" content="http://alistapart.com/article/fauxcolumns">
+		
+	<meta property="og:title" content="Faux Columns">
+	<meta property="og:description" content="It’s a beginning CSS designer’s nightmare and a frequently asked question at ALA: Multi-column CSS layouts can run into trouble when one of the columns stops short of its intended length. Here’s a simple solution.">
+	<meta property="og:url" content="http://alistapart.com/article/fauxcolumns">
+	<meta property="og:image" content="">
+		
+<script type="text/javascript" async="" src="./Faux Columns · An A List Apart Article_files/pro.js"></script><script type="text/javascript" id="_bsaPRO_js" src="./Faux Columns · An A List Apart Article_files/C67DL2E" async="async"></script></head>
+
+<body class="printable comments-exist breakpoint-600 sponsored">
+
+
+	
+		<header class="logo-holder">
+	
+		<h1 name="top" class="killer-logo"><a href="http://alistapart.com/"><img src="./Faux Columns · An A List Apart Article_files/ala-logo-big.png" alt="A List Apart"></a></h1>
+		
+		<a class="go-to-nav" href="http://alistapart.com/article/fauxcolumns#main-nav" title="skip to nav">Menu</a>
+
+	</header>
+	
+	<div role="main" class="main-wrapper">
+	
+		<article class="article-layout hentry">
+		
+			<header class="entry-header">
+			
+				
+				
+								
+								<a href="http://alistapart.com/issue/167" class="issue-number"><span>Issue №</span> 167</a>
+								
+				 
+				
+				<h1 class="entry-title">Faux Columns</h1>
+				
+				<p class="entry-details">
+					
+					by <a class="author" rel="author" href="http://alistapart.com/author/dancederholm"> Dan Cederholm</a>
+					
+					<time class="pubdate updated" datetime="2004-01-09T04:00:48-05:00">January 09, 2004</time>
+					
+					<span class="optional-break">
+					
+						Published in <a href="http://alistapart.com/topic/css">CSS</a>, <a href="http://alistapart.com/topic/layout-grids">Layout &amp; Grids</a>
+						
+													∙ <a class="comment-count" href="http://alistapart.com/article/fauxcolumns#comments">83 Comments</a>
+											
+					</span>
+			
+				</p>
+				
+				
+								
+			
+			</header>
+		
+						<div class="main-content">
+				
+				<p class="editors-note"><b>A note from the editors:</b> While excellent for its time, this article may not reflect modern best practices.</p>
+			
+			</div>
+					
+					
+			<div class="main-content">
+			
+				
+				
+				
+				
+				
+				
+				<p>One of the questions I get asked the most often regarding my personal site’s design is the following:</p>
+
+<figure class="quote" id="figure1"><blockquote>How do you get the right column’s background color to extend all the way down the page?</blockquote></figure>
+
+<aside class="content-minutiae">
+															<h1 class="propagation-enablers">Share This:</h1>
+					<ul class="propagation-enablers">
+						<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/article/fauxcolumns&text=Faux+Columns&via=alistapart" data-trackevent="Share: Twitter">Twitter</a></li>
+						<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/article/fauxcolumns&t=Faux+Columns" data-trackevent="Share: Facebook">Facebook</a></li>
+						<li><a href="https://plus.google.com/share?url=http://alistapart.com/article/fauxcolumns" data-trackevent="Share: Google+">Google+</a></li>
+					</ul>				
+				</aside><p>It’s a simple concept, really — one that many of you may already be familiar with.&nbsp; But for those who aren’t, the following technique can be a handy little trick.</p>
+
+<h2 id="section1">Vertical stretch<a class="subhead-anchor" href="http://alistapart.com/article/fauxcolumns#section1">#section1</a></h2>
+
+<p>One of the somewhat frustrating properties of <abbr title="Cascading Style Sheets">CSS</abbr> is the fact that elements only stretch vertically as far as they need to.&nbsp; Meaning, if a 200-pixel tall image is contained within a <code>&lt;div&gt;</code>, the <code>&lt;div&gt;</code> will only expand down the page 200 pixels.</p>
+
+<p>This becomes an interesting dilemma when you use <code>&lt;div&gt;</code>s to section your markup, then apply CSS to create a columnar layout.&nbsp; One column may be longer than the other (see Figure 1). Depending on the amount of content contained, it becomes difficult to create a layout with two equally tall columns when a unique background color is desired for each column.</p>
+
+<figure id="figure2">
+<img src="./Faux Columns · An A List Apart Article_files/tilecheat_1.gif" alt="figure 1" width="219" height="83" class="thumb">
+<figcaption>Figure 1</figcaption>
+</figure>
+
+<p>There are a few ways to make the columns appear equal in length, regardless of the content that they contain.&nbsp; I’m sharing my particular solution (for use with an absolutely positioned layout), which happens to be pretty darned ... simple.&nbsp; This same little trick is also used elsewhere, including <a href="http://alistapart.com/" title="A List Apart">this very site</a>.</p>
+
+<h2 id="section2">The cheat<a class="subhead-anchor" href="http://alistapart.com/article/fauxcolumns#section2">#section2</a></h2>
+
+<p>The embarrassingly simple secret is to use a vertically tiled background image to create the illusion of colored columns. For SimpleBits, my background image looks something like Figure 2 (proportions changed for demonstration), with a decorative stripy thing on the left, a wide white section for the content column, a 1 pixel border, and a light brown section for the right column’s background followed by the reverse of the left side’s decorative border.</p>
+
+<figure id="figure3">
+<img src="./Faux Columns · An A List Apart Article_files/tilecheat_2.gif" alt="figure 2: background image for vertical tiling" width="385" height="15" class="thumb">
+<figcaption>Figure 2</figcaption>
+</figure>
+
+<p>The whole image is no more than a few pixels tall, but when vertically tiled, it creates the colored columns that will flow all the way down to the bottom of the page — <em>regardless of the length of content in the columns</em>.</p>
+
+<h2 id="section3">The CSS<a class="subhead-anchor" href="http://alistapart.com/article/fauxcolumns#section3">#section3</a></h2>
+
+<p>This elementary CSS rule is added to the <code>body</code> element:</p>
+
+<pre id="snippet1"><code>background: #ccc url(../images/bg_birch_800.gif) repeat-y 50% 0;</code></pre>
+
+<p>Essentially, we’re making the entire page’s background color grey and tiling it vertically only (<code>repeat-y</code>).&nbsp; The <code>50% 0</code> bit refers to the positioning of the background image — in this case, 50% from the left side of the browser window (resulting in a centered image) and 0 pixels from the top.</p>
+
+<h2 id="section4">Positioned columns<a class="subhead-anchor" href="http://alistapart.com/article/fauxcolumns#section4">#section4</a></h2>
+
+<p>With the background image in place, my positioned layout sits on top, with padding and margins set for the left and right columns, ensuring that they will line up in the right place — within the faux columns created by the background image (see Figure 3).</p>
+
+<figure id="figure4"><img src="./Faux Columns · An A List Apart Article_files/tilecheat_3.gif" alt="figure 3" width="385" height="146" class="thumb">
+<figcaption>Figure 3&gt;</figcaption>
+</figure>
+
+<p>It’s important to note that if borders, padding and margins are desired on either column, then we must still make up for IE/Win’s botching of the box model with Tantek Çelik’s <a href="http://www.tantek.com/CSS/Examples/boxmodelhack.html">Box Model Hack</a> or <a href="http://www.tantek.com/CSS/Examples/midpass.html">Mid Pass Filter</a>.</p>
+
+<p>Alternatively, if borders or padding can be <a href="http://www.zeldman.com/daily/1203j.shtml">avoided altogether</a> by just using margins instead, then the the Box Model Hack will not be necessary.&nbsp; And if the column’s content is simply sitting (transparently) on top of the tiled background, then it should be easy to avoid the hack.</p><h2 id="section5">Whatever floats your boat<a class="subhead-anchor" href="http://alistapart.com/article/fauxcolumns#section5">#section5</a></h2>
+
+<p>While I use absolute positioning to create a two-column layout on <a href="http://www.simplebits.com/" title="SimpleBits">my own site</a>, equally fine results can be achieved via the <code>float</code> property (as seen here at ALA).</p>
+
+<p>The same idea applies: tile the background image, then float a column in position to overlay the faux-column backdrop behind.</p><h2 id="section6">End notes<a class="subhead-anchor" href="http://alistapart.com/article/fauxcolumns#section6">#section6</a></h2>
+
+				
+				
+				
+				
+								<aside class="sidebar">
+				
+					<h1>Also in Issue № 167</h1>
+									<h2><a href="http://alistapart.com/article/elastic">Elastic Design</a></h2>
+					
+					<p>by  Patrick Griffiths</p>
+								</aside>
+								
+				
+				<p>It’s a simple concept, but one that may alleviate one of the frustrations that designers frequently encounter when building CSS-based layouts.</p>
+
+<p><small>(Thanks to Jeffrey Zeldman for help in refining this article.)</small></p>
+				
+				
+				
+								
+			</div>
+			
+			<footer class="entry-footer">
+				
+									
+				<h1>About the Author</h1>
+				<div class="byline author vcard">
+				
+					<a class="photo" href="http://alistapart.com/author/dancederholm"><img src="./Faux Columns · An A List Apart Article_files/photo_115913_120_120_c1.jpg" alt=""></a>					
+					<h2><a class="fn" href="http://alistapart.com/author/dancederholm"> Dan Cederholm</a></h2>
+					
+					<div class="author-bio"><p>Dan Cederholm is a designer, author, and speaker living in Salem, Massachusetts. He’s the Co-Founder of <a href="http://dribbble.com/">Dribbble</a>, a community for designers, and Founder of <a href="http://simplebits.com/">SimpleBits</a>, a tiny design studio. A long-time advocate of standards-based web design, Dan has worked with YouTube, Microsoft, Google, MTV, ESPN and others. He’s written several popular books about web design, and received a TechFellow award in early 2012. He’s currently an aspiring clawhammer banjoist and occasionally wears a baseball cap.</p></div>
+					
+									
+								
+								<h3>More from this Author</h3>
+				
+				<ul class="author-more">
+								
+									<li><a href="http://alistapart.com/article/why-sass">Why Sass?</a></li>
+								
+								
+								
+				
+								
+								
+									<li><a href="http://alistapart.com/article/understanding-css3-transitions">Understanding CSS3 Transitions</a></li>
+								
+								
+								
+				
+								
+								
+									<li><a href="http://alistapart.com/article/mountaintop">Mountaintop Corners</a></li>
+								
+								
+								
+				
+								
+								
+								
+				</ul>				
+								
+				
+
+				</div>
+
+
+
+			</footer>
+			
+			<div class="post-article">
+			
+				<div class="column-holder unequal-columns">
+					
+					<section id="comments" class="column comment-holder">
+						
+												<h1 class="classy">83 Reader Comments</h1>
+						
+												
+						<a href="http://alistapart.com/comments/fauxcolumns" id="load-comments" data-url-title="fauxcolumns" class="buttonish">Load Comments</a>
+												
+						
+						
+					</section>
+					
+					<aside class="column more-content">
+						
+												<aside class="the-deck">
+							<div class="deck-inner">
+								<script>
+									//<![CDATA[
+									(function(id) {
+									  document.write('<script type="text/javascript" src="' +
+									    'http://www.northmay.com/deck/deck' + id + '_js.php?' +
+									    (new Date().getTime()) + '"></' + 'script>');
+									})("AL");
+									//]]>
+								</script><script type="text/javascript" src="./Faux Columns · An A List Apart Article_files/deckAL_js.php"></script><a href="https://www.bigstockphoto.com/free-trial?pl=BSDECKUS&utm_source=deck&utm_medium=banner&utm_campaign=deckads"><img class="ad" alt="Bigstock" src="./Faux Columns · An A List Apart Article_files/bigstock_mic.jpg" border="0" height="90" width="120"></a><p class="ads"><a href="https://www.bigstockphoto.com/free-trial?pl=BSDECKUS&utm_source=deck&utm_medium=banner&utm_campaign=deckads">Free 7-Day Trial</a> from Bigstock.  Your first 35 stock photo downloads are free.  No strings attached.</p>
+								<p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p>
+							</div>
+						</aside><!--
+						
+						--><aside class="job-board">
+							<h4>Job Board</h4>
+							<script src="./Faux Columns · An A List Apart Article_files/random.js"></script><div class="job">
+  <a href="https://weworkremotely.com/jobs/645">Toptal, LLC is looking for a Business Sales Support.</a>
+</div>
+
+
+							<p class="board-link">Job listings via <a href="https://weworkremotely.com/?source=ala">We Work Remotely</a></p>
+						</aside>
+					
+						
+						<h1 class="classy">More from ALA</h1>
+						
+						
+						
+												<h2>Columns</h2>
+												
+												<article class="item-summary article">
+				
+							<span class="column-name">Lyza Danger Gardner <i>on</i> Building the Web Everywhere</span>
+				
+							<h1><a href="http://alistapart.com/column/look-at-the-big-picture">Look at the Big Picture</a></h1>
+				
+												
+										<img src="./Faux Columns · An A List Apart Article_files/photo_129828_60_60_c1.jpg" alt="">
+										
+					
+							<p>It’s easy to see that automation can streamline image-optimization for all the varied contexts on the pan-device web. What’s harder to imagine is a future where foregrounding meaningful content in images can be handled by an algorithm. Art direction still requires human intervention, and that’s often a luxury in high-production environments.</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="2014-05-08T08:30:19-05:00">May 08, 2014</time>
+							</footer>
+						
+						</article>
+						
+						
+						
+												
+												<article class="item-summary article">
+				
+							<span class="column-name">Cennydd Bowles <i>on</i> UX &amp; Design</span>
+				
+							<h1><a href="http://alistapart.com/column/letter-to-a-junior-designer">Letter to a Junior Designer</a></h1>
+				
+												
+										<img src="./Faux Columns · An A List Apart Article_files/photo_116112_60_60_c1.jpg" alt="">
+										
+					
+							<p>When you’re starting out in design you hunger to fix all the things. Your imagination and passion are boundless. So what turns a junior designer into a seasoned pro? It’s more than experience—it’s an ability to be in the moment and be a whole person.</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="2014-04-17T08:30:57-05:00">April 17, 2014</time>
+							</footer>
+						
+						</article>
+						
+						
+						
+						
+						
+												<h2>From the Blog</h2>
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/testing-responsive-images">Testing Responsive Images</a></h1>
+							
+							<p></p><p>At long last, the native <code>picture</code> element isn’t just coming: it’s here. The <code>picture</code> element has landed in Canary—Google’s “beta” channel for upcoming Chrome releases—and we can try it out for ourselves right now. Now, we need to test it out, look for bugs, and file issues.</p><p></p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/matmarquis">Mat Marquis</a>
+								<time class="pubdate updated" datetime="2014-06-04T08:30:51-05:00"><a href="http://alistapart.com/blog/post/testing-responsive-images">June 04, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/on-styled-form-elements">On Styled Form Elements</a></h1>
+							
+							<p>For almost 20 years, we’ve had the same input types and form elements we still use today: text fields and areas, password fields, select dropdowns, radio buttons, checkboxes, file fields, hidden fields, and the menagerie of button types including <code>submit</code>, <code>reset,</code> <code>image</code>, and plain old <code>button</code>.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/acolangelo">Anthony Colangelo</a>
+								<time class="pubdate updated" datetime="2014-05-30T08:30:21-05:00"><a href="http://alistapart.com/blog/post/on-styled-form-elements">May 30, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/work-to-do-yesallwomen">We Have Work to Do: #yesallwomen and the Web</a></h1>
+							
+							<p>Why does #yesallwomen matter for the web—and for <cite>A List Apart</cite>? Editor-in-chief Sara Wachter-Boettcher explains why making our industry a welcoming place for people of all kinds of backgrounds is the only way we’ll build the web we need. </p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/sboettcher">Sara Wachter-Boettcher</a>
+								<time class="pubdate updated" datetime="2014-05-29T09:25:46-05:00"><a href="http://alistapart.com/blog/post/work-to-do-yesallwomen">May 29, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/ten-years-ago-in-ala-art-direction-and-drop-shadows">Ten Years Ago in ALA: Art Direction and Drop Shadows</a></h1>
+							
+							<p>Ten years ago in May, <cite>A List Apart</cite> published Issues 180–182, featuring <a href="http://alistapart.com/article/artdirweb">Art Direction and the Web</a> by Stephen Hay and <a href="http://alistapart.com/article/onionskin">Onion Skinned Drop Shadows</a> by Brian Williams.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/mikepick">Mike Pick</a>
+								<time class="pubdate updated" datetime="2014-05-20T08:30:45-05:00"><a href="http://alistapart.com/blog/post/ten-years-ago-in-ala-art-direction-and-drop-shadows">May 20, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/global-accessibility-awareness-day-getting-the-word-out">Global Accessibility Awareness Day: Getting the Word Out</a></h1>
+							
+							<p>Today is Global Accessibility Awareness Day. To mark the day and promote the goal of the day, groups of developers and designers interested in accessibility offer webinars, presentations, and networking events to interest and educate more people about why accessibility is important and how to address accessibility in web content, documents, and software.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/andrewkirkpatrick"> Andrew Kirkpatrick</a>
+								<time class="pubdate updated" datetime="2014-05-15T16:50:39-05:00"><a href="http://alistapart.com/blog/post/global-accessibility-awareness-day-getting-the-word-out">May 15, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+						
+						<div id="bsap_1032" class="bsap" data-serve="C67DL2E"><aside class="sponsor-lower">
+	<h4>Our Sponsor</h4>
+	<p>
+		<a class="sponsor-name" href="http://srv.buysellads.com/ads/click/x/GTND423EC6AI5K77CW74YKQWCTYIL27MCYYILZ3JCEYD45QNCWBDC2JKC6BDTKQ7CA7I6K3EHJNCLSIZZRCCLSIZ">Pantheon</a><span class="sponsor-extended"> understands launching Drupal websites is complex. That's why we built Pantheon.</span>
+		<a class="sponsor-url" href="http://srv.buysellads.com/ads/click/x/GTND423EC6AI5K77CW74YKQWCTYIL27MCYYILZ3JCEYD45QNCWBDC2JKC6BDTKQ7CA7I6K3EHJNCLSIZZRCCLSIZ">getpantheon.com</a>
+	</p>
+</aside>
+<script type="text/javascript" id="auto_1" class="ignoreme">if (typeof(BSAProLoadedCallback) !== 'undefined') BSAProLoadedCallback(C67DL2E);</script>
+<script type="text/javascript" id="auto_2" class="ignoreme">if (typeof(_bsap_serving_callback) !== 'undefined') _bsap_serving_callback(6803, 'C67DL2E', '');</script></div>
+					
+					</aside>
+				
+				</div>
+				
+			</div>
+		
+		</article>
+		
+		
+	
+	</div>
+	
+			<footer class="global-footer">
+			
+			<h1 class="deadly-subtitle">For people who make websites.</h1>
+			
+			<ul class="inline-items">
+				<li><a href="http://alistapart.com/about">About</a></li>
+				<li><a href="http://alistapart.com/authors">Authors</a></li>
+				<li><a href="http://alistapart.com/about/masthead">Masthead</a></li>
+				<li><a href="http://alistapart.com/about/style-guide">Style Guide</a></li>
+				<li><a href="http://alistapart.com/contact">Contact</a></li>
+				<li><a href="http://alistapart.com/about/sponsor">Sponsorships</a></li>
+				<li class="head-east-young-man">
+					
+					Follow us: 
+					<a href="http://alistapart.com/about/rss">RSS</a> · 
+					<a href="http://www.facebook.com/alistapart">Facebook</a> · 
+					<a href="https://plus.google.com/107749003388305496076" rel="publisher">Google+</a> · 
+					<a href="http://www.twitter.com/alistapart">Twitter</a>
+					
+				</li>
+			</ul>
+			
+			<aside class="promo-holder">
+			
+				<ul class="partner-promos">
+					<li>
+						<a href="http://abookapart.com/">
+							<img src="./Faux Columns · An A List Apart Article_files/promo_aba.png" alt="">
+							<h1>A Book Apart</h1>
+							<p>Mobile First &amp; Responsive Web Design bundle.</p>
+							<p>Buy both and save!</p>
+							<p class="arrow">Order now</p>
+						</a>
+					</li><!--
+					
+					--><li>
+						<a href="http://aneventapart.com/">
+							<img src="./Faux Columns · An A List Apart Article_files/promo_aea.png" alt="">
+							<h1>An Event Apart</h1>
+							<p>Three days of design, code, and content for people who make websites.</p>
+							<p class="arrow">See the 2014 schedule</p>
+						</a>
+					</li>
+				</ul>
+			
+			</aside>
+			
+			<ul class="inline-items copyright">
+			
+				<li>
+					<small>ISSN 1534-0295 · Copyright © 1998-2014 A List Apart &amp; Our Authors</small>
+					<small><a href="http://alistapart.com/about/copyright">Permissions &amp; Copyright</a> · <a href="http://webtype.com/">Fonts by Webtype</a></small></li>
+			
+				<li class="affiliates head-east-young-man">
+					
+					<a class="aea" href="http://aneventapart.com/" title="An Event Apart">An Event Apart</a>
+					<a class="aba" href="http://abookapart.com/" title="A Book Apart">A Book Apart</a>
+					<a class="hc" href="http://happycog.com/" title="Happy Cog">Happy Cog</a>
+					<!--<a class="eh" href="http://enginehosting.com" title="Engine Hosting">Engine Hosting</a>-->
+					
+				</li>
+				
+			</ul>
+			
+		</footer>
+	
+	<div id="bsap_1031" class="bsap" data-serve="C67DL2V"><div class="sponsor-top" style="display: block;">
+	<a href="http://srv.buysellads.com/ads/click/x/GTND423EC6AI5K77FT7LYKQWCTYIL27MCA7I4Z3JCEYD45QNCWBDEKJKC6BDTKQ7CA7I6K3EHJNCLSIZZRCCLSIZ" class="sponsor-logo" data-width="170px" data-height="45px" data-standardbg="https://assets.servedby-buysellads.com/p/manage/asset/id/13039" data-hiresbg="https://assets.servedby-buysellads.com/p/manage/asset/id/13040" style="height: 45px; width: 170px; background-image: url(https://assets.servedby-buysellads.com/p/manage/asset/id/13039);">
+	</a>
+	<p>
+		<span class="sponsor-intro">Brought to you by:</span>
+		<a class="sponsor-name" href="http://srv.buysellads.com/ads/click/x/GTND423EC6AI5K77FT7LYKQWCTYIL27MCA7I4Z3JCEYD45QNCWBDEKJKC6BDTKQ7CA7I6K3EHJNCLSIZZRCCLSIZ">Pantheon</a><span class="sponsor-extended">. A Perfect Launch, Every Time. Learn 7 steps to avoid the worst day of your career. Click to download the ebook.</span>
+		<a class="sponsor-url" href="http://srv.buysellads.com/ads/click/x/GTND423EC6AI5K77FT7LYKQWCTYIL27MCA7I4Z3JCEYD45QNCWBDEKJKC6BDTKQ7CA7I6K3EHJNCLSIZZRCCLSIZ">getpantheon.com</a>
+	</p>			
+</div>
+<script type="text/javascript" id="auto_3" class="ignoreme">if (typeof(BSAProLoadedCallback) !== 'undefined') BSAProLoadedCallback(C67DL2V);</script>
+<script type="text/javascript" id="auto_4" class="ignoreme">if (typeof(_bsap_serving_callback) !== 'undefined') _bsap_serving_callback(6755, 'C67DL2V', '');</script></div>
+
+		<nav class="global-nav deluxe" id="main-nav" role="navigation">
+	
+		<ul class="inline-items">
+			<li><a href="http://alistapart.com/">Home</a></li>
+			
+			<li><a href="http://alistapart.com/articles">Articles</a></li>
+			<li><a href="http://alistapart.com/columns">Columns</a></li>
+			<li><a href="http://alistapart.com/blog">Blog</a></li>
+			<li><a href="http://alistapart.com/topics">Topics</a></li>
+			<li><a href="http://alistapart.com/about/contribute">Write for us</a></li>
+			<li class="back-to-top"><a href="http://alistapart.com/article/fauxcolumns#top">Back to top</a></li>
+			<li class="head-east-young-man">
+				<form class="main-search" method="post" action="http://alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="ACT" value="19">
+<input type="hidden" name="XID" value="4b16694547700ce5e5f72fb2ed67b3f71ada7755">
+<input type="hidden" name="RES" value="">
+<input type="hidden" name="meta" value="Ffseekua+rUE8oK/pEbUJWWxDpWf2BoUqFDIvQXjhXZvhxjFg5cTF6MP3Rxtt3h0gzE57XPQfXWvg0nj9Y1Ez9CgWwEnGRAY6knFpH19HNpmm1rhGuRr9ebnQRbp5gzUuAi3HijGA9yRR/+duNMWasUPa0S3ri5kufvn1cJZoXtDEJrakAi4Zi6hXmR7jAoMS32IN2Nnt91qJWBa39w1AJV8sd0qnhHhIINlcsb02vkMpG4eYA2mBCdk4rLBnTtcWm9lsqpzcAbw41a/SSQd1uwuL6FhRywCkesIprmpX/V39TUIrB+WBENjD8PfBNuRIPltmq7vNFIS4c6H83tmAdIBYa09YmGift5UU60UI5sm+GsyNXJMWvj4CA9wCX3q">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+					<label for="search-keywords"><input id="search-keywords" type="search" name="keywords" placeholder="Search" aria-label="Search" value="" required="required"></label>
+					<label class="submit-search" for="submit-search"><input id="submit-search" name="submit" type="image" src="./Faux Columns · An A List Apart Article_files/icon_magnify_v.svg" onerror="this.src=&#39;//d.alistapart.com/_repo/site_assets/img/icon_magnify_v.png&#39;;" alt="Submit"></label>
+				</form>
+			</li>
+		</ul>
+	
+	</nav>
+
+		
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="./Faux Columns · An A List Apart Article_files/jquery.min.js"></script>
+	<script>window.jQuery || document.write('/d/_repo/site_assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+
+	<script src="./Faux Columns · An A List Apart Article_files/d17f5833a253c191b1d7c933685a45afc12377d8.1399662552.js"></script>
+	
+	<!-- BuySell Ads -->
+	<script>(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();</script>
+	
+	<script>
+	var _qevents = _qevents || [];
+	
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+	
+	_qevents.push({qacct:"p-0Gb-D0fnDnm2s"});
+	</script>
+	
+	<noscript>
+	&lt;div style="display:none;"&gt;
+	&lt;img src="//pixel.quantserve.com/pixel/p-0Gb-D0fnDnm2s.gif" height="1" width="1" alt=""/&gt;
+	&lt;/div&gt;
+	</noscript>
+
+	<script>
+	var _gaq=[['_setAccount','UA-11757054-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+	typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+	b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+	mixpanel.init("204b563994d022408e4b540a66fe6136");</script><!-- end Mixpanel -->
+
+
+</body></html>

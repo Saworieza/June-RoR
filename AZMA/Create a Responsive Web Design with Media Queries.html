@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./Create a Responsive Web Design with Media Queries_files/M9D3ycxLNTLVDTPWLy6pzEkFAA.css" media="all">
+
+<meta charset="utf-8">
+
+
+
+<link href="http://line25.com/wp-content/themes/Line25-V3/css/print.css" rel="stylesheet" media="print">
+
+<link rel="alternate" type="application/rss+xml" title="rss" href="http://feeds2.feedburner.com/Line25">
+<link rel="shortcut icon" href="http://line25.com/wp-content/themes/Line25-V3/images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="http://line25.com/wp-content/themes/Line25-V3/images/apple-touch-icon-precomposed.png">
+<link rel="author" href="https://plus.google.com/104450953982253016781/posts">
+
+<script src="./Create a Responsive Web Design with Media Queries_files/cb=gapi.loaded_1" async=""></script><script src="./Create a Responsive Web Design with Media Queries_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Create a Responsive Web Design with Media Queries_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./Create a Responsive Web Design with Media Queries_files/widgets.js"></script><script id="twitter-wjs" src="./Create a Responsive Web Design with Media Queries_files/widgets(1).js"></script><script type="text/javascript" src="./Create a Responsive Web Design with Media Queries_files/yygpKbDS10_MSqzQS8_PT89JTSzILNZLzs8Fi-nnZCYV62cVlqYWVeob6pnoGUI5ermZeXpZxQA.js"></script>
+<script src="./Create a Responsive Web Design with Media Queries_files/scripts.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://line25.com/wp-content/themes/Line25-V3/js/html5shiv.js"></script>
+<link href="http://line25.com/wp-content/themes/Line25-V3/css/ie.css" rel="stylesheet" />
+<![endif]-->
+
+<!--WP Generated Header-->
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.5.2.8 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Create a Responsive Web Design with Media Queries</title>
+<link rel="canonical" href="./Create a Responsive Web Design with Media Queries_files/Create a Responsive Web Design with Media Queries.html">
+<!-- / Yoast WordPress SEO plugin. -->
+
+
+<link rel="shortlink" href="http://line25.com/?p=2039">
+
+
+<script type="text/javascript" async="" src="./Create a Responsive Web Design with Media Queries_files/bsa.js"></script><script src="./Create a Responsive Web Design with Media Queries_files/nonSecureAnonymousFramework"></script><script type="text/javascript" id="_bsap_js_7c98a34c777ddd7887a78ce4a462b94a" src="./Create a Responsive Web Design with Media Queries_files/s_7c98a34c777ddd7887a78ce4a462b94a.js" async="async"></script><style type="text/css" id="bsa_css">div.bsap_1238046{width:100%;display:block}div.bsap_1238046 a{width:125px}div.bsap_1238046 a img{padding:0}div.bsap_1238046 a em{font-style:normal}div.bsap_1238046 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1238046 img{border:0;clear:right;}div.bsap_1238046 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1238046 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1238046 a{line-height:100%}div.bsap_1238046 a.adhere{width:125px;height:125px;line-height:1000%}html>body div.bsap_1238046 a.adhere{width:123px;height:123px}div.bsap_1238046 img.s{height:0;width:0}div.bsap_1244147{width:100%;display:block}div.bsap_1244147 a{width:300px}div.bsap_1244147 a img{padding:0}div.bsap_1244147 a em{font-style:normal}div.bsap_1244147 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1244147 img{border:0;clear:right;}div.bsap_1244147 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1244147 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1244147 a{line-height:100%}div.bsap_1244147 a.adhere{width:300px;height:250px;line-height:2000%}html>body div.bsap_1244147 a.adhere{width:298px;height:248px}div.bsap_1244147 img.s{height:0;width:0}div.bsap_1278054{width:100%;display:block}div.bsap_1278054 a{width:260px}div.bsap_1278054 a img{padding:0}div.bsap_1278054 a em{font-style:normal}div.bsap_1278054 a{;float:left;}div.bsap_1278054 img{}div.bsap_1278054 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1278054 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1278054 a{line-height:100%}div.bsap_1278054 a.adhere{width:260px;height:125px;line-height:1000%}html>body div.bsap_1278054 a.adhere{width:258px;height:123px}div.bsap_1278054 img.s{height:0;width:0}</style></head>
+<body data-twttr-rendered="true">
+
+<!-- BuySellAds.com Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- END BuySellAds.com Ad Code -->
+
+<div id="header-wrapper">
+	<header>
+		<h1><a href="http://line25.com/" title="Return to the Homepage">Line25</a></h1>
+		
+		<nav>
+			<ul>
+				<li><a href="http://line25.com/category/articles">Articles</a></li>
+				<li><a href="http://line25.com/category/inspiration">Inspiration</a></li>
+				<li><a href="http://line25.com/category/tutorials">Tutorials</a></li>
+				<li><a href="http://line25.com/about">About</a></li>
+				<li><a href="http://line25.com/archives">Archives</a></li>
+				<li><a href="http://line25.com/contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+</div><div id="content-wrapper">
+	<div id="content">
+		<section id="main">
+		
+							
+			<article class="post-2039 post type-post status-publish format-standard hentry category-tutorials tag-coding tag-css tag-css3 tag-design tag-interface tag-layouts tag-media-queries tag-responsive tag-techniques tag-tips tag-tutorial tag-web-design">
+				<div class="post-header single">
+					<h2>Create a Responsive Web Design with Media Queries</h2>
+										<a href="./Create a Responsive Web Design with Media Queries_files/Create a Responsive Web Design with Media Queries.html"><img src="./Create a Responsive Web Design with Media Queries_files/header.jpg" alt="Read the full post"></a>
+				</div>
+				
+				<div class="ad">
+<div id="bsap_1244147" class="bsap_1244147 bsap"><a href="http://stats.buysellads.com/click.go?z=1244147&b=533302&g=&s=&sw=1440&sh=900&br=chrome,35,linux&r=0.05257127620279789&link=http://www.dreamtemplate.com/?ref=bsa" onmouseover="window.status = &#39;http://www.dreamtemplate.com/?ref=bsa&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;" class="ad1 odd" title="Premium Website Templates &amp; WordPress Themes" id="bsa_533302" target="_blank"><img src="./Create a Responsive Web Design with Media Queries_files/196922-1384545519.gif" width="300" height="250" alt="Premium Website Templates &amp; WordPress Themes"></a></div>
+</div>				
+				<p>If you’ve yet to get your hands dirty with media queries, now is your chance to create your first responsive website design. In this tutorial we’ll look at converting one of my previous WordPress theme designs into a responsive layout, while taking into consideration the design’s original grid structure. </p>
+<p><span id="more-2039"></span></p>
+<p><a href="http://line25.com/wp-content/uploads/2012/responsive/demo/index.html"><img src="./Create a Responsive Web Design with Media Queries_files/responsive.jpg" alt="View the responsive layout demo"></a></p>
+<p>If you cast your mind back to late 2011, we went through the process of <a href="http://line25.com/tutorials/create-a-typography-based-blog-design-in-photoshop">designing</a>, <a href="http://line25.com/tutorials/create-a-typography-based-blog-layout-in-html5">coding</a> and <a href="http://line25.com/tutorials/create-a-typography-based-wordpress-blog-theme">building</a> ‘Typo’ into a complete WordPress theme. The design lends itself quite well to a responsive layout, so we’ll use the HTML and CSS as a base to transform the static layout into a responsive layout that will adapt to various viewport sizes.</p>
+<p><img src="./Create a Responsive Web Design with Media Queries_files/original.jpg" alt="Non-responsive layout"></p>
+<p>When the viewport size of our browser is reduced on the <a href="http://line25.com/wp-content/uploads/2011/typo-code/demo/index.html">original demo file</a> we’ll see the site is cut off and ugly horizontal scrollbars are added. The idea of a responsive layout is to adapt to these various viewport sizes so the design remains legible. Smartphones and tablets will automatically scale the original website to fit, but creating specific layouts for those smaller resolutions will allow the site to be read easily without the need for zooming.</p>
+<p><img src="./Create a Responsive Web Design with Media Queries_files/screens.jpg" alt="Common viewport sizes"></p>
+<p>The first step to creating our responsive layouts is to plan out what resolutions we’re going to cater for. Common resolutions include the 320px portrait width of smartphones, 768px portrait width of tablets, 1024px landscape width of tablets (and typical netbook resolutions) as well as various desktop monitor resolutions. It’s worth mentioning that a layout that only caters for preset resolutions is often referred to as being ‘adaptive’, whereas a truly ‘responsive’ layout will be built using ems or percentages, allowing an infinite level of scaling.</p>
+<div class="code">
+<pre>&lt;link href="mediaqueries.css" rel="stylesheet" /&gt;
+</pre>
+</div>
+<p>We can then get started with CSS media queries to add the responsive functionality to our design. I’m adding the media queries and additional declarations to a separate CSS file, but they could be added to your main stylesheet.</p>
+<div class="code">
+<pre>&lt;meta name="viewport" content="width=device-width; initial-scale=1.0"&gt;
+</pre>
+</div>
+<p>We’ll also need to prevent the iPhone from automatically scaling the website to fit its screen, so this handy meta tag will tell Safari on the iPhone to set the device width to the size of its viewport.</p>
+<div class="code">
+<pre>@media screen and (max-width: 960px) {
+
+}
+</pre>
+</div>
+<p><img src="./Create a Responsive Web Design with Media Queries_files/1.jpg" alt=""></p>
+<p>The width of the original layout is 960px, so any resolution below this value will generate horizontal scrollbars and cut-off the content. Therefore the first of our media queries will target screens with a width of less than 960px;.</p>
+<div class="code">
+<pre>@media screen and (max-width: 960px) {
+	#container, footer {
+		width: 758px;
+	}
+	
+	#content {
+		margin: 0 20px 0 0;
+	}
+	
+	#sidebar {
+		width: 212px;
+	}
+		#sidebar section {
+			clear: left;
+		}
+		#sidebar #search #searchbar {
+			width: 152px;
+		}
+}
+</pre>
+</div>
+<p><img src="./Create a Responsive Web Design with Media Queries_files/2.jpg" alt=""></p>
+<p>The next most popular resolution under 960px width is 768px to cater for portrait tablet screens. This Typo design is built using a grid, so to stay true to the layout we can simply remove a column to leave a width of 758px. The original layout can then be narrowed down to fit by reducing the margin on the content div as well as reducing the overall width of the sidebar. </p>
+<div class="code">
+<pre>@media screen and (max-width: 758px) {
+	#container, footer, #sidebar {
+		width: 524px;
+	}
+	
+	header nav {
+		clear: left; float: none; overflow: hidden;
+	}
+		header nav li {
+			width: auto; margin: 0 25px 0 0;
+		}
+	
+	header {
+		margin: 0 0 44px 0;
+	}
+	
+	header h1 {
+		margin: 0 0 24px 0;
+	}
+	
+	#sidebar section {
+		float: left; clear: none;
+	}
+		#sidebar #social {
+			margin: 0 20px 47px 0;
+		}
+
+	#sidebar #search #searchbar {
+			width: 464px;
+	}
+}
+</pre>
+</div>
+<p><img src="./Create a Responsive Web Design with Media Queries_files/3.jpg" alt=""></p>
+<p>The value of 758px can then be used for the next media query, so anything smaller than this size will trigger the next layout. At this point the sidebar is too narrow to be made any smaller, so instead it can be naturally flowed underneath the main content when the grid is narrowed by a few more columns. This means the actual sidebar div’s width can be increased to fill the width of the new layout and its child elements floated to fill out the extra horizontal space.<br>
+Other areas such as the header have become too narrow to hold the logo and navigation side by side, so the navigation elements are altered to span the width of the layout on a new line.</p>
+<div class="code">
+<pre>@media screen and (max-width: 524px) {
+	#container, footer, #sidebar, #content {
+		width: 292px;
+	}
+	
+	#content article h2 {
+		font-size: 24px;
+	}
+	
+	#content .postinfo li {
+		margin: 0 10px 0 0;
+	}
+	
+	#sidebar #social {
+			margin: 0;
+		}
+		
+	#sidebar #search #searchbar {
+		width: 230px;
+	}
+}
+</pre>
+</div>
+<p><img src="./Create a Responsive Web Design with Media Queries_files/4.jpg" alt=""></p>
+<p>The third and final media query in our responsive layout will cater for extremely small resolutions such as smartphones. This particular layout is narrower than the original content width, so this div also needs altering with a new declaration in the media queries CSS file. The extremely narrow view has dropped each of the post-info links on a new line, but decreasing the margin between them helps repair some of the floats. </p>
+<p><a href="http://line25.com/wp-content/uploads/2012/responsive/demo/index.html"><img src="./Create a Responsive Web Design with Media Queries_files/responsive.jpg" alt="View the responsive layout demo"></a></p>
+<p>Thanks to these three sets of media queries our website layout is now responsive enough to cater for common viewport sizes and will aid readability by generating a designed layout in place of scrollbars or a scaled view. <a href="http://line25.com/wp-content/uploads/2012/responsive/demo/index.html">View the demo</a> and scale your browser to see the responsive layouts for yourself.</p>
+<p class="btn"><a href="http://line25.com/wp-content/uploads/2012/responsive/demo/index.html">View the responsive layout demo</a></p>
+				
+				
+			</article>
+			
+			<div id="share">
+				<ul>
+					<li><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Create a Responsive Web Design with Media Queries_files/tweet_button.1401325387.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-vertical" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 56px; height: 62px;"></iframe><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+					<li><div class="stumbleupon"><script type="text/javascript" src="./Create a Responsive Web Design with Media Queries_files/hostedbadge.php"></script><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Create a Responsive Web Design with Media Queries_files/saved_resource(1).html" width="50" height="60" id="iframe-stmblpn-widget-1" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px;"></iframe> <script type="text/javascript">   (function() {     var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;     li.src = window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);   })(); </script></div></li>
+					<li><iframe src="./Create a Responsive Web Design with Media Queries_files/saved_resource.html" style="border:none; overflow:hidden; width:85px; height:78px; padding-left: 14px;"></iframe></li>
+					<li><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I0_1401972995255" name="I0_1401972995255" src="./Create a Responsive Web Design with Media Queries_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+						<script type="text/javascript">
+						(function() {
+						var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+						po.src = 'https://apis.google.com/js/plusone.js';
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						})();
+						</script></li>
+					<li><script src="./Create a Responsive Web Design with Media Queries_files/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries" data-counter="top"></script></li>
+					<li><script type="text/javascript">var dzone_url = 'http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries';</script>
+						<script type="text/javascript">var dzone_title = 'Create a Responsive Web Design with Media Queries';</script>
+						<script type="text/javascript">var dzone_style = '1';</script>
+						<script type="text/javascript" src="./Create a Responsive Web Design with Media Queries_files/zoneit.js"></script><iframe src="./Create a Responsive Web Design with Media Queries_files/zoneit.html" height="70" width="50" scrolling="no" frameborder="0"></iframe></li>
+				</ul>
+			</div>
+		
+			<div id="email-subscribe">
+				<a href="http://line25.com/subscribe" class="shadows"><img src="./Create a Responsive Web Design with Media Queries_files/shadows-post.jpg" alt="Free web shadows pack for every subscriber"></a>
+				<p>Join the mailing list to have new content delivered straight to your email inbox. Every subscriber gets a free pack of <a href="http://line25.com/subscribe">realistic web shadows</a>.</p>
+				
+				<script type="text/javascript" src="./Create a Responsive Web Design with Media Queries_files/342983737.js"></script><style type="text/css">#af-form-342983737 .af-body .af-textWrap{width:70%;display:block;float:right;}#af-form-342983737 .af-body input.text, #af-form-342983737 .af-body textarea{background-color:transparent;border-width:2px;border-style:inset;color:#8E8E8E;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:Helvetica, sans-serif;}#af-form-342983737 .af-body input.text:focus, #af-form-342983737 .af-body textarea:focus{background-color:transparent;border-width:2px;border-style:inset;}#af-form-342983737 .af-body label.previewLabel{display:block;float:left;width:25%;text-align:left;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:inherit;}#af-form-342983737 .af-body{background-repeat:no-repeat;background-position:inherit;background-image:none;color:#000000;font-size:12px;font-family:, serif;}#af-form-342983737 .af-quirksMode{padding-right:0px;padding-left:0px;}#af-form-342983737 .af-standards .af-element{padding-right:0px;padding-left:0px;}#af-form-342983737 .buttonContainer input.submit{background-color:#transparent;color:#FFFFFF;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:Helvetica, sans-serif;}#af-form-342983737 .buttonContainer input.submit{width:auto;}#af-form-342983737 .buttonContainer{text-align:center;}#af-form-342983737 button,#af-form-342983737 input,#af-form-342983737 submit,#af-form-342983737 textarea,#af-form-342983737 select,#af-form-342983737 label,#af-form-342983737 optgroup,#af-form-342983737 option{float:none;position:static;margin:0;}#af-form-342983737 div{margin:0;}#af-form-342983737 form,#af-form-342983737 textarea,.af-form-wrapper,.af-form-close-button,#af-form-342983737 img{float:none;color:inherit;position:static;background-color:none;border:none;margin:0;padding:0;}#af-form-342983737 input,#af-form-342983737 button,#af-form-342983737 textarea,#af-form-342983737 select{font-size:100%;}#af-form-342983737 select,#af-form-342983737 label,#af-form-342983737 optgroup,#af-form-342983737 option{padding:0;}#af-form-342983737,#af-form-342983737 .quirksMode{width:600px;}#af-form-342983737.af-quirksMode{overflow-x:hidden;}#af-form-342983737{background-color:transparent;border-color:transparent;border-width:1px;border-style:solid;}#af-form-342983737{display:block;}#af-form-342983737{overflow:hidden;}.af-body .af-textWrap{text-align:left;}.af-body input.image{border:none!important;}.af-body input.submit,.af-body input.image,.af-form .af-element input.button{float:none!important;}.af-body input.text{width:100%;float:none;padding:2px!important;}.af-body.af-standards input.submit{padding:4px 12px;}.af-clear{clear:both;}.af-element label{text-align:left;display:block;float:left;}.af-element{padding:5px 0;}.af-form-wrapper{text-indent:0;}.af-form{text-align:left;margin:auto;}.af-quirksMode .af-element{padding-left:0!important;padding-right:0!important;}.lbl-right .af-element label{text-align:right;}body {}</style><form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"><div style="display: none;"><input type="hidden" name="meta_web_form_id" value="342983737"><input type="hidden" name="meta_split_id" value=""><input type="hidden" name="listname" value="line25"><input type="hidden" name="redirect" value="http://line25.com/thank-you" id="redirect_80cabfaafc14f352a88d9745794e41d4"><input type="hidden" name="meta_adtracking" value="Line25_Bottom_Post_Subscribe"><input type="hidden" name="meta_message" value="1"><input type="hidden" name="meta_required" value="email"><input type="hidden" name="meta_tooltip" value="email||Enter your email address"></div><div id="af-form-342983737" class="af-form"><div id="af-body-342983737" class="af-body af-standards"><div class="af-element"><label class="previewLabel" for="awf_field-47770742"></label><div class="af-textWrap"><input class="text" id="awf_field-47770742" type="text" name="email" value="Enter your email address" tabindex="500" onfocus=" if (this.value == &#39;Enter your email address&#39;) { this.value = &#39;&#39;; }" onblur="if (this.value == &#39;&#39;) { this.value=&#39;Enter your email address&#39;;} "></div><div class="af-clear"></div></div><div class="af-element buttonContainer"><input name="submit" class="submit" type="submit" value="Subscribe" tabindex="501"><div class="af-clear"></div></div></div></div></form><script type="text/javascript">    <!--    (function() {        var IE = /*@cc_on!@*/false;        if (!IE) { return; }        if (document.compatMode && document.compatMode == 'BackCompat') {            if (document.getElementById("af-form-342983737")) {                document.getElementById("af-form-342983737").className = 'af-form af-quirksMode';            }            if (document.getElementById("af-body-342983737")) {                document.getElementById("af-body-342983737").className = "af-body inline af-quirksMode";            }            if (document.getElementById("af-header-342983737")) {                document.getElementById("af-header-342983737").className = "af-header af-quirksMode";            }            if (document.getElementById("af-footer-342983737")) {                document.getElementById("af-footer-342983737").className = "af-footer af-quirksMode";            }        }    })();    --></script>
+			</div>
+		
+			<div id="author">
+				<a href="http://line25.com/about" id="author-image"><img alt="" src="./Create a Responsive Web Design with Media Queries_files/784faf8e9345fd75ad45ea9d33ac545f" class="avatar avatar-80 photo" height="80" width="80"></a>
+				<div id="author-bio">
+					<h4>Written by <a href="http://line25.com/about" title="Visit Chris Spooner’s website" rel="author external">Chris Spooner</a></h4>
+					<p><a href="http://line25.com/about">Chris Spooner</a> is a designer who loves experimenting with new web design techniques collating creative website designs. Check out Chris' design tutorials and articles at <a href="http://blog.spoongraphics.co.uk/">Blog.SpoonGraphics</a> or follow his daily findings on <a href="http://twitter.com/chrisspooner">Twitter</a>.</p>
+				</div>
+			</div>	
+				
+			<div id="related">
+				<h3>More posts like this</h3>
+				<ul class="related_post"><li><a href="http://line25.com/tutorials/create-a-grid-based-web-design-in-html5-css3" title="Create a Grid Based Web Design in HTML5 &amp; CSS3">Create a Grid Based Web Design in HTML5 &amp; CSS3</a></li><li><a href="http://line25.com/articles/responsive-web-design-articles-tutorials-guides" title="Responsive Web Design Articles, Tutorials &amp; Guides">Responsive Web Design Articles, Tutorials &amp; Guides</a></li><li><a href="http://line25.com/tutorials/how-to-create-flat-style-breadcrumb-links-with-css" title="How To Create Flat Style Breadcrumb Links with CSS">How To Create Flat Style Breadcrumb Links with CSS</a></li><li><a href="http://line25.com/tutorials/how-to-create-a-trendy-flat-style-nav-menu-in-css" title="How To Create a Trendy Flat Style Nav Menu in CSS">How To Create a Trendy Flat Style Nav Menu in CSS</a></li><li><a href="http://line25.com/tutorials/how-to-create-a-slick-features-table-in-html-css" title="How To Create a Slick Features Table in HTML &amp; CSS">How To Create a Slick Features Table in HTML &amp; CSS</a></li><li><a href="http://line25.com/tutorials/create-a-stylish-contact-form-with-html5-css3" title="Create a Stylish Contact Form with HTML5 &amp; CSS3">Create a Stylish Contact Form with HTML5 &amp; CSS3</a></li></ul>			</div>
+
+			
+			
+
+				<div id="comments">
+					<h2>49 Comments</h2>           	
+	            	
+											
+	   				<ol class="commentlist">
+								<li class="comment even thread-even depth-1" id="comment-18158">
+				<div id="div-comment-18158" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/1c79812fa44190a6ca9e9b752abe2b0f" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.sammarchant.co.uk/" rel="external nofollow" class="url">Sam</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18158">
+			March 12, 2012 at 9:06 am</a>		</div>
+
+		<p>This is ow so helpful, thank you!!!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18162">
+				<div id="div-comment-18162" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/62cc924c5bd1ec09f0b5acd5c49607bd" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.richythomas.com/" rel="external nofollow" class="url">Richy</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18162">
+			March 12, 2012 at 10:04 am</a>		</div>
+
+		<p>This is great! You always simplify everything as much as possible which is awesome! Wish this article was about a few months back when I was proper confused on this subject.</p>
+<p>The only thing I would say is that some people will say this is more of an adaptive layout as the layout adapts to specific sizes. It would be more of a responsive layout if you used percentages for sizes rather than pixels.</p>
+<p>p.s I way prefer adaptive designs</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18163">
+				<div id="div-comment-18163" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/1503af4f499342d9263bd1f965192fff" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.spinxwebdesign.com/" rel="external nofollow" class="url">web designing</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18163">
+			March 12, 2012 at 10:09 am</a>		</div>
+
+		<p>An excellent guide to make all those website mobile and tablet compatible. Nowadays it is must to get those websites look similar in all major device in order to facilitate easy scrolling of web page.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18165">
+				<div id="div-comment-18165" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/cbb2ef0d09e921a941ef2ad586122cf5" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.feed2need.com/" rel="external nofollow" class="url">Abdelhadi Touil</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18165">
+			March 12, 2012 at 10:37 am</a>		</div>
+
+		<p>Really very helpful! Thanks for your excellent tutorial, Chris!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18166">
+				<div id="div-comment-18166" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/eea62576b00da2d5c2c59879af7760bd" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.proofreadinguk.co.uk/" rel="external nofollow" class="url">Buzz</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18166">
+			March 12, 2012 at 10:52 am</a>		</div>
+
+		<p>Really helpful article, thanks for sharing</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18173">
+				<div id="div-comment-18173" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/a25927d619ffc26cd4dd415e60fbd089" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.adrdecorating.co.uk/" rel="external nofollow" class="url">Simon</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18173">
+			March 12, 2012 at 2:21 pm</a>		</div>
+
+		<p>Chris, you are the MAN!!! Thanks for taking the time to write this.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18174">
+				<div id="div-comment-18174" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/d1ca095ca582bbbd39acb44769db85ec" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.twitter.com/jamiewillmott" rel="external nofollow" class="url">Jamie Willmott</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18174">
+			March 12, 2012 at 2:46 pm</a>		</div>
+
+		<p>Cheers for that, had been thinking of looking into scaleability for web designs.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18176">
+				<div id="div-comment-18176" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/a3c370f0351f44a46742e8bf96012c63" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.shadesodesign.com/" rel="external nofollow" class="url">Aditya</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18176">
+			March 12, 2012 at 3:13 pm</a>		</div>
+
+		<p>So freakin' co-incidential! I just worked on a website and was looking up for a way for media queries! Thanx a ton! :)</p>
+<p>Scaleability is gonna help a lot!</p>
+<p>*Bookmarked!*</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18177">
+				<div id="div-comment-18177" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/410791a6b3a2c812cb274c897480bc0a" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.sstudio.me/" rel="external nofollow" class="url">Web dizajn</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18177">
+			March 12, 2012 at 3:52 pm</a>		</div>
+
+		<p>Oh, this site is awesome, thank you a lot</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18178">
+				<div id="div-comment-18178" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/7a586ac17838c482b23972fc6ea68259" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://responsivedesign.ca/" rel="external nofollow" class="url">Aidan Foster</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18178">
+			March 12, 2012 at 5:02 pm</a>		</div>
+
+		<p>Hi Chris thanks for the great step by step tutorial. I've added it to the RWD resource list over on our site. <a href="http://responsivedesign.ca/developer-resources/articles" rel="nofollow">http://responsivedesign.ca/developer-resources/articles</a></p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18179">
+				<div id="div-comment-18179" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/4345eb9dbf3099b2ef0833f4d046ca1c" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://jamalmoghrabi.com/" rel="external nofollow" class="url">Jamal Moghrabi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18179">
+			March 12, 2012 at 5:02 pm</a>		</div>
+
+		<p>wow…you read my mind! I'm designing my first responsive site and I needed tutorials for the coding. Thanks!! :)</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18182">
+				<div id="div-comment-18182" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/9bdbfff8019b578055f8dc9d6731b85d" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn">phil</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18182">
+			March 12, 2012 at 6:44 pm</a>		</div>
+
+		<p>Just started doin site like this, however regarding jqueryscrolling banners  menusas dropdowns or fancy scrolling header banner is that able to be made responsive?</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18183">
+				<div id="div-comment-18183" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/13386587788365dc45a0ccc9d3e9595c" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.sccc.premiumdw.com/" rel="external nofollow" class="url">Mike Sinkula</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18183">
+			March 12, 2012 at 8:13 pm</a>		</div>
+
+		<p>Thanks, Chris! I posted this one for my students!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18189">
+				<div id="div-comment-18189" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/2457a448d9b23c737d07277a0940f98a" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.aagthosting.com/" rel="external nofollow" class="url">AAGT Business Web Hosting</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18189">
+			March 13, 2012 at 4:22 am</a>		</div>
+
+		<p>Thanks for the tutorial.  It may become useful in the future.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18190">
+				<div id="div-comment-18190" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/290135c03ade03ce740e799006a023f6" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn">webdesdev</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18190">
+			March 13, 2012 at 6:09 am</a>		</div>
+
+		<p>Hi Chris, nice article, i have tried few responsive layout using media queries, your tutorial is i will try this one.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18193">
+				<div id="div-comment-18193" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/ceebc0248220579941576c890adb1bea" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn">Calamorna</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18193">
+			March 13, 2012 at 8:56 am</a>		</div>
+
+		<p>Nice article! Thanks for sharing.</p>
+<p>Btw, have you a portofolio in a self-promoting site like <a href="http://www.peopleperhour.com/" rel="nofollow">http://www.peopleperhour.com</a> ?</p>
+<p>I would use your opinion about it, if you ever have the time. ^_^</p>
+<p>Keep on the good work!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18198">
+				<div id="div-comment-18198" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/322cc6a6b315c858af67d5ab468fa223" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.coljung.com/" rel="external nofollow" class="url">Pablinho</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18198">
+			March 13, 2012 at 6:14 pm</a>		</div>
+
+		<p>Great and simple walk-through !</p>
+<p>Thanks</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18200">
+				<div id="div-comment-18200" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/4a1e56d3181b59197408466c27a8d4fb" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.doodlepad.co.uk/" rel="external nofollow" class="url">Web Design hull</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18200">
+			March 13, 2012 at 11:03 pm</a>		</div>
+
+		<p>As always Mr Spooner you explain things so easily, thanks again for another great tut.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18204">
+				<div id="div-comment-18204" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/a3d6e50ee258aae03732879c0418f407" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn">Web design market harborough</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18204">
+			March 14, 2012 at 8:41 am</a>		</div>
+
+		<p>Great post – really easy to follow and straightforward explanation!  Cheers :)</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18206">
+				<div id="div-comment-18206" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/b367e18cb40bfc7b01248e7f945b8d38" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.laabhaa.com/" rel="external nofollow" class="url">Website Designing in Indore</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18206">
+			March 14, 2012 at 1:09 pm</a>		</div>
+
+		<p>I am very happy to read your articles it’s very useful for me,<br>
+and I am completely satisfied with your website.<br>
+All comments and articles are very useful and very good.<br>
+Your blog is very attention-grabbing. I am loving all of the in<br>
+ turn you are sharing with each one!…<br>
+&lt;a href="<a href="http://www.laabhaa.com%26quot/" rel="nofollow">http://www.Laabhaa.com&amp;quot</a>; title="Website Designing in Indore"<br>
+target="_blank"&gt;Website Designing in Indore&lt;/a&gt;</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18207">
+				<div id="div-comment-18207" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/6774f11ab3e3d219f526234582aea2c3" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.amtstudios.nl/blog/" rel="external nofollow" class="url">AlfonsT</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18207">
+			March 14, 2012 at 1:34 pm</a>		</div>
+
+		<p>Thanks for creating this easy to follow tutorial and including a demo with it..that's exactly what I needed!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18208">
+				<div id="div-comment-18208" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/e7d788f31ab7c18da41883e56c900ba6" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://podzemka.pro/" rel="external nofollow" class="url">misha</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18208">
+			March 14, 2012 at 2:09 pm</a>		</div>
+
+		<p>Hi!<br>
+Thanx a lot for tut. btw, this solution don't work on IE, isn't it?</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18210">
+				<div id="div-comment-18210" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/2b5cb9742578497ad8866d55942722e0" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://cerazskijui.nl/" rel="external nofollow" class="url">Tai Erner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18210">
+			March 14, 2012 at 3:59 pm</a>		</div>
+
+		<p>If you owe the lending company $100 that's your condition. In the event you owe the financial institution $100 million, which is the bank's problem.<br>
+The trick of economic would be to have some understanding that nobody knows.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18213">
+				<div id="div-comment-18213" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/9fe4ea5cdfec4da5229a7761a75f1b0d" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://joefreymahusay.com/" rel="external nofollow" class="url">Joefrey Mahusay</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18213">
+			March 15, 2012 at 1:57 am</a>		</div>
+
+		<p>Very useful tutorial. Thanks Chris!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18220">
+				<div id="div-comment-18220" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/b56b889ac68cfed11d06ad0f3b9a097b" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.lexi-soft.co.uk/" rel="external nofollow" class="url">umesh ramidi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18220">
+			March 15, 2012 at 7:04 am</a>		</div>
+
+		<p>thank you for your easy following tutorial and it is very use full tutorial</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18228">
+				<div id="div-comment-18228" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/62cc924c5bd1ec09f0b5acd5c49607bd" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.richythomas.com/" rel="external nofollow" class="url">Richy</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18228">
+			March 15, 2012 at 3:59 pm</a>		</div>
+
+		<p>For crappy browses (IE8 or less) You can use this little polyfill. Although I don't think any tablet or smart-phones use IE6 as a preferred browser on their phone so there's not really need for it to adapt in IE8 or less. anyway here is the code</p>
+<p>&lt;!–[if lt IE 9]&gt;<br>
+			&lt;script src="<a href="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js%22%3E%3C/script&gt" rel="nofollow">http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"&gt;&lt;/script&amp;gt</a>;<br>
+		&lt;![endif]–&gt;</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18235">
+				<div id="div-comment-18235" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/811d7d9b9b10e922ff4d45d04c27bf2d" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.it-gigs.com/" rel="external nofollow" class="url">Web Package Phuket</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18235">
+			March 16, 2012 at 7:14 am</a>		</div>
+
+		<p>Hey!<br>
+The information you provided is very good.Thanks for sharing your post.I will recommend your post.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18236">
+				<div id="div-comment-18236" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/b94d82715491036f5b196bead4977fc2" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.buyonenote2010.com/" rel="external nofollow" class="url">Buy OneNote 2010</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18236">
+			March 16, 2012 at 8:40 am</a>		</div>
+
+		<p>I’m adding the media queries and additional declarations to a separate CSS file, but they could be added to your main stylesheet.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18242">
+				<div id="div-comment-18242" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/d15dbf449a27c1fe16fdb016575bb82c" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn">yashodhan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18242">
+			March 16, 2012 at 10:55 am</a>		</div>
+
+		<p>its relay useful, I was looking for the same :)</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18263">
+				<div id="div-comment-18263" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/4aa3516a411a43790640535b2c0dfe35" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.affiliates-market.net/" rel="external nofollow" class="url">Brian</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18263">
+			March 17, 2012 at 6:14 am</a>		</div>
+
+		<p>Thanks for the info.  I've been comparing &lt;a href="<a href="http://www.affiliates-market.net/3/category/compare%20top%20web%20hosts/1.html%22%3Ethe" rel="nofollow">http://www.affiliates-market.net/3/category/compare%20top%20web%20hosts/1.html"&gt;the</a> top web hosts&lt;/a&gt; on my new blog, come check it out and pick the best for yourself.  I thinking about redoing the whole site, let me know what you think.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18277">
+				<div id="div-comment-18277" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/4908f9e636d5b15bfecc07f584dac6d6" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.tenengo.com/" rel="external nofollow" class="url">Edrian Thomidis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18277">
+			March 18, 2012 at 2:29 pm</a>		</div>
+
+		<p>Thanks for taking the time to put this together. I was looking for something similar. This is great and very helpful!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18326">
+				<div id="div-comment-18326" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/11698a3eb0c6c3bbef9a6a8c4fd39862" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.webdesignoklahomacity.org/" rel="external nofollow" class="url">Web Design Oklahoma City</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18326">
+			March 20, 2012 at 6:40 pm</a>		</div>
+
+		<p>This is a very helpful tutorial. Your articles always are in the simplest form so everyone could understand. Thank you so much. This is a great help for us beginning to explore the web design.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18332">
+				<div id="div-comment-18332" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/3c3223e0a5d60b31523866985727cda8" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://wptidbits.com/" rel="external nofollow" class="url">wptidbits</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18332">
+			March 21, 2012 at 5:21 am</a>		</div>
+
+		<p>Great tutorial. Simple and straightforward. I have used these techniques. Most of them started whether using 1024px until down to smartphones resolution. Nobody bold enough to give a tutorial starts from big resolutions like wide monitors and tvs. Hopefully somebody can start this.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18364">
+				<div id="div-comment-18364" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/f145cd6f030643046ea1e80bb49deeb6" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn">Pete</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18364">
+			March 23, 2012 at 6:00 pm</a>		</div>
+
+		<p>Thank you so much for the powerful tutorial. It helps my job easy.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-18380">
+				<div id="div-comment-18380" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/c20bb14b129539c0bccf1f43e3928a31" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://www.dubaifreelancedesigner.com/" rel="external nofollow" class="url">Farhan</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18380">
+			March 25, 2012 at 11:59 am</a>		</div>
+
+		<p>Nice article</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18395">
+				<div id="div-comment-18395" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Create a Responsive Web Design with Media Queries_files/d38375aab18ad58fda6d961e677cb2a0" class="avatar avatar-80 photo" height="80" width="80">			<cite class="fn"><a href="http://adamphotomedia.com/" rel="external nofollow" class="url">Adam</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#comment-18395">
+			March 26, 2012 at 3:53 am</a>		</div>
+
+		<p>Thank you for this nice tutorial. By the way, Dreamweaver CS5.5 partly do it for you. I also heard that @media, @screen, @mobile etc. are not recognized by all devices, mostly older one. What I do when I design a website is add 3 different css without mention any of media above. We cannot forget that there are still many "flip-flap" mobile users. I  make mobile sites, which will scale up to 240px so those with ordinary phones can see content on their devices as well.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+   
+	                </ol>
+	 				
+	 				             
+	                <nav class="pagination">
+						<ul>
+							<li class="older btn dark"></li>
+							<li class="newer btn dark"></li>
+						</ul>
+					</nav>
+	            	           
+						
+	
+											<h2>Comments are now closed</h2>
+					           		</div>			
+			
+						
+						
+		</section>
+
+		<aside id="side">
+			<section id="subscribe">
+				<ul>
+					<li class="btn"><a href="http://feeds2.feedburner.com/Line25" class="rss"><img src="./Create a Responsive Web Design with Media Queries_files/rss-icon.png" alt="Subscribe by RSS"></a></li>
+					<li class="btn"><a href="http://line25.com/subscribe" class="email"><img src="./Create a Responsive Web Design with Media Queries_files/email-icon.png" alt="Subscribe by Email"></a></li>
+					<li class="btn"><a href="http://twitter.com/line25blog" class="twitter"><img src="./Create a Responsive Web Design with Media Queries_files/twitter-icon.png" alt="Follow Line25 on Twitter"></a></li>
+				</ul>
+			</section>
+			
+			<section id="search">
+				<form action="http://line25.com/" method="get" role="search">
+					<fieldset>
+						<input type="text" placeholder="Search…" value="" class="search" name="s">
+						<input type="submit" value="Search" class="submit">
+					</fieldset>
+				</form>
+			</section>
+			
+			<section id="ads">
+				<!-- BuySellAds Zone Code 260x125-->
+				<div id="bsap_1278054" class="bsap_1278054 bsap"><a href="http://stats.buysellads.com/click.go?z=1278054&b=4520319&g=&s=&sw=1440&sh=900&br=chrome,35,linux&r=0.10659208055585623&link=http://getflywheel.com/designers/?utm_source=Line25n&utm_medium=banner&utm_term=designers-page&utm_campaign=ForDesigners" onmouseover="window.status = &#39;http://getflywheel.com/designers/?utm_source=Line25n&amp;utm_medium=banner&amp;utm_term=designers-page&amp;utm_campaign=ForDesigners&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;" class="ad1 odd" title="Flywheel is beautifully simple WordPress hosting built specifically for designers. " id="bsa_4520319" target="_blank"><img src="./Create a Responsive Web Design with Media Queries_files/205305-1389892019.png" width="260" height="125" alt="Flywheel is beautifully simple WordPress hosting built specifically for designers. "></a></div>
+				<!-- End BuySellAds Zone Code -->
+				
+				<!-- BuySellAds.com Zone Code 125x125-->
+				<div id="bsap_1238046" class="bsap_1238046 bsap"><a href="http://stats.buysellads.com/click.go?z=1238046&b=4340340&g=&s=&sw=1440&sh=900&br=chrome,35,linux&r=0.7448778951074928&link=https://www.psd2html.com/order-now.html?utm_source=line25.com&utm_medium=banner&utm_campaign=responsive" onmouseover="window.status = &#39;https://www.psd2html.com/order-now.html?utm_source=line25.com&amp;utm_medium=banner&amp;utm_campaign=responsive&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;" class="ad1 odd" title="PSD2HTML.com" id="bsa_4340340" target="_blank"><img src="./Create a Responsive Web Design with Media Queries_files/205745-1390225509.png" width="125" height="125" alt="PSD2HTML.com"></a><a href="http://stats.buysellads.com/click.go?z=1238046&b=4608269&g=&s=&sw=1440&sh=900&br=chrome,35,linux&r=0.08813118259422481&link=http://www.templatemonster.com/wordpress-themes.php?utm_source=line25&utm_medium=banner&utm_campaign=bsaseptember" onmouseover="window.status = &#39;http://www.templatemonster.com/wordpress-themes.php?utm_source=line25&amp;utm_medium=banner&amp;utm_campaign=bsaseptember&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;" class="ad2 even" title="2,000+ WordPress Themes (Free Customer Support)" id="bsa_4608269" target="_blank"><img src="./Create a Responsive Web Design with Media Queries_files/194663-1383043852.jpg" width="125" height="125" alt="2,000+ WordPress Themes (Free Customer Support)"></a><iframe width="125" height="125" id="ad_2875319_frame" src="./Create a Responsive Web Design with Media Queries_files/raw_03579f076465d7a5244cae2854712564.html" frameborder="0" class="bsap_adframe" scrolling="no"></iframe><a href="http://stats.buysellads.com/click.go?z=1238046&b=4513274&g=&s=&sw=1440&sh=900&br=chrome,35,linux&r=0.901291023939848&link=http://themeforest.net/item/x-the-ultimate-wordpress-theme/5871901?ref=themeco" onmouseover="window.status = &#39;http://themeforest.net/item/x-the-ultimate-wordpress-theme/5871901?ref=themeco&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;" class="ad4 even" title="X WordPress Theme" id="bsa_4513274" target="_blank"><img src="./Create a Responsive Web Design with Media Queries_files/224256-1401264739.png" width="125" height="125" alt="X WordPress Theme"></a><a href="http://stats.buysellads.com/click.go?z=1238046&b=325082&g=&s=&sw=1440&sh=900&br=chrome,35,linux&r=0.1542241780553013&link=http://www.elegantthemes.com/blog/theme-releases/divi-2" onmouseover="window.status = &#39;http://www.elegantthemes.com/blog/theme-releases/divi-2&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;" class="ad5 odd" title="Premium WordPress Themes" id="bsa_325082" target="_blank"><img src="./Create a Responsive Web Design with Media Queries_files/223418-1400702611.jpg" width="125" height="125" alt="Premium WordPress Themes"></a></div>
+				<!-- END BuySellAds.com Zone Code -->
+			</section>
+			
+			<section id="newsletter">
+				<h3>Subscribe for email updates</h3>
+				<p>Don't miss a post! Sign up for email notifications of new content on Line25. Every subscriber gets a free handy pack of <a href="http://line25.com/subscribe">web shadows</a>.</p>
+				<a href="http://line25.com/subscribe" class="shadows"><img src="./Create a Responsive Web Design with Media Queries_files/shadows-sidebar.jpg" alt="Free realistic web shadows pack for every subscriber"></a>
+				<script type="text/javascript" src="./Create a Responsive Web Design with Media Queries_files/179208238.js"></script><style type="text/css">#af-form-179208238 .af-body .af-textWrap{width:70%;display:block;float:right;}#af-form-179208238 .af-body input.text, #af-form-179208238 .af-body textarea{background-color:transparent;border-width:2px;border-style:inset;color:#8E8E8E;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:Helvetica, sans-serif;}#af-form-179208238 .af-body input.text:focus, #af-form-179208238 .af-body textarea:focus{background-color:transparent;border-width:2px;border-style:inset;}#af-form-179208238 .af-body label.previewLabel{display:block;float:left;width:25%;text-align:left;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:inherit;}#af-form-179208238 .af-body{background-repeat:no-repeat;background-position:inherit;background-image:none;color:#000000;font-size:12px;font-family:, serif;}#af-form-179208238 .af-quirksMode{padding-right:0px;padding-left:0px;}#af-form-179208238 .af-standards .af-element{padding-right:0px;padding-left:0px;}#af-form-179208238 .buttonContainer input.submit{background-color:#transparent;color:#FFFFFF;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:Helvetica, sans-serif;}#af-form-179208238 .buttonContainer input.submit{width:auto;}#af-form-179208238 .buttonContainer{text-align:center;}#af-form-179208238 button,#af-form-179208238 input,#af-form-179208238 submit,#af-form-179208238 textarea,#af-form-179208238 select,#af-form-179208238 label,#af-form-179208238 optgroup,#af-form-179208238 option{float:none;position:static;margin:0;}#af-form-179208238 div{margin:0;}#af-form-179208238 form,#af-form-179208238 textarea,.af-form-wrapper,.af-form-close-button,#af-form-179208238 img{float:none;color:inherit;position:static;background-color:none;border:none;margin:0;padding:0;}#af-form-179208238 input,#af-form-179208238 button,#af-form-179208238 textarea,#af-form-179208238 select{font-size:100%;}#af-form-179208238 select,#af-form-179208238 label,#af-form-179208238 optgroup,#af-form-179208238 option{padding:0;}#af-form-179208238,#af-form-179208238 .quirksMode{width:333px;}#af-form-179208238.af-quirksMode{overflow-x:hidden;}#af-form-179208238{background-color:transparent;border-color:transparent;border-width:1px;border-style:solid;}#af-form-179208238{display:block;}#af-form-179208238{overflow:hidden;}.af-body .af-textWrap{text-align:left;}.af-body input.image{border:none!important;}.af-body input.submit,.af-body input.image,.af-form .af-element input.button{float:none!important;}.af-body input.text{width:100%;float:none;padding:2px!important;}.af-body.af-standards input.submit{padding:4px 12px;}.af-clear{clear:both;}.af-element label{text-align:left;display:block;float:left;}.af-element{padding:5px 0;}.af-form-wrapper{text-indent:0;}.af-form{text-align:left;margin:auto;}.af-quirksMode .af-element{padding-left:0!important;padding-right:0!important;}.lbl-right .af-element label{text-align:right;}body {}</style><form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"><div style="display: none;"><input type="hidden" name="meta_web_form_id" value="179208238"><input type="hidden" name="meta_split_id" value=""><input type="hidden" name="listname" value="line25"><input type="hidden" name="redirect" value="http://line25.com/thank-you" id="redirect_80cabfaafc14f352a88d9745794e41d4"><input type="hidden" name="meta_adtracking" value="Line25_Sidebar_Subscribe"><input type="hidden" name="meta_message" value="1"><input type="hidden" name="meta_required" value="email"><input type="hidden" name="meta_tooltip" value="email||Enter your email address"></div><div id="af-form-179208238" class="af-form"><div id="af-body-179208238" class="af-body af-standards"><div class="af-element"><label class="previewLabel" for="awf_field-50061696"></label><div class="af-textWrap"><input class="text" id="awf_field-50061696" type="text" name="email" value="Enter your email address" tabindex="500" onfocus=" if (this.value == &#39;Enter your email address&#39;) { this.value = &#39;&#39;; }" onblur="if (this.value == &#39;&#39;) { this.value=&#39;Enter your email address&#39;;} "></div><div class="af-clear"></div></div><div class="af-element buttonContainer"><input name="submit" class="submit" type="submit" value="Subscribe and Download" tabindex="501"><div class="af-clear"></div></div></div></div></form><script type="text/javascript">    <!--    (function() {        var IE = /*@cc_on!@*/false;        if (!IE) { return; }        if (document.compatMode && document.compatMode == 'BackCompat') {            if (document.getElementById("af-form-179208238")) {                document.getElementById("af-form-179208238").className = 'af-form af-quirksMode';            }            if (document.getElementById("af-body-179208238")) {                document.getElementById("af-body-179208238").className = "af-body inline af-quirksMode";            }            if (document.getElementById("af-header-179208238")) {                document.getElementById("af-header-179208238").className = "af-header af-quirksMode";            }            if (document.getElementById("af-footer-179208238")) {                document.getElementById("af-footer-179208238").className = "af-footer af-quirksMode";            }        }    })();    --></script>
+			</section>
+			
+		</aside>
+	</div>
+</div>
+<div id="footer-wrapper">
+	<footer>
+		<div id="about-line25">
+			<h3>About Line25</h3>
+			
+			<p>Line25 was built in March 2009 by <a href="http://twitter.com/chrisspooner">Chris Spooner</a> as a place to share his web design ideas and inspiration through articles, tutorials and examples of stunning site designs. Be the first to see new posts by subscribing by <a href="http://feeds2.feedburner.com/Line25">RSS</a>, have new content delivered by <a href="http://line25.com/subscribe">Email</a>, or join Line25 on <a href="http://twitter.com/line25blog">Twitter</a>.</p>
+		</div>
+		
+		<div id="most-popular">
+			<h3>Most popular posts</h3>
+			<ul>
+				<li><a href="http://line25.com/tutorials/how-to-design-a-custom-youtube-background">How To Design a Custom YouTube Background</a></li>
+				<li><a href="http://line25.com/articles/rounding-up-the-top-10-jquery-lightbox-scripts">Rounding Up the Top 10 jQuery Lightbox Scripts</a></li>
+				<li><a href="http://line25.com/tutorials/how-to-create-a-pure-css-dropdown-menu">How To Create a Pure CSS Dropdown Menu</a></li>
+				<li><a href="http://line25.com/articles/15-tutorials-to-help-you-build-wordpress-themes">15 Tutorials To Help You Build WordPress Themes</a></li>
+				<li><a href="http://line25.com/tutorials/create-a-stylish-contact-form-with-html5-css3">Create a Stylish Contact Form with HTML5 &amp; CSS3</a></li>
+			</ul>
+		</div>
+		
+		<p id="top"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries#">Back to top</a></p>
+		
+		<div id="copy">
+			<ul>
+				<li>Copyright © <a href="http://www.chrisspooner.com/">Chris Spooner</a>. All rights reserved</li>
+				<li><a href="http://line25.com/privacy-policy">Privacy policy</a></li>
+				<li><a href="http://line25.com/advertise">Advertise on Line25</a></li>
+				<li><!-- Awaiting first fetch --> Subscribers</li>
+				<li>Page loaded in 0.509 seconds</li>
+			</ul>
+		</div>
+		
+	</footer>
+</div>
+
+<script type="text/javascript" src="./Create a Responsive Web Design with Media Queries_files/M9FPzs_NTc0r0S1KLcip1MvNzAMA.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Create a Responsive Web Design with Media Queries_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1691636-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+	
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk
+Page Caching using disk: enhanced
+Database Caching 12/28 queries in 0.117 seconds using disk
+
+ Served from: line25.com @ 2014-06-05 13:37:37 by W3 Total Cache --><iframe name="oauth2relay849666986" id="oauth2relay849666986" src="./Create a Responsive Web Design with Media Queries_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

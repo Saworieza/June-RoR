@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://alistapart.com/article/the-z-axis-designing-for-the-future -->
+<html class="js no-touch svg" lang="en" data-useragent="Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36" data-platform="Linux i686"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta charset="utf-8">
+	
+	<link rel="dns-prefetch" href="http://d.alistapart.com/">
+	
+	<link rel="alternate" type="application/rss+xml" title="A List Apart: The Full Feed" href="http://alistapart.com/site/rss">
+	<link rel="alternate" type="application/rss+xml" title="A List Apart: The Abridged Feed (just articles and columns)" href="http://alistapart.com/site/abridged-rss">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="http://alistapart.com/d/_repo/site_assets/img/favicons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://alistapart.com/d/_repo/site_assets/img/favicons/apple-touch-icon-152x152.png">
+	
+	<meta name="application-name" content="A List Apart"> 
+	<meta name="msapplication-TileColor" content="#222222"> 
+	<meta name="msapplication-TileImage" content="/d/_repo/site_assets/img/favicons/windows-8-tile.png">
+	
+	<link href="https://plus.google.com/+alistapart/" rel="publisher">
+	
+	<meta http-equiv="imagetoolbar" content="false">
+
+	<link rel="stylesheet" href="http://d.alistapart.com/_cache/56692f5fbd66eae3cc106629481bd3338e0b5fdf.1399662546.css">
+	
+	<link rel="stylesheet" href="http://cloud.webtype.com/css/0f692040-baf5-44df-a4f8-c4666e3f1c6f.css">
+	
+	<script type="text/javascript" async="" src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/mixpanel-2.2.min.js"></script><script src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/ga.js"></script><script src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/quant.js" async="" type="text/javascript"></script><script src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/modernizr-custom.js"></script>
+	
+	
+
+	<title>The Z-Axis: Designing for the Future · An A List Apart Article</title>
+	
+	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="http://alistapart.com/comments/feed/the-z-axis-designing-for-the-future">
+	
+	
+	
+		
+	
+	<style>
+	
+	.member_133653 {
+		border: 1px solid rgba(0,0,0,.4) !important;
+	}
+	
+	
+	.member_133653::before {
+		/*box-shadow: inset 0 0 18px -8px rgba(255,161,161,.9);*/
+		content: url(//d.alistapart.com/_repo/site_assets/img/laurel-white-2.svg) !important;
+		padding-top: 3px !important;
+		height: 23px !important;
+	}
+	</style>
+	
+	
+	
+	<style>
+		</style>
+	
+	<meta name="description" content="For years we’ve seen the web as a two-dimensional space filled with pages that sit side by side on a flat, infinite plane. But as the devices we design for take on an increasingly diverse array of shapes and sizes, we must embrace new ways of designing up and down. Designing on the z-axis means incorporating three-dimensional physics into our interface designs. Wren Lanier explains how, by using the z-axis to place interface elements above or below one another, we can create better design systems that are more flexible and intuitive to use—and create new patterns that point the way to future interactions.">
+	<meta name="author" content="Wren Lanier">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="The Z-Axis: Designing for the Future">
+	<meta name="twitter:description" content="For years we’ve seen the web as a two-dimensional space filled with pages that sit side by side on a flat, infinite plane. But as the devices we design for take on an increasingly diverse array of shapes and sizes, we must embrace new ways of designing up and down. Designing on the z-axis means incorporating three-dimensional physics into our interface designs. Wren Lanier explains how, by using the z-axis to place interface elements above or below one another, we can create better design systems that are more flexible and intuitive to use—and create new patterns that point the way to future interactions.">
+	<meta name="twitter:url" content="http://alistapart.com/article/the-z-axis-designing-for-the-future">
+		
+	<meta property="og:title" content="The Z-Axis: Designing for the Future">
+	<meta property="og:description" content="For years we’ve seen the web as a two-dimensional space filled with pages that sit side by side on a flat, infinite plane. But as the devices we design for take on an increasingly diverse array of shapes and sizes, we must embrace new ways of designing up and down. Designing on the z-axis means incorporating three-dimensional physics into our interface designs. Wren Lanier explains how, by using the z-axis to place interface elements above or below one another, we can create better design systems that are more flexible and intuitive to use—and create new patterns that point the way to future interactions.">
+	<meta property="og:url" content="http://alistapart.com/article/the-z-axis-designing-for-the-future">
+	<meta property="og:image" content="http://alistapart.com/d/ALA393_zaxis_300.png">
+		
+<script type="text/javascript" async="" src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/pro.js"></script></head>
+
+<body class="printable comments-exist breakpoint-600">
+
+
+	
+		<header class="logo-holder">
+	
+		<h1 name="top" class="killer-logo"><a href="http://alistapart.com/"><img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/ala-logo-big.png" alt="A List Apart"></a></h1>
+		
+		<a class="go-to-nav" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#main-nav" title="skip to nav">Menu</a>
+
+	</header>
+	
+	<div role="main" class="main-wrapper">
+	
+		<article class="article-layout hentry">
+		
+			<header class="entry-header">
+			
+				
+				
+								
+				
+				
+								<figure class="wide-hero" data-picture="" data-alt=""><img alt="" src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/ALA393_zaxis_300_960_454_60.jpg">
+					<div data-src="http://d.alistapart.com/_made/d/ALA393_zaxis_300_480_227_60.jpg"></div>
+					<div data-src="http://d.alistapart.com/_made/d/ALA393_zaxis_300_960_454_60.jpg" data-media="(min-width: 600px)"></div>
+					<div data-src="http://d.alistapart.com/_made/d/ALA393_zaxis_300_1920_907_10.jpg" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+			
+					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+					<noscript>&lt;img src="http://d.alistapart.com/_made/d/ALA393_zaxis_300_960_454_10.jpg" alt=""&gt;</noscript>
+					
+					<a href="http://alistapart.com/issue/393" class="issue-number"><span>Issue №</span> 393</a>
+				</figure>
+								
+								
+				 
+				
+				<h1 class="entry-title">The Z-Axis: Designing for the Future</h1>
+				
+				<p class="entry-details">
+					
+					by <a class="author" rel="author" href="http://alistapart.com/author/wrenlanier">Wren Lanier</a>
+					
+					<time class="pubdate updated" datetime="2014-04-08T08:00:25-05:00">April 08, 2014</time>
+					
+					<span class="optional-break">
+					
+						Published in <a href="http://alistapart.com/topic/graphic-design">Graphic Design</a>
+						
+													∙ <a class="comment-count" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#comments">15 Comments</a>
+											
+					</span>
+			
+				</p>
+				
+				
+								
+			
+			</header>
+		
+					
+					
+			<div class="main-content">
+			
+				
+				
+				
+				
+				
+				
+				<p>For years we’ve thought about the web as a two-dimensional space filled with pages that sit side by side on a flat, infinite plane. But as the devices we design for take on an increasingly diverse array of shapes and sizes, we should embrace new ways of designing up and down. By building interfaces using a system of layers, we solve tricky design problems, flexibly adapt to a variety of screens, and create new patterns that will point the way to future interactions.</p>
+
+				
+				
+				
+				<aside class="content-minutiae">
+										<h1>Illustration:</h1>
+					<ul>
+						<li><a href="http://alistapart.com/author/kcornell">Kevin Cornell</a></li>
+					</ul>
+															<h1 class="propagation-enablers">Share This:</h1>
+					<ul class="propagation-enablers">
+						<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/article/the-z-axis-designing-for-the-future&text=The+Z-Axis%3A+Designing+for+the+Future&via=alistapart" data-trackevent="Share: Twitter">Twitter</a></li>
+						<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/article/the-z-axis-designing-for-the-future&t=The+Z-Axis%3A+Designing+for+the+Future" data-trackevent="Share: Facebook">Facebook</a></li>
+						<li><a href="https://plus.google.com/share?url=http://alistapart.com/article/the-z-axis-designing-for-the-future" data-trackevent="Share: Google+">Google+</a></li>
+					</ul>				
+				</aside><p>In geometric terms, the z-axis is the vertex that measures space above and below the x- and y-axes. Translation for those of us who napped through geometry: it’s how we describe panels and layers that sit above or below one another.</p>
+
+<figure id="figure1">
+<img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/layers.jpg" alt="">
+</figure>
+
+<p>Designing on the z-axis simply means incorporating three-dimensional physics—as represented by the z-axis—into our interface designs. Not the faux-depth of skeuomorphic text shadows and button highlights, but an interface made of components that exist on distinct layers and move independently of one another.</p>
+
+<p>As <a href="http://stuffandnonsense.co.uk/blog/about/walls_come_tumbling_down_presentation_slides_and_transcript/">Andy Clarke has noted</a>, the page is an outdated metaphor for what we’re designing today. Unlike the permanence of ink on paper, a website is a series of dynamic views that can occur in many combinations. Applications require us to consider numerous happy and unhappy paths, and even static marketing sites need reusable design components that can adapt to different content needs.</p>
+
+<p>By using the z-axis to place interface elements above or below one another, we can create better design systems that are more flexible and intuitive to use.</p>
+
+<h2 id="section1">Using the z-axis to solve design problems<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section1">#section1</a></h2>
+
+<p>While juggling the constraints of making an interface work across many different screens, I often encounter the same problems. <i>Where do I put this? How do I make this effective for touchscreens? What can I show right away, and what can I hide?</i></p>
+
+<p>The answers aren’t easy, but fortunately we can count on the z-axis to be there when extra pixels aren’t. Got an options panel that just won’t fit? Trying to add filters but the excess UI clutter doesn’t seem worth it? When you’re running out of space and searching for a clever solution, remembering that you have three dimensions to design in can save the day.</p>
+
+<p>Creating an interface that seamlessly works across the z-axis requires two important elements: layers and transitions.</p>
+
+<h2 id="section2">1. Layers<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section2">#section2</a></h2>
+
+<p>Incorporating layers is the key to designing on the z-axis, since layers are the way we differentiate levels above and below one another. A layer might contain a single UI element that sits above the rest of the view, or it might be a full screen that appears and disappears as necessary. However you incorporate layers, each should have a purpose—a reason it exists—and be used consistently throughout your site in a way that helps users better understand your design.</p>
+
+<p>A panel that covers up the entire interface, for example, should be one of the most important functions on a site. On the other hand, an option in a secret panel that slides out from behind another object should relate to whatever sits above it, but be less important.</p>
+
+<h3 id="section3">Menus<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section3">#section3</a></h3>
+
+<p>Generally speaking, the higher something sits on the z-axis, the more important it is. Primary navigation menus are usually placed on a higher level than other elements; they might pop over the rest of the view, they might stick to the top of the screen, or they might be accessed by zooming out to a larger menu presentation.</p>
+
+<figure id="figure2">
+<video width="696" height="391" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/teehanlax.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/teehanlax.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>Teehan + Lax takes this to the extreme with the menu overlay on its website. It’s more than a popover; it’s like a page takeover. <em>Look at our menu!</em> it shouts. The sliding animation combined with a new screen layer grabs the user’s attention, while huge font sizes and a larger-than-usual menu of links deliver more content than a typical primary nav bar and (probably) justify the need for a separate layer.</p>
+
+<p>Do I love this bold menu presentation? Yes. Do I think it’s a best practice we should incorporate into every site we build? No way. Not every site needs that much dramatic flair.</p>
+
+<p>But I love how this inspires me to think about a menu as a piece of content in and of itself, and not just more interface cruft. Teehan + Lax highlights the act of presenting a menu to the user and how it can be more than popping up or sliding over from the left—it can be an opportunity for surprise and delight.</p>
+
+<h3 id="section4">Action buttons<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section4">#section4</a></h3>
+
+<p>Primary action buttons, such as checking in or adding a new post, are often placed above other elements on the z-axis. It’s easy to tell what an app thinks is its most important feature when it’s sitting on top of everything else. Just take a look at Facebook’s chat heads.</p>
+
+<figure id="figure3">
+<video width="450" height="798" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/facebook.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/facebook.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>Right now, Facebook clearly thinks that messaging is its most important feature. (If you’re unconvinced, Facebook also has a separate Messaging app, <em>and</em> recently paid $19 billion for <a href="http://www.whatsapp.com/">What’s App</a>.) Since layers allow elements to remain fixed in one place while everything else moves around them, floating action buttons are an easy way to make them more prominent without taking up a lot of valuable screen real estate.</p>
+
+<p>The z-axis gives Facebook an easy way to keep messaging front and center, and even if I don’t like tapping on the disembodied faces of my friends and family, <a href="http://allfacebook.com/zuckerberg-techcrunch-disrupt-sf-2013_b124924">it seems to be working</a>. For clients who want a button to “pop” a bit more, using the z-axis to give it its own layer is one of the more elegant possibilities.</p>
+
+<h3 id="section5">Storytelling<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section5">#section5</a></h3>
+
+<p>Objects on different layers of the z-axis can move at asynchronous speeds during scrolling. This effect—usually called <em>parallax</em>—was pioneered in video games, but it’s become quite popular in interactive design. When objects move at different speeds, it creates the appearance of depth and simulates the passing of time, making parallax a powerful tool for online storytelling.</p>
+
+<figure id="figure4">
+<video width="696" height="443" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/letsfreecongress.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/letsfreecongress.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>Superfluous use of parallax as a trendy eye-catcher has been rightfully criticized, but the ability to move layers independently of one another allows us to animate stories on the web in a way that hasn’t been as effective without the use of video. Sites like <a href="http://letsfreecongress.org/">Let’s Free Congress</a> and <a href="http://inception-explained.com/">Inception Explained</a> use asynchronous scrolling to turn what could have been flat infographics into visual narratives. By breaking elements apart using layers, each thread can unfold at its own speed while the user controls the pace of the action.</p>
+
+<p>Web designers have always worked within the confines of flat, pixel-based screens, forcing complex interactions onto two visual axes. Layers on flat screens are a hack, but an important one; they’re the first step toward the true multidimensional interactions that are only a few years away. By creating layered patterns in our interfaces now, we help prepare users—and ourselves—for what’s ahead.</p>
+
+<h2 id="section6">2. Transitions<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section6">#section6</a></h2>
+
+<p>When you use layers in an interface design, it’s important to include animations that smooth the transitions between them. Animated transitions serve several important functions: they help soften what could otherwise be a jarring moment of change, they describe where you came from and where you’ve arrived, and they provide cues about how information on the new layer relates to everything else.</p>
+
+<h3 id="section7">Sliding<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section7">#section7</a></h3>
+
+<p>Sliding is one of the most common animated transitions because it’s relatively easy to execute and simple to understand. Navigation menus, hidden panels—just slide them out quickly whenever you need them, right? But like anything “simple,” sliding requires more care than you might expect.</p>
+
+<figure id="figure5">
+<video width="450" height="798" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/gmail.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/gmail.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>The ubiquitous left-hand menu, used in many mobile apps including Gmail, is a perfect example. When activated, Gmail’s menu doesn’t slide anywhere; it’s actually the main window that slides to the right, revealing the menu on the left underneath your inbox.</p>
+
+<p>The distinction is important, because the ability to see the first few words of each subject line keeps the inbox functional even when the menu is engaged; without that persistence, there’s little point to the inbox remaining there at all. Mobile websites that seek to mimic this interaction should take note—sliding a left menu over the top of a webpage usually feels clunky and intrusive compared to sliding the main view over instead.</p>
+
+<figure id="figure6">
+<video width="450" height="798" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/tweetlist.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/tweetlist.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>You can also slide existing elements out of view to reveal hidden panels. Tweetlist slides the keyboard down to show additional tweet options like geotagging or attaching a photo. It’s a clever way to display secondary features that don’t need to be visible at all times, and using the back of the keyboard reinforces the relationship between these options and sending a tweet.</p>
+
+<h3 id="section8">Zooming<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section8">#section8</a></h3>
+
+<p>Zoom animation has been around for a while, but its frequent use in Apple’s iOS 7 has increased both its popularity and its infamy. Some people have said the zooming used throughout the operating system—particularly when opening and closing apps—makes them nauseous. While this may be the case, it’s worth understanding the different ways we can use zooming to transition from one layer to another, and why some types of zoom may be more stomach-churning than others.</p>
+
+<p>Enlarging or shrinking single objects has been a common animation in the Apple universe since the release of Mac OS X and the introduction of the dock. It naturally found its way into the mobile world on the iPhone, and users quickly grew accustomed to tapping a photo and zooming into it to see more detail.</p>
+
+<p>In the case of photos, zooming is a simple illusion created by enlarging the image. Everything around the photo remains in place; only the photo itself moves.</p>
+
+<p>The zoom effect used in iOS 7 is more complex. It works by moving the “camera” in and out as you open and close apps so that everything on the screen changes, not just one object. When you close an app, for example, the app window shrinks down into its icon on the homescreen. Watch the background behind the window and you’ll see all the other homescreen objects zoom back into the view as well.</p>
+
+<figure id="figure7">
+<video width="450" height="798" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/ios-close.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/ios-close.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>This key difference—zooming the camera rather than a single element—creates a much more immersive illusion. It shifts the viewer’s perspective to a new level on the z-axis. That simulated perspective-shift adds to the wow factor by introducing an element of super-realism: it mimics real-world physics, while producing an effect that would be impossible in real life. It’s no wonder designers are eager to take advantage of the possibilities it offers, in spite of <a href="http://www.livescience.com/40013-why-ios7-motion-sickness.html">the potential side-effects</a>.</p>
+
+<figure id="figure8">
+<video width="696" height="522" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/creativedash-menu.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/creativedash-menu.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>This design experiment from Creative Dash shows how zooming the camera all the way out allows us to use the liminal space around a window. Our canvas is both deep and wide, and this takes advantage of both—though the extreme zoom depth would probably make quite a few users feel sick.</p>
+
+<figure id="figure9">
+<video width="450" height="646" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/foursquare.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/foursquare.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+<p>Foursquare has used a much more subtle version of zooming the camera to reveal map details. You don’t travel very far forward, but the zoom-in reinforces the notion that you’re going to a deeper level of information.</p>
+
+<p>Whether you apply zoom to a single object or an entire view, it’s important for the animation to be consistent with the information hierarchy you’re using. When you move the camera out, you should be at a higher level, while zooming in should provide more detail.</p>
+
+<h3 id="section9">Other transitions<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section9">#section9</a></h3>
+
+<p>Sliding and zooming are two of the most common animated transitions used today, but there are other options, including flipping or folding.</p>
+
+<p>Three-dimensional objects have two (or more) sides, but most user interfaces are like the moon: they have a “light” side that’s always visible and a “dark” side we never see. Flipping an object over creates a new visual space that’s easy for users to understand. The only downside? Flipping is, well, <em>flipping slow</em>.</p>
+
+<figure id="figure10">
+<video width="600" height="788" controls="">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/flipboard.mp4" type="video/mp4">
+<source src="http://d.alistapart.com/393/the-z-axis-designing-for-the-future/flipboard.webmhd.webm" type="video/webm"> 
+</video>
+</figure>
+
+				
+				
+				
+				
+								<aside class="sidebar">
+				
+					<h1>Also in Issue № 393</h1>
+									<h2><a href="http://alistapart.com/article/creating-style-guides">Creating Style Guides</a></h2>
+					
+					<p>by Susan Robertson</p>
+								</aside>
+								
+				
+				<p>While flipping is sometimes applied to create a more magazine-like feel, 180 degrees is a big transition; it often feels slow and disruptive. In contexts where speed is critical, the time a flip adds to interactions usually isn’t worth it. That said, if deployed in the right place in the right way, it could be <em>flipping fantastic</em>. Card-based layouts offer plenty of opportunities to flip objects over and reveal additional information.</p>
+
+<h2 id="section10">What comes next<a class="subhead-anchor" href="http://alistapart.com/article/the-z-axis-designing-for-the-future#section10">#section10</a></h2>
+
+<p>Gesture-based command centers, holographic interfaces—whatever technology lies over the horizon, we’ll be better prepared to adapt our skills if we understand the principles of designing for information, not just visual tricks for laying things out with boxes and color. Just as print designers once learned to take their talents to the web, we need to learn to take our talents beyond the screen—and getting comfortable with the z-axis is a great place to start.</p>
+				
+				
+				
+								
+			</div>
+			
+			<footer class="entry-footer">
+				
+									
+				<h1>About the Author</h1>
+				<div class="byline author vcard">
+				
+					<a class="photo" href="http://alistapart.com/author/wrenlanier"><img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/photo_133653_120_120_c1.jpg" alt=""></a>					
+					<h2><a class="fn" href="http://alistapart.com/author/wrenlanier">Wren Lanier</a></h2>
+					
+					<div class="author-bio"><p>Wren is a designer with a passion for creating beautiful digital experiences. As a principal at <a href="http://www.neo.com/">Neo</a>, she helps her clients make products that people will love to use. When she’s not building internet things, Wren enjoys eating bagels, making trouble, and taking naps. She occasionally updates her <a href="http://wrenlanier.com/">blog</a> and frequently overshares on <a href="https://twitter.com/heywren">Twitter</a>.</p></div>
+					
+									
+								
+				
+
+				</div>
+
+
+
+			</footer>
+			
+			<div class="post-article">
+			
+				<div class="column-holder unequal-columns">
+					
+					<section id="comments" class="column comment-holder">
+						
+												<h1 class="classy">15 Reader Comments</h1>
+						
+												
+						<a href="http://alistapart.com/comments/the-z-axis-designing-for-the-future" id="load-comments" data-url-title="the-z-axis-designing-for-the-future" class="buttonish">Load Comments</a>
+												
+						
+						
+					</section>
+					
+					<aside class="column more-content">
+						
+												<aside class="the-deck">
+							<div class="deck-inner">
+								<script>
+									//<![CDATA[
+									(function(id) {
+									  document.write('<script type="text/javascript" src="' +
+									    'http://www.northmay.com/deck/deck' + id + '_js.php?' +
+									    (new Date().getTime()) + '"></' + 'script>');
+									})("AL");
+									//]]>
+								</script><script type="text/javascript" src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/deckAL_js.php"></script><a href="https://www.atlassian.com/software/stash/overview?utm_source=the-deck&utm_medium=banner&utm_content=git-repo-management-btf&utm_campaign=stash-promotion"><img class="ad" alt="Atlassian" src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/atlassian_stash.png" border="0" width="120" height="90"></a><p class="ads">Git repo management, <a href="https://www.atlassian.com/software/stash/overview?utm_source=the-deck&utm_medium=banner&utm_content=git-repo-management-btf&utm_campaign=stash-promotion">behind the firewall</a>. Integrates with JIRA.</p>
+								<p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p>
+							</div>
+						</aside><!--
+						
+						--><aside class="job-board">
+							<h4>Job Board</h4>
+							<script src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/random.js"></script><div class="job">
+  <a href="https://weworkremotely.com/jobs/645">Toptal, LLC is looking for a Business Sales Support.</a>
+</div>
+
+
+							<p class="board-link">Job listings via <a href="https://weworkremotely.com/?source=ala">We Work Remotely</a></p>
+						</aside>
+					
+						
+						<h1 class="classy">More from ALA</h1>
+						
+						
+						
+												<h2>Columns</h2>
+												
+												<article class="item-summary article">
+				
+							<span class="column-name">Lyza Danger Gardner <i>on</i> Building the Web Everywhere</span>
+				
+							<h1><a href="http://alistapart.com/column/look-at-the-big-picture">Look at the Big Picture</a></h1>
+				
+												
+										<img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/photo_129828_60_60_c1.jpg" alt="">
+										
+					
+							<p>It’s easy to see that automation can streamline image-optimization for all the varied contexts on the pan-device web. What’s harder to imagine is a future where foregrounding meaningful content in images can be handled by an algorithm. Art direction still requires human intervention, and that’s often a luxury in high-production environments.</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="2014-05-08T08:30:19-05:00">May 08, 2014</time>
+							</footer>
+						
+						</article>
+						
+						
+						
+												
+												<article class="item-summary article">
+				
+							<span class="column-name">Cennydd Bowles <i>on</i> UX &amp; Design</span>
+				
+							<h1><a href="http://alistapart.com/column/letter-to-a-junior-designer">Letter to a Junior Designer</a></h1>
+				
+												
+										<img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/photo_116112_60_60_c1.jpg" alt="">
+										
+					
+							<p>When you’re starting out in design you hunger to fix all the things. Your imagination and passion are boundless. So what turns a junior designer into a seasoned pro? It’s more than experience—it’s an ability to be in the moment and be a whole person.</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="2014-04-17T08:30:57-05:00">April 17, 2014</time>
+							</footer>
+						
+						</article>
+						
+						
+						
+						
+						
+												<h2>From the Blog</h2>
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/on-styled-form-elements">On Styled Form Elements</a></h1>
+							
+							<p>For almost 20 years, we’ve had the same input types and form elements we still use today: text fields and areas, password fields, select dropdowns, radio buttons, checkboxes, file fields, hidden fields, and the menagerie of button types including <code>submit</code>, <code>reset,</code> <code>image</code>, and plain old <code>button</code>.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/acolangelo">Anthony Colangelo</a>
+								<time class="pubdate updated" datetime="2014-05-30T08:30:21-05:00"><a href="http://alistapart.com/blog/post/on-styled-form-elements">May 30, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/work-to-do-yesallwomen">We Have Work to Do: #yesallwomen and the Web</a></h1>
+							
+							<p>Why does #yesallwomen matter for the web—and for <cite>A List Apart</cite>? Editor-in-chief Sara Wachter-Boettcher explains why making our industry a welcoming place for people of all kinds of backgrounds is the only way we’ll build the web we need. </p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/sboettcher">Sara Wachter-Boettcher</a>
+								<time class="pubdate updated" datetime="2014-05-29T09:25:46-05:00"><a href="http://alistapart.com/blog/post/work-to-do-yesallwomen">May 29, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/ten-years-ago-in-ala-art-direction-and-drop-shadows">Ten Years Ago in ALA: Art Direction and Drop Shadows</a></h1>
+							
+							<p>Ten years ago in May, <cite>A List Apart</cite> published Issues 180–182, featuring <a href="http://alistapart.com/article/artdirweb">Art Direction and the Web</a> by Stephen Hay and <a href="http://alistapart.com/article/onionskin">Onion Skinned Drop Shadows</a> by Brian Williams.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/mikepick">Mike Pick</a>
+								<time class="pubdate updated" datetime="2014-05-20T08:30:45-05:00"><a href="http://alistapart.com/blog/post/ten-years-ago-in-ala-art-direction-and-drop-shadows">May 20, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/global-accessibility-awareness-day-getting-the-word-out">Global Accessibility Awareness Day: Getting the Word Out</a></h1>
+							
+							<p>Today is Global Accessibility Awareness Day. To mark the day and promote the goal of the day, groups of developers and designers interested in accessibility offer webinars, presentations, and networking events to interest and educate more people about why accessibility is important and how to address accessibility in web content, documents, and software.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/andrewkirkpatrick"> Andrew Kirkpatrick</a>
+								<time class="pubdate updated" datetime="2014-05-15T16:50:39-05:00"><a href="http://alistapart.com/blog/post/global-accessibility-awareness-day-getting-the-word-out">May 15, 2014</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary link-post">
+			
+							<h1><a href="https://dearfcc.org/">“Dear FCC,”</a></h1>
+					
+							<p>Every voice counts! Please share your thoughts with the FCC before they vote later today to destroy net neutrality. This is an issue of justice and access. Save our shared web and help ensure that others can access it.</p>					
+							<footer>
+								dearfcc.org
+								
+							</footer>
+				
+						</article>
+												
+						
+						
+						
+						<div id="bsap_1032" class="bsaPROrocks" data-serve="C67DL2E"></div>
+					
+					</aside>
+				
+				</div>
+				
+			</div>
+		
+		</article>
+		
+		
+	
+	</div>
+	
+			<footer class="global-footer">
+			
+			<h1 class="deadly-subtitle">For people who make websites.</h1>
+			
+			<ul class="inline-items">
+				<li><a href="http://alistapart.com/about">About</a></li>
+				<li><a href="http://alistapart.com/authors">Authors</a></li>
+				<li><a href="http://alistapart.com/about/masthead">Masthead</a></li>
+				<li><a href="http://alistapart.com/about/style-guide">Style Guide</a></li>
+				<li><a href="http://alistapart.com/contact">Contact</a></li>
+				<li><a href="http://alistapart.com/about/sponsor">Sponsorships</a></li>
+				<li class="head-east-young-man">
+					
+					Follow us: 
+					<a href="http://alistapart.com/about/rss">RSS</a> · 
+					<a href="http://www.facebook.com/alistapart">Facebook</a> · 
+					<a href="https://plus.google.com/107749003388305496076" rel="publisher">Google+</a> · 
+					<a href="http://www.twitter.com/alistapart">Twitter</a>
+					
+				</li>
+			</ul>
+			
+			<aside class="promo-holder">
+			
+				<ul class="partner-promos">
+					<li>
+						<a href="http://abookapart.com/">
+							<img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/promo_aba.png" alt="">
+							<h1>A Book Apart</h1>
+							<p>Mobile First &amp; Responsive Web Design bundle.</p>
+							<p>Buy both and save!</p>
+							<p class="arrow">Order now</p>
+						</a>
+					</li><!--
+					
+					--><li>
+						<a href="http://aneventapart.com/">
+							<img src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/promo_aea.png" alt="">
+							<h1>An Event Apart</h1>
+							<p>Three days of design, code, and content for people who make websites.</p>
+							<p class="arrow">See the 2014 schedule</p>
+						</a>
+					</li>
+				</ul>
+			
+			</aside>
+			
+			<ul class="inline-items copyright">
+			
+				<li>
+					<small>ISSN 1534-0295 · Copyright © 1998-2014 A List Apart &amp; Our Authors</small>
+					<small><a href="http://alistapart.com/about/copyright">Permissions &amp; Copyright</a> · <a href="http://webtype.com/">Fonts by Webtype</a></small></li>
+			
+				<li class="affiliates head-east-young-man">
+					
+					<a class="aea" href="http://aneventapart.com/" title="An Event Apart">An Event Apart</a>
+					<a class="aba" href="http://abookapart.com/" title="A Book Apart">A Book Apart</a>
+					<a class="hc" href="http://happycog.com/" title="Happy Cog">Happy Cog</a>
+					<!--<a class="eh" href="http://enginehosting.com" title="Engine Hosting">Engine Hosting</a>-->
+					
+				</li>
+				
+			</ul>
+			
+		</footer>
+	
+	<div id="bsap_1031" class="bsaPROrocks" data-serve="C67DL2V"></div>
+
+		<nav class="global-nav deluxe" id="main-nav" role="navigation">
+	
+		<ul class="inline-items">
+			<li><a href="http://alistapart.com/">Home</a></li>
+			
+			<li><a href="http://alistapart.com/articles">Articles</a></li>
+			<li><a href="http://alistapart.com/columns">Columns</a></li>
+			<li><a href="http://alistapart.com/blog">Blog</a></li>
+			<li><a href="http://alistapart.com/topics">Topics</a></li>
+			<li><a href="http://alistapart.com/about/contribute">Write for us</a></li>
+			<li class="back-to-top"><a href="http://alistapart.com/article/the-z-axis-designing-for-the-future#top">Back to top</a></li>
+			<li class="head-east-young-man">
+				<form class="main-search" method="post" action="http://alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="ACT" value="19">
+<input type="hidden" name="XID" value="1a6dba42463a9a6498dcb8f05e69b7f5bba360aa">
+<input type="hidden" name="RES" value="">
+<input type="hidden" name="meta" value="Ffseekua+rUE8oK/pEbUJWWxDpWf2BoUqFDIvQXjhXZvhxjFg5cTF6MP3Rxtt3h0gzE57XPQfXWvg0nj9Y1Ez9CgWwEnGRAY6knFpH19HNpmm1rhGuRr9ebnQRbp5gzUuAi3HijGA9yRR/+duNMWasUPa0S3ri5kufvn1cJZoXtDEJrakAi4Zi6hXmR7jAoMS32IN2Nnt91qJWBa39w1AJV8sd0qnhHhIINlcsb02vkMpG4eYA2mBCdk4rLBnTtcWm9lsqpzcAbw41a/SSQd1uwuL6FhRywCkesIprmpX/V39TUIrB+WBENjD8PfBNuRIPltmq7vNFIS4c6H83tmAdIBYa09YmGift5UU60UI5sm+GsyNXJMWvj4CA9wCX3q">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+					<label for="search-keywords"><input id="search-keywords" type="search" name="keywords" placeholder="Search" aria-label="Search" value="" required="required"></label>
+					<label class="submit-search" for="submit-search"><input id="submit-search" name="submit" type="image" src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/icon_magnify_v.png" onerror="this.src=&#39;//d.alistapart.com/_repo/site_assets/img/icon_magnify_v.png&#39;;" alt="Submit"></label>
+				</form>
+			</li>
+		</ul>
+	
+	</nav>
+
+		
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/jquery.min.js"></script>
+	<script>window.jQuery || document.write('/d/_repo/site_assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+
+	<script src="./The Z-Axis  Designing for the Future · An A List Apart Article_files/d17f5833a253c191b1d7c933685a45afc12377d8.1399662552.js"></script>
+	
+	<!-- BuySell Ads -->
+	<script>(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();</script>
+	
+	<script>
+	var _qevents = _qevents || [];
+	
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+	
+	_qevents.push({qacct:"p-0Gb-D0fnDnm2s"});
+	</script>
+	
+	<noscript>
+	&lt;div style="display:none;"&gt;
+	&lt;img src="//pixel.quantserve.com/pixel/p-0Gb-D0fnDnm2s.gif" height="1" width="1" alt=""/&gt;
+	&lt;/div&gt;
+	</noscript>
+
+	<script>
+	var _gaq=[['_setAccount','UA-11757054-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+	typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+	b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+	mixpanel.init("204b563994d022408e4b540a66fe6136");</script><!-- end Mixpanel -->
+
+
+</body></html>

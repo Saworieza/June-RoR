@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://24ways.org/2008/absolute-columns/ -->
+<html lang="en-gb" class=" js-enhanced svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="http://themes.googleusercontent.com/">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com/">
+    <link rel="dns-prefetch" href="http://cloud.24ways.org/">
+    <link rel="dns-prefetch" href="http://media.24ways.org/">
+    <link rel="dns-prefetch" href="http://static.24ways.org/">
+    <script type="text/javascript" async="" id="gauges-tracker" data-site-id="5299b018f5a1f50cc600011d" src="./Absolute Columns ◆ 24 ways_files/track.js"></script><script async="" src="./Absolute Columns ◆ 24 ways_files/analytics.js"></script><script>
+        // Cut the mustard
+        var enhanced=false, ddecn='';
+        if (document.querySelector && window.addEventListener){ddecn+=' js-enhanced'; enhanced=true;}
+        // Detect support for SVG
+        if(document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1")){ddecn+=' svg';}
+        document.documentElement.className += ddecn;
+    </script>
+<!--[if lt IE 9]>
+    <script src="/_assets/js/html5shiv.min.js"></script>
+<![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="./Absolute Columns ◆ 24 ways_files/styles_v25.css">
+    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/24ways">
+    <link rel="icon" href="http://static.24ways.org/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="http://static.24ways.org/icons/apple-touch-icon.png">
+    <link rel="author" href="http://24ways.org/humans.txt">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="24 ways">
+    <meta name="apple-mobile-web-app-title" content="24 ways">
+    <meta name="twitter:site" content="@24ways">
+    <meta name="twitter:title" content="Absolute Columns">
+    <meta name="twitter:description" content="Dan Rubin pops down the chimney to deliver a neat little CSS gift that, in certain circumstances, could be just the trick needed to obtain those matched height columns so often desired. Whilst no technique is perfect for every situation, the more sharp tools we have in our CSS toolbox the better.">
+    <meta name="twitter:creator" content="@danrubin">
+    <meta name="twitter:image" content="http://cloud.24ways.org/authors/danrubin160.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <title>Absolute Columns ◆ 24 ways</title>
+</head>
+
+<body class="year-2008">
+    <header class="banner" role="banner" id="top">
+        <h1 class="banner_logo"><a href="http://24ways.org/" rel="home">24 ways <span>to impress your friends</span></a></h1>
+    </header><!--/@banner-->
+    <a class="menu" href="http://24ways.org/2008/absolute-columns/#menu" data-icon="☰">Jump to menu</a>
+
+
+
+
+
+
+
+    <main class="main" role="main">
+        <article class="article h-entry day-22">
+            <header class="article_header">
+                <h1 class="article_title p-name">Absolute Columns</h1>
+                <p class="article_byline p-author h-card">
+                    <a class="u-url" href="http://24ways.org/2008/absolute-columns/#author">
+                        <span class="avatar"><img class="article_image u-photo" src="./Absolute Columns ◆ 24 ways_files/danrubin280.jpg" width="160" height="160" alt="Dan Rubin"></span>
+                        <span class="p-name">Dan Rubin</span>
+                    </a>
+                </p><p>
+            </p></header>
+
+            <footer class="article_footer">
+                <ul class="list">
+                    <li class="list_item"><time class="dt-published" datetime="2008-12-22T00:00:00+00:00">22 Dec<span>ember</span> 2008</time></li>
+                    <li class="list_item">Published in <a href="http://24ways.org/topics/code/">Code</a></li>
+                    <li class="list_item"><a href="http://24ways.org/2008/absolute-columns/#comments">42 comments</a></li>
+                </ul>
+            </footer>
+
+            <div class="article_main e-content">
+                              
+                <p class="lede"><span class="caps">CSS</span> layouts have come quite a long way since the dark ages of web publishing, with all sorts of creative applications of floats, negative margins, and even background images employed in order to give us that most basic building block, the column. As the title implies, we are indeed going to be discussing columns today—more to the point, a handy little application of absolute positioning that may be exactly what you’ve been looking for…</p>
+
+<h2>Care for a nightcap?</h2>
+
+<p>If you’ve been developing for the web for long enough, you may be familiar with this little children’s fable, passed down from wizened Shaolin monks sitting atop the great Mt. Geocities: “Once upon a time, multiple columns of the same height could be easily created using <span class="caps">TABLES</span>.” Now, though we’re all comfortably seated on the standards train (and let’s be honest: even if you like to think you’ve fallen off, if you’ve given up using tables for layout, rest assured your sleeper car is still reserved), this particular—and as page layout goes, quite basic—trick is still a thorn in our <span class="caps">CSS</span>ides compared to the ease of achieving the same effect using said Tables of Evil™.</p>
+
+<h2>See, the orange juice masks the flavor…</h2>
+
+<p>Creative solutions such as <a href="http://simplebits.com/">Dan Cederholm’s</a>  <a href="http://www.alistapart.com/articles/fauxcolumns/">Faux Columns</a> do a good job of making it appear as though adjacent columns maintain equal height as content expands, using a background image to fill the space that the columns cannot.</p>
+
+<p>Now, the Holy Grail of <span class="caps">CSS</span> columns behaving exactly how they would as table cells—or more to the point, as columns—still eludes us (cough <a href="http://www.w3.org/TR/css3-multicol/">CSS3 Multi-column layout module</a> cough), but sometimes you just need, for example, a secondary column (say, a sidebar) to match the height of a primary column, without involving the creation of images. This is where a little absolute positioning can save you time, while possibly giving your layout a little more flexibility.</p>
+
+<h2>Shaken, not stirred</h2>
+
+<p>You’re probably familiar by now with the concept of <a href="http://stopdesign.com/articles/absolute/">Making the Absolute, Relative</a> as set forth long ago by <a href="http://stopdesign.com/">Doug Bowman</a>, but let’s quickly review just in case: an element set to <code>position:absolute</code> will position itself relative to its nearest ancestor set to <code>position:relative</code>, rather than the browser window (see Figure 1).</p>
+
+<p class="image"><img src="./Absolute Columns ◆ 24 ways_files/2008-absolute-columns-figure1.png" width="640" height="220" alt="2008 Absolute Columns Figure 1"> <span class="caption">Figure 1.</span></p>
+
+<p>However, what you may not know is that we can anchor more than two sides of an absolutely positioned element. Yes, that’s right, all four sides (top, right, bottom, left) can be set, though in this example we’re only going to require the services of three sides (see Figure 2 for the end result).</p>
+
+<p class="image"><img src="./Absolute Columns ◆ 24 ways_files/2008-absolute-columns-figure2.png" width="640" height="450" alt="2008 Absolute Columns Figure 2"> <span class="caption">Figure 2.</span></p>
+
+<h2>Trust me, this will make you feel better</h2>
+
+<p>Our requirements are essentially the same as the standard “absolute-relative” trick—a container <code>&lt;div&gt;</code> set to <code>position:relative</code>, and our sidebar <code>&lt;div&gt;</code> set to <code>position:absolute</code> — plus another <code>&lt;div&gt;</code> that will serve as our main content column. We’ll also add a few other common layout elements (wrapper, header, and footer) so <a href="http://media.24ways.org/2008/22/2008-absolute-columns-example1.html">our example markup</a> looks more like a real layout and less like a test case:</p>
+
+<pre><code>&lt;div id="wrapper"&gt;
+	&lt;div id="header"&gt;
+		&lt;h2&gt;#header&lt;/h2&gt;
+	&lt;/div&gt;
+	&lt;div id="container"&gt;
+		&lt;div id="column-left"&gt;
+			&lt;h2&gt;#left&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet…&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div id="column-right"&gt;
+			&lt;h2&gt;#right&lt;/h2&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div id="footer"&gt;
+		&lt;h2&gt;#footer&lt;/h2&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>In this example, our main column (<code>#column-left</code>) is only being given a width to fit within the context of the layout, and is otherwise untouched (though we’re using pixels here, this trick will of course work with fluid layouts as well), and our right keeping our styles nice and minimal:</p>
+
+<pre><code>#container {
+	position: relative;
+}
+#column-left {
+	width: 480px;
+}
+#column-right {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	width: 250px;
+}
+</code></pre>
+
+<p>The trick is a simple one: the <code>#container &lt;div&gt;</code> will expand vertically to fit the content within <code>#column-left</code>. By telling our sidebar <code>&lt;div&gt;</code> (<code>#column-right</code>) to attach itself not only to the top and right edges of <code>#container</code>, but also to the bottom, it too will expand and contract to match the height of the left column (duplicate the “lorem ipsum” paragraph a few times to see it in action).</p>
+
+<p class="image"><img src="./Absolute Columns ◆ 24 ways_files/2008-absolute-columns-figure3.png" width="640" height="450" alt="2008 Absolute Columns Figure 3"> <span class="caption">Figure 3.</span></p>
+
+<h2>On the rocks</h2>
+
+<p>“But wait!” I hear you exclaim, “when the right column has more content than the left column, it doesn’t expand! My text runneth over!” Sure enough, that’s <a href="http://media.24ways.org/2008/22/2008-absolute-columns-example2.html">exactly what happens</a>, and what’s more, it’s supposed to: Absolutely positioned elements do exactly what you tell them to do, and unfortunately aren’t very good at thinking outside the box (get it? sigh…). </p>
+
+<p>However, this needn’t get your spirits down, because there’s an easy way to address the issue: by adding <code>overflow:auto</code> to <code>#column-right</code>, a scrollbar will <a href="http://media.24ways.org/2008/22/2008-absolute-columns-example3.html">automatically appear</a> if and when needed:</p>
+
+<pre><code>#column-right {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	width: 250px;
+	overflow: auto;
+}
+</code></pre>
+
+<p>While this may limit the trick’s usefulness to situations where the primary column will almost always have more content than the secondary column—or where the secondary column’s content can scroll with wild abandon—a little prior planning will make it easy to incorporate into your designs.</p>
+
+<h2>Driving us to drink</h2>
+
+<p>It just wouldn’t be right to have a friendly, festive holiday tutorial without inviting IE6, though in this particular instance there will be no shaming that old browser into admitting it has a problem, nor an intervention and subsequent 12-step program. That’s right my friends, this tutorial has abstained from IE6-abuse now for 30 days, thanks to the wizard <a href="http://dean.edwards.name/">Dean Edwards</a> and his amazingly talented <a href="http://dean.edwards.name/weblog/2008/01/ie7-2/">IE7 Javascript library</a>.</p>
+
+<p>Simply drop the Conditional Comment and <code>&lt;script&gt;</code> element into the <code>&lt;head&gt;</code> of your document, along with one tiny <span class="caps">CSS</span> hack that only IE6 (and below) will ever see, and that browser will be <a href="http://media.24ways.org/2008/22/2008-absolute-columns-example3.html">back on the straight and narrow</a>:</p>
+
+<pre><code>&lt;!--[if lt IE 7]&gt;
+&lt;script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;style type="text/css" media="screen"&gt;
+	#container {
+		zoom:1; /* helps fix IE6 by initiating hasLayout */
+	}
+&lt;/style&gt;
+&lt;![endif]--&gt;
+</code></pre>
+
+<h2>Eggnog is supposed to be spiked, right?</h2>
+
+<p>Of course, this is one simple example of what can be a much more powerful technique, depending on your needs and creativity. Just don’t go coding up your wildest fantasies until you’ve had a chance to sleep off the Christmas turkey and whatever tasty liquids you happen to imbibe along the way…</p>
+            </div>
+
+            <section class="section" id="author">
+                <header class="section_header">
+                    <h1 class="section_title">About the author</h1>
+                </header>
+                <div class="section_main">
+                    <p><strong class="fn n">Dan Rubin</strong> is a highly accomplished <span class="role">user interface designer and usability consultant</span>, with over ten years of experience as a leader in the fields of web standards and usability, specifically focusing on the use of (X)HTML and <span class="caps">CSS</span> to streamline development and improve accessibility.</p>
+
+<p>His passion for all things creative and artistic isn’t a solely selfish endeavor either—you’ll frequently find him waxing educational about a cappella jazz and barbershop harmony, interface design, usability, web standards, typography, and graphic design in general.</p>
+
+<p>In addition to his contributions to sites including Blogger, the <span class="caps">CSS</span> Zen Garden, Yahoo! Small Business and Microsoft’s <span class="caps">ASP</span>.net portal, Dan is a contributing author of Cascading Style Sheets: Separating Content from Presentation (2nd Edition, friends of ED, 2003), technical reviewer for Beginning <span class="caps">CSS</span> Web Development (Apress, 2006), The Art &amp; Science of <span class="caps">CSS</span> (SitePoint, 2007) and Sexy Web Design (SitePoint, 2009), coauthor of <a href="http://www.amazon.com/exec/obidos/ASIN/159059732X/superfluous-20">Pro <span class="caps">CSS</span> Techniques</a> (Apress, 2006), and <a href="http://www.amazon.com/exec/obidos/ASIN/1590598032/superfluous-20">Web Standards Creativity</a> (friends of ED, 2007), writes about web standards, design and life in general on his blog, <a href="http://superfluousbanter.org/" class="url">SuperfluousBanter.org</a>, and spends his professional time on a variety of online and offline projects for <a href="http://sidebarcreative.com/">Sidebar Creative</a>, <a href="http://webgraph.com/">Webgraph</a> and <a href="http://blackseagull.com/">Black Seagull</a>, and consults on design, user interaction and online publishing for <a href="http://garciamedia.com/">Garcia Media</a>.</p>
+                    <p><a class="continue" href="http://24ways.org/authors/danrubin/" title="More information about Dan Rubin">More articles by Dan</a></p>
+                </div>
+            </section><!--/.section-->
+
+
+
+            
+
+                      
+            <section class="section section-sponsor" id="sponsor">
+                <header class="section_header">
+                    <h1 class="section_title">Brought to you by</h1>
+                </header>
+                <div class="section_main">
+                    
+                        <a class="promo" href="http://grabaperch.com/?ref=24w01">
+    <img class="promo_image" src="./Absolute Columns ◆ 24 ways_files/logo-perch.png" alt="Perch - A really little CMS" width="152" height="64">
+    <p class="promo_message">The easiest way to publish <strong>fast, flexible HTML5 websites</strong> your clients will love.</p>
+    <p class="promo_url">grabaperch.com</p>
+</a><!--/.promo-->
+
+                    
+                    
+                    
+                </div>
+            </section><!--/.section-->
+            
+
+            <section class="section" id="comments">
+                <header class="section_header">
+                    <h1 class="section_title">Comments</h1>
+                </header>
+                <div class="section_main">
+                    <p><a class="continue continue-ajax" href="http://24ways.org/2008/absolute-columns/comments/" data-replace="" data-interaction="" data-target="#comments">View 42 reader comments</a></p>
+                </div>
+            </section><!--/.section-->
+
+            		
+		<section class="section" id="related">
+		    <header class="section_header">
+		        <h1 class="section_title">Related articles</h1>
+		    </header>
+		    <div class="section_main">
+		        <ul class="list list-articles">
+		
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-22" style="height: 303px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2005/debugging-css-with-the-dom-inspector/">Debugging CSS with the DOM Inspector</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2005-12-22T00:00:00+00:00">22 Dec 2005</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2005/debugging-css-with-the-dom-inspector/#comments">25 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://www.hicksdesign.co.uk/">Jon Hicks</a> demonstrates how to use the Firefox <span class="caps">DOM</span> Inspector to debug problems in your <span class="caps">CSS</span>. It may not be the ideal time of year for <em>seek and destroy</em> missions, but I’d be prepared to overlook that. It’s the season of goodwill, after all.</p>
+					<a class="summary_link" href="http://24ways.org/2005/debugging-css-with-the-dom-inspector/">
+						Impress your friends with ‘Debugging CSS with the DOM Inspector’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/jonhicks/"><img class="u-photo" src="./Absolute Columns ◆ 24 ways_files/jonhicks160.jpg" alt=""><span class="p-name">Jon Hicks</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-22" style="height: 303px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2010/everything-you-wanted-to-know-about-gradients/">Everything You Wanted To Know About Gradients (And a Few Things You Didn’t)</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2010-12-22T00:00:00+00:00">22 Dec 2010</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2010/everything-you-wanted-to-know-about-gradients/#comments">17 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://ethanmarcotte.com/">Ethan Marcotte</a> explains the theory and practice of <span class="caps">CSS</span> gradients, separates the duelling syntaxes and wields a mean color-stop. No longer will gradients confound, baffle or frustrate. Just leave the rainbows to the unicorns.</p>
+					<a class="summary_link" href="http://24ways.org/2010/everything-you-wanted-to-know-about-gradients/">
+						Impress your friends with ‘Everything You Wanted To Know About Gradients (And a Few Things You Didn’t)’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/ethanmarcotte/"><img class="u-photo" src="./Absolute Columns ◆ 24 ways_files/ethanmarcotte160.jpg" alt=""><span class="p-name">Ethan Marcotte</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-21" style="height: 303px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2012/infinite-canvas-moving-beyond-the-page/">Infinite Canvas: Moving Beyond the Page</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2012-12-21T00:00:00+00:00">21 Dec 2012</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2012/infinite-canvas-moving-beyond-the-page/#comments">2 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://nathanperetic.com/">Nathan Peretic</a> weighs the page refresh in the balance and finds it wanting – wanting to be brought up to date, that is, with some future <span class="caps">CSS</span> sparkle.</p>
+					<a class="summary_link" href="http://24ways.org/2012/infinite-canvas-moving-beyond-the-page/">
+						Impress your friends with ‘Infinite Canvas: Moving Beyond the Page’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/nathanperetic/"><img class="u-photo" src="./Absolute Columns ◆ 24 ways_files/nathanperetic160.jpg" alt=""><span class="p-name">Nathan Peretic</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-21" style="height: 319px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2005/swooshy-curly-quotes-without-images/">Swooshy Curly Quotes Without Images</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2005-12-21T00:00:00+00:00">21 Dec 2005</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2005/swooshy-curly-quotes-without-images/#comments">44 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+						<p><a href="http://www.colly.com/">Simon Collison</a> questions the use of quote-mark images for the aesthetic styling of blockquotes. In doing so, he demonstrates a method of achieving the same purely with <span class="caps">CSS</span>. A worthy thing in my estimation.</p>
+					<a class="summary_link" href="http://24ways.org/2005/swooshy-curly-quotes-without-images/">
+						Impress your friends with ‘Swooshy Curly Quotes Without Images’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/simoncollison/"><img class="u-photo" src="./Absolute Columns ◆ 24 ways_files/simoncollison160.jpg" alt=""><span class="p-name">Simon Collison</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-20" style="height: 319px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2006/intricate-fluid-layouts/">Intricate Fluid Layouts in Three Easy Steps</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2006-12-20T00:00:00+00:00">20 Dec 2006</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2006/intricate-fluid-layouts/#comments">20 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://nate.koechley.com/blog/">Nate Koechley</a> demonstrates how the compact and powerful <span class="caps">YUI</span> Grids stylesheet can be used to conjure up all manner of layouts from the simple to the complex. Take it easy over the festive period, and let the <span class="caps">YUI</span> Grids do all the hard work for you.</p>
+					<a class="summary_link" href="http://24ways.org/2006/intricate-fluid-layouts/">
+						Impress your friends with ‘Intricate Fluid Layouts in Three Easy Steps’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/natekoechley/"><img class="u-photo" src="./Absolute Columns ◆ 24 ways_files/natekoechley160.jpg" alt=""><span class="p-name">Nate Koechley</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+				
+		            <li class="list_item">
+		            	
+			<article class="summary summary-article h-entry day-20" style="height: 319px;">
+				<header class="summary_header">
+					<h1 class="summary_title p-name">
+						<a class="u-url" rel="bookmark" href="http://24ways.org/2007/diagnostic-styling/">Diagnostic Styling</a>
+					</h1>
+					<p class="summary_meta">
+						
+						<time class="dt-published" datetime="2007-12-20T00:00:00+00:00">20 Dec 2007</time>
+						
+						
+						<a class="summary_comments" href="http://24ways.org/2007/diagnostic-styling/#comments">11 comments</a>
+						
+					</p>
+				</header>
+				<div class="summary_main">
+					<p><a href="http://meyerweb.com/">Eric Meyer</a> describes a technique for using <span class="caps">CSS</span> as a diagnostic tool for finding potential problems or issues within a page. Going beyond the styling for the delivery of a site, the use of <span class="caps">CSS</span> as an author-time development tool holds many possibilities. Now if only there was a selector to show me which presents I’ve forgotten to buy this year.</p>
+					<a class="summary_link" href="http://24ways.org/2007/diagnostic-styling/">
+						Impress your friends with ‘Diagnostic Styling’
+					</a>
+				</div>
+				<footer class="summary_footer">
+					<p class="summary_author p-author h-card">
+						<a class="u-url" href="http://24ways.org/authors/ericmeyer/"><img class="u-photo" src="./Absolute Columns ◆ 24 ways_files/ericmeyer160.jpg" alt=""><span class="p-name">Eric Meyer</span></a>
+					</p>
+				</footer>
+			</article><!--/.summary-article-->
+		            </li>
+		
+		        </ul><!--/.list-articles-->
+		    </div>
+		</section><!--/.section-->
+		
+
+            
+        </article><!--/.article-->
+    </main><!--/@main-->    <nav class="navigation" role="navigation" id="menu">
+        <h1 class="hidden">Browse 24 ways</h1>
+<div class="nav nav-traverse"><a class="nav_item nav_prev" rel="prev" href="http://24ways.org/2008/geotag-everywhere-with-fire-eagle/" data-sequence-title="Geotag Everywhere with Fire Eagle" data-icon="←">Previous article</a><a class="nav_item nav_next" rel="next" href="http://24ways.org/2008/contract-killer/" data-sequence-title="Contract Killer" data-icon="→">Next article</a></div><!--/.nav-traverse-->        
+<ul class="nav nav-topics">
+
+    <li class="nav_item"><a href="http://24ways.org/topics/business/" data-icon="♕">Business</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/code/" data-icon="♖">Code</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/content/" data-icon="♔">Content</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/design/" data-icon="♗">Design</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/process/" data-icon="♙">Process</a></li>
+
+    <li class="nav_item"><a href="http://24ways.org/topics/ux/" data-icon="♘">UX</a></li>
+
+</ul><!--/.nav-topics-->
+
+        <form class="search" role="search" id="search" action="http://24ways.org/search/">
+            <fieldset class="field-search">
+                <legend class="hidden">Search 24 ways</legend>
+                <label class="field_label label" for="q">Keywords</label>
+                <input class="field_input input" type="search" id="q" name="q" placeholder="e.g. CSS, Design, Research…">
+                <input class="field_button button" type="submit" value="Search">
+
+            </fieldset>
+        </form><!--/.search-->
+
+        <ul class="nav nav-site">
+            <li class="nav_item"><a href="http://24ways.org/archives/">Archives</a></li>
+            <li class="nav_item"><a href="http://24ways.org/topics/">Topics</a></li>
+            <li class="nav_item"><a href="http://24ways.org/authors/">Authors</a></li>
+            <li class="nav_item"><a href="http://24ways.org/about/">About</a></li>
+        </ul><!--/.nav-site-->
+
+    <a class="nav nav-top" href="http://24ways.org/2008/absolute-columns/#top" data-icon="⌃" style="opacity: 1; -webkit-transition: opacity 0.5s ease-in; transition: opacity 0.5s ease-in;">Return to the top of this page</a></nav><!--/@navigation-->
+    <footer class="contentinfo" role="contentinfo">
+        <p class="contentinfo_copyright">
+            <small>© 2005-2014 24 ways and our authors. <a href="http://24ways.org/about/#colophon">Colophon</a></small>
+        </p>
+        <p class="contentinfo_social">
+            <a href="http://feeds.feedburner.com/24ways" rel="alternate">Grab our RSS feed</a>
+            <a href="https://twitter.com/24ways" rel="me">Follow us on Twitter</a>
+        </p>
+    </footer><!--/@contentinfo-->
+    <script src="./Absolute Columns ◆ 24 ways_files/scripts_v25.js"></script>
+
+</body></html>

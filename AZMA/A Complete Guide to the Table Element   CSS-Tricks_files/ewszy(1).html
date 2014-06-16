@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://s.codepen.io/chriscoyier/fullembedgrid/ewszy?type=embed&animations=run -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="UTF-8">
+
+  <meta name="google" value="notranslate">
+
+  <!--
+Copyright (c) 2014 by Chris Coyier (http://codepen.io/chriscoyier/pen/ewszy)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+  <title>Column Highlighting in Vanilla JavaScript - CodePen</title>
+
+  <style>body {
+  font: normal medium/1.4 sans-serif;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+.hover {
+  background: yellow;
+}</style>
+
+</head>
+
+<body onload="_l=&#39;t&#39;;">
+
+  <table class="zebra"> 
+<colgroup><col>
+<col>
+<col>
+<col>
+</colgroup><thead> 
+<tr> 
+    <th>Last Name</th> 
+    <th>First Name</th> 
+    <th>Email</th> 
+    <th>Due</th> 
+    <th>Web Site</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr id="row"> 
+    <td>Smith</td> 
+    <td>John</td> 
+    <td>jsmith@gmail.com</td> 
+    <td>$50.00</td> 
+    <td>http://www.jsmith.com</td> 
+</tr> 
+<tr> 
+    <td>Bach</td> 
+    <td>Frank</td> 
+    <td>fbach@yahoo.com</td> 
+    <td>$50.00</td> 
+    <td>http://www.frank.com</td> 
+</tr> 
+<tr> 
+    <td>Doe</td> 
+    <td>Jason</td> 
+    <td>jdoe@hotmail.com</td> 
+    <td>$100.00</td> 
+    <td>http://www.jdoe.com</td> 
+</tr> 
+<tr> 
+    <td>Conway</td> 
+    <td>Tim</td> 
+    <td>tconway@earthlink.net</td> 
+    <td>$50.00</td> 
+    <td>http://www.timconway.com</td> 
+</tr> 
+</tbody> 
+</table>
+
+  <script>
+var tds = 
+  document.querySelectorAll("td");
+var ths = 
+  document.querySelectorAll("th");
+
+var cells = 
+    Array.prototype.slice.call(tds)
+      .concat(
+        Array.prototype.slice.call(ths)
+      );
+
+var rows =
+  document.querySelectorAll("tr");
+
+[].forEach.call(
+  cells, 
+  function(el) {
+    el.addEventListener(
+      'mouseover', 
+      function() {
+
+        var index = indexInParent(this);
+
+        for (var i = 0; i < rows.length; i++) {
+          var cellsInThisRow = rows[i].getElementsByTagName("td");
+
+          if (cellsInThisRow.length == 0) {
+            cellsInThisRow = rows[i].getElementsByTagName("th");
+          }
+
+          cellsInThisRow[index]
+            .classList
+            .add("hover");
+        };  
+
+      }, 
+      false
+    );
+  }
+);
+
+[].forEach.call(
+  cells, 
+  function(el) {
+    el.addEventListener(
+      'mouseout', 
+      function() {
+        for (var i = 0; i < cells.length; i++) {
+          cells[i]
+            .classList
+            .remove("hover");
+        }
+      }, 
+      false
+    );
+  }
+);
+
+function indexInParent(node) {
+    var children = node.parentNode.childNodes;
+    var num = 0;
+    for (var i=0; i<children.length; i++) {
+         if (children[i]==node) return num;
+         if (children[i].nodeType==1) num++;
+    }
+    return -1;
+}
+  </script>
+
+
+
+</body></html>
